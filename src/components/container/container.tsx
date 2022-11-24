@@ -20,10 +20,12 @@ export const Container = ({ children, className }: ContainerProps) => {
 
 const Wrapper = styled.div`
   width: 100%;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: stretch;
+
   position: relative;
 `;
 

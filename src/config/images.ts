@@ -52,6 +52,18 @@ import BscscanIconSvg from '../assets/Desktop/Svg/logobscscan.svg';
 
 import DeskFooterLogoSvg from '../assets/Desktop/Svg/footerlogo.svg';
 
+import LogoKingFlokiPNG from '../assets/Desktop/Png/logokingfloki.png';
+
+import BoxBgKingFlokiPNG from '../assets/Desktop/Png/boxbgkingfloki.png';
+import BoxBgKingFlokiTabletPNG from '../assets/Tablet/Png/boxbgkingfloki.png';
+import BoxBgKingFlokiMobilePNG from '../assets/Mobile/Png/boxbgkingfloki.png';
+
+export const BoxBgKingFloki = BoxBgKingFlokiPNG;
+export const BoxBgKingFlokiTablet = BoxBgKingFlokiTabletPNG;
+export const BoxBgKingFlokiMobile = BoxBgKingFlokiMobilePNG;
+
+export const LogoKingFloki = LogoKingFlokiPNG;
+
 export const LogoHeader = LogoH;
 
 export const MenuKingfloki = MenuKingflokiSvg;
