@@ -34,8 +34,9 @@ const HeaderContent = styled.div`
   width: 100%;
   justify-content: space-between;
   align-items: flex-start;
-  position: absolute;
-  top: 3rem;
+  /* position: absolute;
+  top: 3rem; */
+  padding-top: 3rem;
 
   @media screen and (max-width: 640px) {
     justify-content: center;

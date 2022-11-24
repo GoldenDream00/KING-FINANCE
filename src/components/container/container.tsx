@@ -24,6 +24,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: stretch;
+  position: relative;
 `;
 
 const ContainerWrapper = styled.div`
