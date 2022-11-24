@@ -102,16 +102,14 @@ const KingLogo = styled.img`
 
 const CopyRight = styled.div`
   display: flex;
-  font-size: 15px;
+
   font-family: 'gotham-book';
   gap: 2rem;
+  width: 100%;
+  justify-content: center;
   color: ${(props) => props.theme.white};
   @media screen and (max-width: 640px) {
     gap: 1rem;
-  }
-
-  @media screen and (max-width: 540px) {
-    font-size: 13px;
   }
 
   @media screen and (max-width: 480px) {
@@ -123,6 +121,17 @@ const CopyRight = styled.div`
 const Element = styled.div`
   cursor: pointer;
   color: ${(props) => props.theme.white};
+  font-family: 'gotham-book';
+  text-transform: none;
+  width: fit-content;
+  height: fit-content;
+  font-size: 15px;
+  @media screen and (max-width: 540px) {
+    font-size: 13px;
+  }
+  @media screen and (max-width: 480px) {
+    font-size: 11px;
+  }
 `;
 
 const Line = styled.div``;
