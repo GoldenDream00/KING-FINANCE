@@ -5,6 +5,13 @@ import { CmcIcon, BscscanIcon, CoingeckoIcon } from 'src/config/images';
 export const ExternalLinks = () => {
   return (
     <Wrapper>
+      <ExternalButtons>
+        <div className="token-button">Token</div>
+        <div className="token-button">Team</div>
+        <div className="token-button">Docs</div>
+        <div className="token-button">Media Kit</div>
+        <div className="token-button">King Pass</div>
+      </ExternalButtons>
       <ExternalLinkWrapper>
         <div className="medium-link">
           <img src={CmcIcon} alt="medium-link-icon" className="link-icon" />
@@ -16,13 +23,6 @@ export const ExternalLinks = () => {
           <img src={BscscanIcon} alt="bscscan-link-icon" className="link-icon" />
         </div>
       </ExternalLinkWrapper>
-      <div>
-        <div className="token-button">Token</div>
-        <div className="token-button">Team</div>
-        <div className="token-button">Docs</div>
-        <div className="token-button">Media Kit</div>
-        <div className="token-button">King Pass</div>
-      </div>
     </Wrapper>
   );
 };
