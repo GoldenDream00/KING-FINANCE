@@ -141,6 +141,7 @@ const BottomLetter = styled.p`
   font-size: 30px;
   font-family: 'gotham-book';
   text-transform: none;
+  padding-top: 2rem;
   @media screen and (max-width: 1092px) {
     font-size: 25px;
   }
