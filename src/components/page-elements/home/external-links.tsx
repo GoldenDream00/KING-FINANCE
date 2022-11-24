@@ -15,14 +15,14 @@ export const ExternalLinks = () => {
         <div className="bscscan-link">
           <img src={BscscanIcon} alt="bscscan-link-icon" className="link-icon" />
         </div>
-        <ExternalButtons>
-          <div className="token-button">Token</div>
-          <div className="token-button">Team</div>
-          <div className="token-button">Docs</div>
-          <div className="token-button">Media Kit</div>
-          <div className="token-button">King Pass</div>
-        </ExternalButtons>
       </ExternalLinkWrapper>
+      <ExternalButtons>
+        <div className="token-button">Token</div>
+        <div className="token-button">Team</div>
+        <div className="token-button">Docs</div>
+        <div className="token-button">Media Kit</div>
+        <div className="token-button">King Pass</div>
+      </ExternalButtons>
     </Wrapper>
   );
 };
