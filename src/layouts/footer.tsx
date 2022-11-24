@@ -41,6 +41,7 @@ const FooterContainer = styled.div`
   width: 100%;
   height: 450px;
   position: relative;
+  padding-top: 7rem;
 
   @media screen and (max-width: 1280px) {
     height: 350px;

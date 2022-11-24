@@ -109,6 +109,7 @@ const LandingDetailsWrapper = styled.div`
   align-content: space-between;
 
   gap: 1rem;
+  padding-top: 7rem;
 
   color: ${(props) => props.theme.white};
 `;
@@ -205,12 +206,17 @@ const MetaverseTitle = styled.div`
     }
 
     @media screen and (max-width: 1024px) {
-      padding: 10px 12px;
+      padding: 18px 24px;
       font-size: 18px;
     }
 
     @media screen and (max-width: 640px) {
-      padding: 10px 12px;
+      padding: 18px 24px;
+      font-size: 15px;
+    }
+
+    @media screen and (max-width: 420px) {
+      padding: 12px 16px;
       font-size: 15px;
     }
   }
@@ -307,6 +313,7 @@ const Game = styled.div`
         .in-game {
           font-family: 'gotham-bold';
           font-size: 2.5rem;
+          text-align: center;
 
           @media screen and (max-width: 640px) {
             font-size: 1rem;
@@ -322,7 +329,7 @@ const Game = styled.div`
           font-family: 'gotham-bold';
           font-size: 5rem;
 
-          @media screen and (max-width: 768px) {
+          @media screen and (max-width: 640px) {
             font-size: 2.5rem;
           }
         }
@@ -344,12 +351,17 @@ const Game = styled.div`
         }
 
         @media screen and (max-width: 1024px) {
-          padding: 10px 12px;
+          padding: 18px 24px;
           font-size: 18px;
         }
 
         @media screen and (max-width: 640px) {
-          padding: 10px 12px;
+          padding: 18px 24px;
+          font-size: 15px;
+        }
+
+        @media screen and (max-width: 420px) {
+          padding: 12px 16px;
           font-size: 15px;
         }
       }
@@ -361,6 +373,7 @@ const Game = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
 
     @media screen and (max-width: 768px) {
       width: 300px;
@@ -417,7 +430,7 @@ const Game = styled.div`
           font-family: 'gotham-bold';
           font-size: 5rem;
 
-          @media screen and (max-width: 768px) {
+          @media screen and (max-width: 640px) {
             font-size: 2.5rem;
           }
         }
@@ -439,12 +452,17 @@ const Game = styled.div`
         }
 
         @media screen and (max-width: 1024px) {
-          padding: 10px 12px;
+          padding: 18px 24px;
           font-size: 18px;
         }
 
         @media screen and (max-width: 640px) {
-          padding: 10px 12px;
+          padding: 18px 24px;
+          font-size: 15px;
+        }
+
+        @media screen and (max-width: 420px) {
+          padding: 12px 16px;
           font-size: 15px;
         }
       }
@@ -502,6 +520,7 @@ const KingPadSection = styled.div`
     gap: 1rem;
     top: 0;
     font-family: 'gotham-bold';
+    font-size: 36px;
 
     @media screen and (max-width: 640px) {
       margin-right: 0;
@@ -518,10 +537,6 @@ const KingPadSection = styled.div`
 
       @media screen and (max-width: 1366px) {
         gap: 1rem;
-      }
-
-      @media screen and (max-width: 840px) {
-        gap: 1.5rem;
       }
 
       @media screen and (max-width: 640px) {
@@ -665,6 +680,7 @@ const KingLandSection = styled.div`
     gap: 1rem;
     top: 0;
     font-family: 'gotham-bold';
+    font-size: 36px;
 
     @media screen and (max-width: 640px) {
       margin-right: 0;
@@ -687,10 +703,6 @@ const KingLandSection = styled.div`
 
       @media screen and (max-width: 1366px) {
         gap: 1rem;
-      }
-
-      @media screen and (max-width: 840px) {
-        gap: 1.5rem;
       }
 
       @media screen and (max-width: 640px) {

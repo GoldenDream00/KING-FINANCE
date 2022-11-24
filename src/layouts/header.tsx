@@ -117,10 +117,6 @@ const RectButton = styled.div`
     background: none;
     padding: 10px;
   }
-
-  @media screen and (max-width: 420px) {
-    font-size: 10px;
-  }
 `;
 
 const ButtonGroup = styled.div`

@@ -85,6 +85,7 @@ const ExternalButtons = styled.div`
   -webkit-justify-content: space-between;
   font-size: 20px;
   font-family: 'gotham-book';
+  text-align: center;
 
   .token-button {
     cursor: pointer;
