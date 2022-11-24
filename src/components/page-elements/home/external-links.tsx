@@ -71,6 +71,7 @@ const ExternalLinkWrapper = styled.div`
 const ExternalButtons = styled.div`
   max-width: 650px;
   width: 100%;
+  height: 100%;
   display: flex;
   justify-content: space-between;
   font-size: 20px;
