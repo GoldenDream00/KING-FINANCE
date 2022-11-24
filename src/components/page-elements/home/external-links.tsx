@@ -5,13 +5,6 @@ import { CmcIcon, BscscanIcon, CoingeckoIcon } from 'src/config/images';
 export const ExternalLinks = () => {
   return (
     <Wrapper>
-      <ExternalButtons>
-        <div className="token-button">Token</div>
-        <div className="token-button">Team</div>
-        <div className="token-button">Docs</div>
-        <div className="token-button">Media Kit</div>
-        <div className="token-button">King Pass</div>
-      </ExternalButtons>
       <ExternalLinkWrapper>
         <div className="medium-link">
           <img src={CmcIcon} alt="medium-link-icon" className="link-icon" />
@@ -22,6 +15,13 @@ export const ExternalLinks = () => {
         <div className="bscscan-link">
           <img src={BscscanIcon} alt="bscscan-link-icon" className="link-icon" />
         </div>
+        <ExternalButtons>
+          <div className="token-button">Token</div>
+          <div className="token-button">Team</div>
+          <div className="token-button">Docs</div>
+          <div className="token-button">Media Kit</div>
+          <div className="token-button">King Pass</div>
+        </ExternalButtons>
       </ExternalLinkWrapper>
     </Wrapper>
   );
@@ -82,9 +82,11 @@ const ExternalButtons = styled.div`
     cursor: pointer;
     color: ${(props) => props.theme.white};
     height: 100%;
+    width: 100%;
     font-size: 20px;
     font-family: 'gotham-book';
-    text-decoration: none;
+    text-transform: none;
+    padding-top: 2rem;
   }
 
   @media screen and (max-width: 768px) {
