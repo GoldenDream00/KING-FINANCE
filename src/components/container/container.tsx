@@ -30,11 +30,8 @@ const ContainerWrapper = styled.div`
   width: 100%;
 
   max-width: 1160px;
-  min-height: 5000px;
 
   position: relative;
-
-  background-color: ${(props) => props.theme.white};
 
   @media screen and (max-width: 1366px) {
     max-width: 900px;
