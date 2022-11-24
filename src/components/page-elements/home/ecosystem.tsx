@@ -329,13 +329,13 @@ const ConnectWithKing = styled.div`
   justify-content: center;
   align-items: center;
 
-  gap: 3rem;
+  gap: 1.5rem;
 
   z-index: 1;
 `;
 
 const ConnectLetter = styled.div`
-  font-size: 18px;
+  font-size: 14px;
   text-transform: uppercase;
   width: 100%;
   height: 100%;
@@ -343,11 +343,11 @@ const ConnectLetter = styled.div`
   padding-top: 2rem;
   color: ${(props) => props.theme.white};
   @media screen and (max-width: 480px) {
-    font-size: 16px;
+    font-size: 12px;
   }
 
   @media screen and (max-width: 350px) {
-    font-size: 14px;
+    font-size: 10px;
   }
 `;
 
