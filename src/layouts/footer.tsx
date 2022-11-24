@@ -42,6 +42,8 @@ const FooterContainer = styled.div`
   height: 450px;
   position: relative;
   padding-top: 7rem;
+  display: flex;
+  align-items: flex-end;
 
   @media screen and (max-width: 1280px) {
     height: 350px;
@@ -49,6 +51,10 @@ const FooterContainer = styled.div`
 
   @media screen and (max-width: 960px) {
     height: 300px;
+  }
+
+  @media screen and (max-width: 640px) {
+    padding-top: 0;
   }
 `;
 
@@ -66,10 +72,11 @@ const FooterContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 4rem;
+  justify-content: flex-end;
+  gap: 3rem;
   width: 100%;
   height: 100%;
+  padding-bottom: 2rem;
 
   @media screen and (max-width: 960px) {
     gap: 2rem;
@@ -122,6 +129,7 @@ const Line = styled.div``;
 const SocialLinkGroup = styled.div`
   display: flex;
   gap: 4rem;
+  padding-bottom: 2rem;
 
   @media screen and (max-width: 480px) {
     gap: 2rem;

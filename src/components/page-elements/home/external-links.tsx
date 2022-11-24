@@ -31,21 +31,15 @@ const Wrapper = styled.div`
   color: ${(props) => props.theme.white};
 
   width: 100%;
-  padding-top: 4rem;
+  padding-top: 3rem;
   display: flex;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
   flex-direction: column;
   align-items: center;
-  gap: 7rem;
+  gap: 4rem;
 `;
 
 const ExternalLinkWrapper = styled.div`
   display: flex;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
   width: 100%;
   justify-content: center;
   -webkit-justify-content: center;
@@ -78,11 +72,7 @@ const ExternalButtons = styled.div`
   max-width: 650px;
   width: 100%;
   display: flex;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
   justify-content: space-between;
-  -webkit-justify-content: space-between;
   font-size: 20px;
   font-family: 'gotham-book';
   text-align: center;

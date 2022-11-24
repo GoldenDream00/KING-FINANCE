@@ -13,6 +13,7 @@ export const Layout = ({ children }: LayoutProps) => {
     <MainContainer>
       <Header />
       {children}
+      <Footer />
       <ToastContainer
         position="bottom-right"
         autoClose={3000}
@@ -21,7 +22,6 @@ export const Layout = ({ children }: LayoutProps) => {
         closeOnClick
         theme="light"
       />
-      <Footer />
     </MainContainer>
   );
 };
