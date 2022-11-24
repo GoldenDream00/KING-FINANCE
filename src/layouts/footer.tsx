@@ -8,8 +8,7 @@ import {
   YoutubeIcon
 } from 'src/config/images';
 import styled from 'styled-components';
-import { Container, PageWrapper } from '../components/container/container';
-import { Text } from '../components/text/text';
+import { PageWrapper } from '../components/container/container';
 
 export const Footer = () => {
   return (
