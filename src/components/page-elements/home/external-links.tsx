@@ -75,7 +75,7 @@ const ExternalButtons = styled.div`
   display: flex;
   justify-content: space-between;
   font-size: 20px;
-  font-family: 'gotham-book';
+  /* font-family: 'gotham-book'; */
   text-align: center;
   color: ${(props) => props.theme.white};
   .token-button {
