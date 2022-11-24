@@ -122,6 +122,7 @@ const CopyRight = styled.div`
 
 const Element = styled.div`
   cursor: pointer;
+  color: ${(props) => props.theme.white};
 `;
 
 const Line = styled.div``;

@@ -326,6 +326,7 @@ const ConnectWithKing = styled.div`
   letter-spacing: 2.6px;
   font-family: 'gotham-book';
   padding-top: 3rem;
+  color: ${(props) => props.theme.white};
 
   display: flex;
   flex-direction: column;

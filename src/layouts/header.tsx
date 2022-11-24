@@ -102,7 +102,7 @@ const RectButton = styled.div`
   background: #1d1d1d;
   border-radius: 28px;
   letter-spacing: 0.875px;
-  color: #ffffff;
+  color: ${(props) => props.theme.white};
   text-transform: uppercase;
   border: none;
   padding: 0px 18px;

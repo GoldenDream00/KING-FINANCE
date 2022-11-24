@@ -23,12 +23,12 @@ export const SmoothScrollProvider = ({ children }: SmoothScrollProps) => {
   };
 
   useEffect(() => {
-    setTimeout(setBodyHeight, 500);
+    setTimeout(setBodyHeight, 1000);
   }, []);
 
   // 4.
   useEffect(() => {
-    setTimeout(setBodyHeight, 500);
+    setTimeout(setBodyHeight, 1000);
   }, [windowSize]);
 
   const setBodyHeight = () => {

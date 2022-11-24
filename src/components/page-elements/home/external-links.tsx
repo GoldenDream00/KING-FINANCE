@@ -76,9 +76,10 @@ const ExternalButtons = styled.div`
   font-size: 20px;
   font-family: 'gotham-book';
   text-align: center;
-
+  color: ${(props) => props.theme.white};
   .token-button {
     cursor: pointer;
+    color: ${(props) => props.theme.white};
   }
 
   @media screen and (max-width: 768px) {
