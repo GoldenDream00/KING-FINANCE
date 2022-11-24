@@ -105,7 +105,7 @@ const CopyRight = styled.div`
   font-size: 15px;
   font-family: 'gotham-book';
   gap: 2rem;
-  color: #fff;
+  color: ${(props) => props.theme.white};
   @media screen and (max-width: 640px) {
     gap: 1rem;
   }
