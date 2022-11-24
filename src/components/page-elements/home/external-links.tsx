@@ -74,8 +74,6 @@ const ExternalButtons = styled.div`
   height: 100%;
   display: flex;
   justify-content: space-between;
-  font-size: 20px;
-  font-family: 'gotham-book';
   text-align: center;
   color: ${(props) => props.theme.white};
   text-rendering: optimizeLegibility;
@@ -84,6 +82,8 @@ const ExternalButtons = styled.div`
     cursor: pointer;
     color: ${(props) => props.theme.white};
     height: 100%;
+    font-size: 20px;
+    font-family: 'gotham-book';
   }
 
   @media screen and (max-width: 768px) {
