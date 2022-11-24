@@ -17,6 +17,8 @@ export const Footer = () => {
         <FooterBackground src={DeskBgMain} />
       </FooterContainer>
       <FooterContent>
+        <KingLogo src={DeskFooterLogo} />
+
         <CopyRight>
           <Element>Cookie preferences</Element>
           <Line>|</Line>
@@ -24,8 +26,6 @@ export const Footer = () => {
           <Line>|</Line>
           <Element>Terms of use</Element>
         </CopyRight>
-        <KingLogo src={DeskFooterLogo} />
-
         <SocialLinkGroup>
           <SocialIcon src={TelegramIcon} />
           <SocialIcon src={TwitterIcon} />
@@ -127,6 +127,7 @@ const Element = styled.div`
   width: fit-content;
   height: fit-content;
   font-size: 15px;
+  padding-top: 0.001rem;
   @media screen and (max-width: 540px) {
     font-size: 13px;
   }
