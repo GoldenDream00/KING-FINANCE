@@ -86,7 +86,7 @@ const ExternalButtons = styled.div`
     font-size: 20px;
     font-family: 'gotham-book';
     text-transform: none;
-    padding-top: 0.0001rem;
+    padding-top: 0.01rem;
   }
 
   @media screen and (max-width: 768px) {
