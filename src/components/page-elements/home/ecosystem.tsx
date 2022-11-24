@@ -52,7 +52,7 @@ export const EcoSystem = () => {
       </EcoSystemWrapper>
       <ConnectWrapper>
         <ConnectWithKing>
-          <p>Connect With King</p>
+          <ConnectLetter>Connect With King</ConnectLetter>
           <SocialLinkGroup>
             <SocialBox>
               <svg
@@ -321,12 +321,8 @@ export const ConnectWrapper = styled.div`
 `;
 
 const ConnectWithKing = styled.div`
-  font-size: 18px;
-  text-transform: uppercase;
   letter-spacing: 2.6px;
-  font-family: 'gotham-book';
   padding-top: 3rem;
-  color: ${(props) => props.theme.white};
 
   display: flex;
   flex-direction: column;
@@ -336,7 +332,13 @@ const ConnectWithKing = styled.div`
   gap: 3rem;
 
   z-index: 1;
+`;
 
+const ConnectLetter = styled.div`
+  font-size: 18px;
+  text-transform: uppercase;
+  font-family: 'gotham-book';
+  color: ${(props) => props.theme.white};
   @media screen and (max-width: 480px) {
     font-size: 16px;
   }
