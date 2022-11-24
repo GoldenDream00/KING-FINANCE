@@ -15,7 +15,6 @@ export const EcoSystem = () => {
   const [bgSvg, setBgSvg] = useState(DeskBgMain);
 
   const changeBg = (idx: number) => {
-    console.log('hover');
     switch (idx) {
       case 0:
         setBgSvg(DeskBgMain);
