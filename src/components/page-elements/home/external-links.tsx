@@ -78,11 +78,6 @@ const ExternalButtons = styled.div`
   color: ${(props) => props.theme.white};
   text-rendering: optimizeLegibility;
   z-index: 100;
-
-  @media screen and (max-width: 768px) {
-    flex-direction: column;
-  }
-
   .token-button {
     cursor: pointer;
     color: ${(props) => props.theme.white};
@@ -91,6 +86,14 @@ const ExternalButtons = styled.div`
     font-size: 20px;
     font-family: 'gotham-book';
     text-transform: none;
-    padding-top: 2.5rem;
+    padding-top: 0.5rem;
+    @media screen and (max-width: 768px) {
+      padding-top: 1rem;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    gap: 2.5rem;
   }
 `;
