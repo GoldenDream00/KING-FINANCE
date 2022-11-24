@@ -17,21 +17,11 @@ export const ExternalLinks = () => {
         </div>
       </ExternalLinkWrapper>
       <ExternalButtons>
-        <div className="token-button" style={{ color: '#ffffff' }}>
-          Token
-        </div>
-        <div className="token-button" style={{ color: '#ffffff' }}>
-          Team
-        </div>
-        <div className="token-button" style={{ color: '#ffffff' }}>
-          Docs
-        </div>
-        <div className="token-button" style={{ color: '#ffffff' }}>
-          Media Kit
-        </div>
-        <div className="token-button" style={{ color: '#ffffff' }}>
-          King Pass
-        </div>
+        <p className="token-button">Token</p>
+        <p className="token-button">Team</p>
+        <p className="token-button">Docs</p>
+        <p className="token-button">Media Kit</p>
+        <p className="token-button">King Pass</p>
       </ExternalButtons>
     </Wrapper>
   );

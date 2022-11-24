@@ -52,7 +52,7 @@ export const EcoSystem = () => {
       </EcoSystemWrapper>
       <ConnectWrapper>
         <ConnectWithKing>
-          <div style={{ color: '#ffffff' }}>Connect With King</div>
+          <p>Connect With King</p>
           <SocialLinkGroup>
             <SocialBox>
               <svg
