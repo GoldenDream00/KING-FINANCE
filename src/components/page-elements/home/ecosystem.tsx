@@ -321,10 +321,11 @@ export const ConnectWrapper = styled.div`
 `;
 
 const ConnectWithKing = styled.div`
-  font-size: 20px;
+  font-size: 18px;
   text-transform: uppercase;
   letter-spacing: 2.6px;
   font-family: 'gotham-book';
+  padding-top: 3rem;
 
   display: flex;
   flex-direction: column;
