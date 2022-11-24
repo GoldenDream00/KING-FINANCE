@@ -16,13 +16,13 @@ export const ExternalLinks = () => {
           <img src={BscscanIcon} alt="bscscan-link-icon" className="link-icon" />
         </div>
       </ExternalLinkWrapper>
-      <ExternalButtons>
+      <div>
         <div className="token-button">Token</div>
         <div className="token-button">Team</div>
         <div className="token-button">Docs</div>
         <div className="token-button">Media Kit</div>
         <div className="token-button">King Pass</div>
-      </ExternalButtons>
+      </div>
     </Wrapper>
   );
 };
