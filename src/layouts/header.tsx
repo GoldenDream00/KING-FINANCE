@@ -1,33 +1,30 @@
-import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 
 import { Container } from '../components/container/container';
-// import { Section } from 'src/components/container/section';
 
 import { LogoHeader, MenuKingfloki, MenuKingland, MenuKingpad } from '../config/images';
-import { PUBLIC_ROUTES } from '../config/routes';
 
 export const Header = () => {
   return (
     <Container>
-      {/* <HeaderContent>
+      <HeaderContent>
         <DesktopLogo src={LogoHeader} alt="logo-header" />
-        <ButtonArea>
-          <RectButtonGroup>
+        <RectButtonGroup>
+          <LogoButtons>
             <MobileLogo src={LogoHeader} alt="mobile-header-logo" />
             <RectButtons>
               <RectButton>Docs</RectButton>
               <RectButton>Staking</RectButton>
             </RectButtons>
-            <ButtonGroup>
-              <KingFlokiButton className="btn-kingfloki" />
-              <KingLandButton className="btn-kingland" />
-              <KingPadButton className="btn-kingpad" />
-            </ButtonGroup>
-          </RectButtonGroup>
-        </ButtonArea>
-      </HeaderContent> */}
+          </LogoButtons>
+
+          <ButtonGroup>
+            <KingFlokiButton className="btn-kingfloki" />
+            <KingLandButton className="btn-kingland" />
+            <KingPadButton className="btn-kingpad" />
+          </ButtonGroup>
+        </RectButtonGroup>
+      </HeaderContent>
     </Container>
   );
 };
@@ -36,24 +33,13 @@ const HeaderContent = styled.div`
   display: flex;
   width: 100%;
   justify-content: space-between;
+  align-items: flex-start;
   position: absolute;
-  top: 0;
-  gap: 3rem;
-  z-index: 1;
+  top: 3rem;
 
   @media screen and (max-width: 640px) {
     justify-content: center;
     gap: 0;
-  }
-
-  .logo-img {
-    display: block;
-    width: 75px;
-    height: auto;
-
-    @media screen and (max-width: 640px) {
-      display: none;
-    }
   }
 `;
 
@@ -67,17 +53,6 @@ const DesktopLogo = styled.img`
   }
 `;
 
-const ButtonArea = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  @media screen and (max-width: 960px) {
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: flex-end;
-  }
-`;
-
 const RectButtonGroup = styled.div`
   display: flex;
   align-items: center;
@@ -85,21 +60,33 @@ const RectButtonGroup = styled.div`
   width: 100%;
   min-width: 1px;
   gap: 10px;
-  @media screen and (max-width: 480px) {
-    width: 95%;
-  }
-  @media screen and (max-width: 640px) {
+  @media screen and (max-width: 840px) {
     justify-content: space-between;
     flex-direction: column;
+    align-items: flex-end;
   }
+  @media screen and (max-width: 640px) {
+    align-items: stretch;
+  }
+`;
+
+const LogoButtons = styled.div`
+  display: flex;
+  justify-content: space-between;
 `;
 
 const MobileLogo = styled.img`
   display: none;
+  margin-left: 1rem;
 
   @media screen and (max-width: 640px) {
     display: block;
     width: 60px;
+    height: auto;
+  }
+
+  @media screen and (max-width: 420px) {
+    width: 50px;
     height: auto;
   }
 `;
@@ -129,6 +116,10 @@ const RectButton = styled.div`
     background: none;
     padding: 10px;
   }
+
+  @media screen and (max-width: 420px) {
+    font-size: 10px;
+  }
 `;
 
 const ButtonGroup = styled.div`
@@ -137,6 +128,7 @@ const ButtonGroup = styled.div`
   cursor: pointer;
   background: #1d1d1d 0% 0% no-repeat padding-box;
   border-radius: 31px;
+  justify-content: center;
 
   &:hover {
     .btn-kingfloki,

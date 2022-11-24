@@ -30,7 +30,6 @@ const ContainerWrapper = styled.div`
   width: 100%;
 
   max-width: 1160px;
-
   position: relative;
 
   @media screen and (max-width: 1366px) {
@@ -54,6 +53,6 @@ const ContainerWrapper = styled.div`
   }
 
   @media screen and (max-width: 420px) {
-    max-width: 280px;
+    max-width: 300px;
   }
 `;
