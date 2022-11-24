@@ -337,7 +337,6 @@ const ConnectWithKing = styled.div`
 const ConnectLetter = styled.div`
   font-size: 18px;
   text-transform: uppercase;
-  font-family: 'gotham-book';
   width: 100%;
   height: 100%;
   text-align: center;
