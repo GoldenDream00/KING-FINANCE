@@ -80,6 +80,7 @@ const ExternalButtons = styled.div`
   .token-button {
     cursor: pointer;
     color: ${(props) => props.theme.white};
+    height: 100%;
   }
 
   @media screen and (max-width: 768px) {
