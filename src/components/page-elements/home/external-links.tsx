@@ -17,11 +17,11 @@ export const ExternalLinks = () => {
         </div>
       </ExternalLinkWrapper>
       <ExternalButtons>
-        <p className="token-button">Token</p>
-        <p className="token-button">Team</p>
-        <p className="token-button">Docs</p>
-        <p className="token-button">Media Kit</p>
-        <p className="token-button">King Pass</p>
+        <span className="token-button">Token</span>
+        <span className="token-button">Team</span>
+        <span className="token-button">Docs</span>
+        <span className="token-button">Media Kit</span>
+        <span className="token-button">King Pass</span>
       </ExternalButtons>
     </Wrapper>
   );
@@ -75,7 +75,7 @@ const ExternalButtons = styled.div`
   display: flex;
   justify-content: space-between;
   font-size: 20px;
-  /* font-family: 'gotham-book'; */
+  font-family: 'gotham-book';
   text-align: center;
   color: ${(props) => props.theme.white};
   .token-button {
