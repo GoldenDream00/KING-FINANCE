@@ -340,6 +340,7 @@ const ConnectLetter = styled.div`
   width: 100%;
   height: 100%;
   text-align: center;
+  padding-top: 2rem;
   color: ${(props) => props.theme.white};
   @media screen and (max-width: 480px) {
     font-size: 16px;
