@@ -81,6 +81,7 @@ const ExternalButtons = styled.div`
     cursor: pointer;
     color: ${(props) => props.theme.white};
     height: 100%;
+    background-color: red;
   }
 
   @media screen and (max-width: 768px) {
