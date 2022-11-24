@@ -78,6 +78,7 @@ const ExternalButtons = styled.div`
   color: ${(props) => props.theme.white};
   text-rendering: optimizeLegibility;
   z-index: 100;
+
   .token-button {
     cursor: pointer;
     color: ${(props) => props.theme.white};
