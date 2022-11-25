@@ -2,7 +2,10 @@ import styled from 'styled-components';
 
 import { CmcIcon, BscscanIcon, CoingeckoIcon } from 'src/config/images';
 
+import { useNavigate } from 'react-router-dom';
+
 export const ExternalLinks = () => {
+  const navigate = useNavigate();
   return (
     <Wrapper>
       <ExternalLinkWrapper>
@@ -17,7 +20,9 @@ export const ExternalLinks = () => {
         </div>
       </ExternalLinkWrapper>
       <ExternalButtons>
-        <div className="token-button">Token</div>
+        <div className="token-button" onClick={() => navigate('/token')}>
+          Token
+        </div>
         <div className="token-button">Team</div>
         <div className="token-button">Docs</div>
         <div className="token-button">Media Kit</div>

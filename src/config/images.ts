@@ -58,6 +58,10 @@ import BoxBgKingFlokiPNG from '../assets/Desktop/Png/boxbgkingfloki.png';
 import BoxBgKingFlokiTabletPNG from '../assets/Tablet/Png/boxbgkingfloki.png';
 import BoxBgKingFlokiMobilePNG from '../assets/Mobile/Png/boxbgkingfloki.png';
 
+// Token
+
+import TokenomicsImg from '../assets/Token/desktop_tokenomics.svg';
+
 export const BoxBgKingFloki = BoxBgKingFlokiPNG;
 export const BoxBgKingFlokiTablet = BoxBgKingFlokiTabletPNG;
 export const BoxBgKingFlokiMobile = BoxBgKingFlokiMobilePNG;
@@ -117,3 +121,7 @@ export const CoingeckoIcon = CoingeckoIconSvg;
 export const BscscanIcon = BscscanIconSvg;
 
 export const DeskFooterLogo = DeskFooterLogoSvg;
+
+// Token
+
+export const Tokenomics = TokenomicsImg;
