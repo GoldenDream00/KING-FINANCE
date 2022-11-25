@@ -39,7 +39,7 @@ const InfoContainer = styled.div`
   grid-template-columns: auto auto auto auto;
   width: 100%;
   justify-content: center;
-  gap: 3rem;
+  gap: 1rem;
   @media screen and (max-width: 840px) {
     grid-template-columns: auto auto;
   }
@@ -60,7 +60,7 @@ const TokenColor = styled.div`
 
 const TokenInfo = styled.div`
   display: flex;
-  gap: 1rem;
+  padding-right: 1rem;
   flex-direction: row;
 
   @media screen and (max-width: 640px) {
@@ -68,12 +68,10 @@ const TokenInfo = styled.div`
   }
 `;
 const TokenAmount = styled.div`
-  padding: 0.1rem;
+  padding: 0 0.5rem 0 0rem;
   font-size: 16px;
   color: ${(prop) => prop.theme.white};
   min-height: 1px;
   min-width: 1px;
-  width: 100%;
-  height: 100%;
-  text-rendering: optimizeLegibility;
+  text-rendering: optimizeSpeed;
 `;
