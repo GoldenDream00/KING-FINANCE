@@ -73,5 +73,7 @@ const TokenAmount = styled.div`
   color: ${(prop) => prop.theme.white};
   min-height: 1px;
   min-width: 1px;
+  width: 100%;
+  height: 100%;
   text-rendering: optimizeLegibility;
 `;
