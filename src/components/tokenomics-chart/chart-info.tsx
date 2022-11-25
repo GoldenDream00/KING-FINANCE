@@ -58,12 +58,13 @@ const TokenInfo = styled.div`
   display: flex;
   gap: 0.5rem;
   flex-direction: row;
-  padding: 0.1rem;
+
   @media screen and (max-width: 640px) {
     flex-direction: column;
   }
 `;
 const TokenAmount = styled.div`
+  padding: 0.1rem;
   font-size: 16px;
   color: ${(prop) => prop.theme.white};
 `;
