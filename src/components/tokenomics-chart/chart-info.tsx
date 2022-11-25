@@ -23,8 +23,12 @@ const TokenStatus = (props: TokenStatusProps) => {
     <StatusContainer>
       <TokenColor style={{ backgroundColor: color }} />
       <TokenInfo>
-        <TokenAmount>{amount}%</TokenAmount>
-        <TokenAmount>{name}</TokenAmount>
+        <TokenAmount>
+          <p>{amount}%</p>
+        </TokenAmount>
+        <TokenAmount>
+          <p>{name}</p>
+        </TokenAmount>
       </TokenInfo>
     </StatusContainer>
   );
@@ -56,7 +60,7 @@ const TokenColor = styled.div`
 
 const TokenInfo = styled.div`
   display: flex;
-  gap: 0.5rem;
+  gap: 1rem;
   flex-direction: row;
 
   @media screen and (max-width: 640px) {
@@ -66,7 +70,8 @@ const TokenInfo = styled.div`
 const TokenAmount = styled.div`
   padding: 0.1rem;
   font-size: 16px;
-  width: 100%;
-  height: 100%;
   color: ${(prop) => prop.theme.white};
+  min-height: 1px;
+  min-width: 1px;
+  text-rendering: optimizeLegibility;
 `;
