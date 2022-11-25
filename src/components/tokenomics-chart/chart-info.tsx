@@ -58,6 +58,7 @@ const TokenInfo = styled.div`
   display: flex;
   gap: 0.5rem;
   flex-direction: row;
+  padding: 0.1rem;
   @media screen and (max-width: 640px) {
     flex-direction: column;
   }
