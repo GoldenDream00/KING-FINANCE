@@ -2,7 +2,17 @@ import { DeskTopTokenomicsChart, MobileTokenomicsChart } from 'src/components/to
 import { TokennChartInfo } from 'src/components/tokenomics-chart/chart-info';
 import { LogoHeader } from 'src/config/images';
 import styled from 'styled-components';
-import { isMobile } from 'react-device-detect';
+import { isMobile, isWindows } from 'react-device-detect';
+
+const TokenPieChart = () => {
+  if (isMobile) {
+    return <MobileTokenomicsChart />;
+  } else if (isWindows) {
+    return <DeskTopTokenomicsChart />;
+  } else {
+    return <DeskTopTokenomicsChart />;
+  }
+};
 
 export const TokenGraph = () => {
   return (
@@ -16,7 +26,7 @@ export const TokenGraph = () => {
           <TokenName>$King</TokenName>
         </TokenInfo>
         <TokenChart>
-          {isMobile ? <MobileTokenomicsChart /> : <DeskTopTokenomicsChart />}
+          <TokenPieChart />
           <Img src={LogoHeader} />
           <TokennChartInfo />
         </TokenChart>

@@ -23,12 +23,8 @@ const TokenStatus = (props: TokenStatusProps) => {
     <StatusContainer>
       <TokenColor style={{ backgroundColor: color }} />
       <TokenInfo>
-        <TokenAmount>
-          <p>{amount}%</p>
-        </TokenAmount>
-        <TokenAmount>
-          <p>{name}</p>
-        </TokenAmount>
+        <TokenAmount>{amount}%</TokenAmount>
+        <TokenAmount>{name}</TokenAmount>
       </TokenInfo>
     </StatusContainer>
   );
@@ -39,7 +35,7 @@ const InfoContainer = styled.div`
   grid-template-columns: auto auto auto auto;
   width: 100%;
   justify-content: center;
-  gap: 1rem;
+  gap: 15px;
   @media screen and (max-width: 840px) {
     grid-template-columns: auto auto;
   }
@@ -53,8 +49,8 @@ const StatusContainer = styled.div`
   }
 `;
 const TokenColor = styled.div`
-  width: 20px;
-  height: 20px;
+  min-width: 20px;
+  min-height: 20px;
   border-radius: 50%;
 `;
 
@@ -62,6 +58,10 @@ const TokenInfo = styled.div`
   display: flex;
   padding-right: 1rem;
   flex-direction: row;
+  font-size: 16px;
+  width: 100%;
+  height: 100%;
+  gap: 8px;
 
   @media screen and (max-width: 640px) {
     flex-direction: column;
