@@ -38,7 +38,6 @@ const TokenDetails = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
 `;
 
 const TokenInfo = styled.div`
@@ -83,7 +82,7 @@ const TokenName = styled.div`
 `;
 
 const TokenChart = styled.div`
-  padding-top: 5rem;
+  padding-top: 7rem;
   width: 100%;
   height: 510px;
   display: flex;

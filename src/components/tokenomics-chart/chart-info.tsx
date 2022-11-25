@@ -66,5 +66,7 @@ const TokenInfo = styled.div`
 const TokenAmount = styled.div`
   padding: 0.1rem;
   font-size: 16px;
+  width: 100%;
+  height: 100%;
   color: ${(prop) => prop.theme.white};
 `;
