@@ -61,7 +61,6 @@ const TokenInfo = styled.div`
   font-size: 16px;
   width: 100%;
   height: 100%;
-  gap: 8px;
 
   @media screen and (max-width: 640px) {
     flex-direction: column;
@@ -73,5 +72,6 @@ const TokenAmount = styled.div`
   color: ${(prop) => prop.theme.white};
   min-height: 1px;
   min-width: 1px;
+  padding-bottom: 8px;
   text-rendering: optimizeSpeed;
 `;
