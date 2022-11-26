@@ -43,11 +43,10 @@ const InfoContainer = styled.div`
 `;
 const StatusContainer = styled.div`
   display: flex;
-  align-items: center;
   gap: 0.5rem;
-  @media screen and (max-width: 640px) {
-    align-items: flex-start;
-  }
+  width: 100%;
+  height: 100%;
+  align-items: flex-start;
 `;
 const TokenColor = styled.div`
   min-width: 20px;
@@ -68,11 +67,11 @@ const TokenInfo = styled.div`
   }
 `;
 const TokenAmount = styled.div`
-  padding: 0 0.5rem 0 0rem;
   font-size: 16px;
   color: ${(prop) => prop.theme.white};
   min-height: 1px;
   min-width: 1px;
   padding-bottom: 8px;
+  padding-left: 0.5rem;
   text-rendering: optimizeSpeed;
 `;

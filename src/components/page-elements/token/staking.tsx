@@ -1,19 +1,15 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import DesktopStaking from '../../../assets/Token/destop_staking.png';
-import Tabletstaking from '../../../assets/Token/tablet_staking.png';
-import MobileStaking from '../../../assets/Token/mobile_staking.png';
 
 export const Staking = () => {
   return (
     <StakingContainer>
       <SmallText>
-        <span className="bold">Staking </span>
+        <span className="bold">Staking</span>
         platform
       </SmallText>
       <LaunchButton>Launch App</LaunchButton>
       <DesktopImg src={DesktopStaking} alt="desktop-staking" />
-      {/* <TabletImg src={Tabletstaking} alt="tablet-staking" />
-      <MobileImg src={MobileStaking} alt="mobile-staking" /> */}
     </StakingContainer>
   );
 };

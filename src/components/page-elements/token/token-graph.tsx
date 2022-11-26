@@ -100,15 +100,6 @@ const TokenChart = css`
   color: ${(props) => props.theme.black};
   font-size: 20px;
   z-index: 1;
-  /* @media screen and (max-width: 580px) {
-    height: 360px;
-  }
-  @media screen and (max-width: 380px) {
-    height: 330px;
-  }
-  @media screen and (max-width: 350px) {
-    height: 300px;
-  } */
 `;
 
 const Img = styled.img`
