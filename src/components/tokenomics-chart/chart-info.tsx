@@ -69,6 +69,7 @@ const TokenAmount = styled.div`
   color: ${(prop) => prop.theme.white};
   min-height: 1px;
   min-width: 1px;
-  margin-bottom: 8px;
+  height: 25px;
+  /* margin-bottom: 26px; */
   margin-left: 0.5rem;
 `;

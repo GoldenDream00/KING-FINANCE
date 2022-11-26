@@ -23,6 +23,7 @@ export const DeskTopTokenChart = () => {
       enableArcLabels={false}
       arcLinkLabelsStraightLength={56}
       arcLabelsSkipAngle={10}
+      tooltip={() => <></>}
       arcLabelsTextColor={{
         from: 'color',
         modifiers: [['brighter', 4]]
