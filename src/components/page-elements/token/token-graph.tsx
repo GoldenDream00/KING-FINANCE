@@ -168,7 +168,7 @@ const MediumText = styled.div`
 `;
 
 const SmallText = styled.div`
-  padding-top: 10px;
+  margin-top: 10px;
   letter-spacing: -0.13px;
   color: ${(prop) => prop.theme.white};
   font-size: 15px;
