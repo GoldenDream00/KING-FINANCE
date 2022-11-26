@@ -7,7 +7,7 @@ interface TokenStatusProps {
   name: string;
 }
 
-export const TokennChartInfo = () => {
+export const TokenChartInfo = () => {
   return (
     <InfoContainer>
       {TokenData.map((token, index) => (
@@ -39,6 +39,7 @@ const InfoContainer = styled.div`
   @media screen and (max-width: 840px) {
     grid-template-columns: auto auto;
   }
+  margin-left: 2rem;
 `;
 const StatusContainer = styled.div`
   display: flex;

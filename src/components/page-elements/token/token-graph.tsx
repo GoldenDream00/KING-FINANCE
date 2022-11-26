@@ -1,20 +1,9 @@
-import { DeskTopTokenomicsChart, MobileTokenomicsChart } from 'src/components/tokenomics-chart';
-import { TokennChartInfo } from 'src/components/tokenomics-chart/chart-info';
+import { DeskTopTokenChart, MobileTokenChart } from 'src/components/tokenomics-chart';
+import { TokenChartInfo } from 'src/components/tokenomics-chart/chart-info';
 import { LogoHeader } from 'src/config/images';
-import styled from 'styled-components';
-import { isMobile, isWindows } from 'react-device-detect';
+import styled, { css } from 'styled-components';
 
-const TokenPieChart = () => {
-  if (isMobile) {
-    return <MobileTokenomicsChart />;
-  } else if (isWindows) {
-    return <DeskTopTokenomicsChart />;
-  } else {
-    return <DeskTopTokenomicsChart />;
-  }
-};
-
-export const TokenGraph = () => {
+export const TokenGraphSection = () => {
   return (
     <TokenGraphContainer>
       <TokenDetails>
@@ -25,17 +14,27 @@ export const TokenGraph = () => {
           </TokenAmount>
           <TokenName>$King</TokenName>
         </TokenInfo>
-        <TokenChart>
-          <TokenPieChart />
+        <DeskChartContainer>
+          <DeskTopTokenChart />
           <Img src={LogoHeader} />
-          <TokennChartInfo />
-        </TokenChart>
+        </DeskChartContainer>
+        <MobileChartContainer>
+          <MobileTokenChart />
+          <Img src={LogoHeader} />
+        </MobileChartContainer>
+        <TokenChartInfo />
+        <MediumText>Contract Address</MediumText>
+        <SmallText>To be announced</SmallText>
+        <MediumText>Buy King</MediumText>
+        <SmallText>New listings comming soon</SmallText>
       </TokenDetails>
     </TokenGraphContainer>
   );
 };
 
 const TokenGraphContainer = styled.div`
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -92,20 +91,16 @@ const TokenName = styled.div`
   }
 `;
 
-const TokenChart = styled.div`
-  padding-top: 7rem;
-  width: 100%;
-  height: 510px;
+const TokenChart = css`
+  padding-top: 5rem;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   color: ${(props) => props.theme.black};
   font-size: 20px;
-  @media screen and (max-width: 768px) {
-    height: 420px;
-  }
-  @media screen and (max-width: 580px) {
+  z-index: 1;
+  /* @media screen and (max-width: 580px) {
     height: 360px;
   }
   @media screen and (max-width: 380px) {
@@ -113,27 +108,71 @@ const TokenChart = styled.div`
   }
   @media screen and (max-width: 350px) {
     height: 300px;
-  }
+  } */
 `;
 
 const Img = styled.img`
   width: 100%;
   height: 70px;
   position: absolute;
-  margin-bottom: 4rem;
-  @media screen and (max-width: 840px) {
-    margin-bottom: 8rem;
+  margin-bottom: 2rem;
+
+  @media screen and (max-width: 420px) {
+    height: 60px;
   }
+`;
+
+const DeskChartContainer = styled.div`
+  ${TokenChart}
+  width: 100%;
+  height: 510px;
+  display: flex;
   @media screen and (max-width: 768px) {
-    height: 50px;
+    display: none;
+  }
+`;
+
+const MobileChartContainer = styled.div`
+  ${TokenChart}
+  width: 560px;
+  height: 560px;
+  display: none;
+  @media screen and (max-width: 768px) {
+    display: flex;
   }
   @media screen and (max-width: 640px) {
-    margin-bottom: 11rem;
+    width: 500px;
+    height: 500px;
   }
-  @media screen and (max-width: 580px) {
-    height: 40px;
+
+  @media screen and (max-width: 420px) {
+    width: 450px;
+    height: 450px;
   }
-  @media screen and (max-width: 380px) {
-    height: 35px;
+`;
+
+const MediumText = styled.div`
+  color: ${(prop) => prop.theme.white};
+  font-size: 25px;
+  padding-top: 7rem;
+  font-family: 'gotham-bold';
+  text-transform: uppercase;
+  @media screen and (max-width: 768px) {
+    font-size: 22px;
+    padding-top: 5rem;
+  }
+  @media screen and (max-width: 420px) {
+    font-size: 15px;
+    padding-top: 3rem;
+  }
+`;
+
+const SmallText = styled.div`
+  padding-top: 10px;
+  letter-spacing: -0.13px;
+  color: ${(prop) => prop.theme.white};
+  font-size: 15px;
+  @media screen and (max-width: 420px) {
+    font-size: 13px;
   }
 `;

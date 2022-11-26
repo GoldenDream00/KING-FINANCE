@@ -1,7 +1,7 @@
 import { ResponsivePie } from '@nivo/pie';
 import { TokenData } from './data';
 
-export const DeskTopTokenomicsChart = () => {
+export const DeskTopTokenChart = () => {
   return (
     <ResponsivePie
       data={TokenData}
@@ -21,6 +21,7 @@ export const DeskTopTokenomicsChart = () => {
       arcLinkLabelsThickness={2}
       arcLinkLabelsColor={{ from: 'color' }}
       enableArcLabels={false}
+      arcLinkLabelsStraightLength={56}
       arcLabelsSkipAngle={10}
       arcLabelsTextColor={{
         from: 'color',
@@ -50,7 +51,7 @@ export const DeskTopTokenomicsChart = () => {
   );
 };
 
-export const MobileTokenomicsChart = () => {
+export const MobileTokenChart = () => {
   return (
     <ResponsivePie
       data={TokenData}
