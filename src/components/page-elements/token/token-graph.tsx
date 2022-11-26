@@ -168,8 +168,10 @@ const MediumText = styled.div`
 `;
 
 const SmallText = styled.div`
-  margin-top: 10px;
-  letter-spacing: -0.13px;
+  padding-top: 1.5rem;
+  width: 100%;
+  height: 100%;
+  text-align: center;
   color: ${(prop) => prop.theme.white};
   font-size: 15px;
   @media screen and (max-width: 420px) {
