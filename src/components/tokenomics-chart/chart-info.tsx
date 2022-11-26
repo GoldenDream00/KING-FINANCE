@@ -44,8 +44,6 @@ const InfoContainer = styled.div`
 const StatusContainer = styled.div`
   display: flex;
   gap: 0.5rem;
-  width: 100%;
-  height: 100%;
   align-items: flex-start;
 `;
 const TokenColor = styled.div`
@@ -71,7 +69,6 @@ const TokenAmount = styled.div`
   color: ${(prop) => prop.theme.white};
   min-height: 1px;
   min-width: 1px;
-  padding-bottom: 8px;
-  padding-left: 0.5rem;
-  text-rendering: optimizeSpeed;
+  margin-bottom: 8px;
+  margin-left: 0.5rem;
 `;
