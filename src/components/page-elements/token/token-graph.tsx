@@ -167,5 +167,6 @@ const SmallText = styled.div`
   font-size: 15px;
   @media screen and (max-width: 420px) {
     font-size: 13px;
+    padding-top: 1.375rem;
   }
 `;
