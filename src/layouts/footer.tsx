@@ -69,15 +69,14 @@ const FooterBackground = styled.img`
 
 const FooterContent = styled.div`
   position: absolute;
-  top: 0;
+  top: 80px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   gap: 3rem;
   width: 100%;
   height: 100%;
-  padding-bottom: 2rem;
 
   @media screen and (max-width: 960px) {
     gap: 2rem;
