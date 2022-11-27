@@ -62,6 +62,7 @@ const ExclusiveContainer = styled.div`
 
   width: 100%;
   height: 100%;
+  font-family: 'gotham-thin';
 
   @media screen and (max-width: 1096px) {
     gap: 2rem;
