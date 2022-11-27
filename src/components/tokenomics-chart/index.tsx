@@ -78,6 +78,7 @@ export const MobileTokenChart = () => {
         modifiers: [['brighter', 4]]
       }}
       enableArcLinkLabels={false}
+      tooltip={() => <></>}
       defs={[
         {
           id: 'dots',
