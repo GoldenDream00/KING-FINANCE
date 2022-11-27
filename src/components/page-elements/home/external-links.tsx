@@ -99,6 +99,6 @@ const ExternalButtons = styled.div`
 
   @media screen and (max-width: 768px) {
     flex-direction: column;
-    gap: 2.5rem;
+    gap: 3rem;
   }
 `;
