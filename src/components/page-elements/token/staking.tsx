@@ -5,7 +5,7 @@ export const Staking = () => {
   return (
     <StakingContainer>
       <SmallText>
-        <span className="bold">Staking</span>
+        <span className="bold">Staking </span>
         platform
       </SmallText>
       <LaunchButton>Launch App</LaunchButton>
@@ -15,19 +15,22 @@ export const Staking = () => {
 };
 
 const StakingContainer = styled.div`
-  padding-top: 4rem;
+  padding-top: 5rem;
   display: flex;
   align-items: center;
   flex-direction: column;
+  @media screen and (max-width: 892px) {
+    padding-top: 8rem;
+  }
   @media screen and (max-width: 640px) {
-    padding-top: 12rem;
+    padding-top: 14rem;
   }
 
   @media screen and (max-width: 540px) {
-    padding-top: 16rem;
+    padding-top: 20rem;
   }
   @media screen and (max-width: 420px) {
-    padding-top: 18rem;
+    padding-top: 24rem;
   }
   @media screen and (max-width: 390px) {
     padding-top: 22rem;
@@ -54,7 +57,7 @@ const SmallText = styled.p`
 
 const LaunchButton = styled.button`
   margin-top: 2rem;
-  background: #191919 0% 0% no-repeat padding-box;
+  background: #262626 0% 0% no-repeat padding-box;
   border-radius: 31px;
   border: none;
   padding: 16px 20px;
@@ -85,6 +88,7 @@ const DesktopImg = styled.img`
   padding-top: 2rem;
   width: 80%;
   height: 80%;
+  padding-bottom: 3rem;
   @media screen and (max-width: 640px) {
     width: 100%;
     height: 100%;

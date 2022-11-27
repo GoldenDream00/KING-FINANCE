@@ -40,7 +40,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4rem;
+  gap: 3rem;
 `;
 
 const ExternalLinkWrapper = styled.div`
@@ -93,7 +93,7 @@ const ExternalButtons = styled.div`
     text-transform: none;
     padding-top: 0.5rem;
     @media screen and (max-width: 768px) {
-      padding-top: 1rem;
+      padding-top: 0.1rem;
     }
   }
 

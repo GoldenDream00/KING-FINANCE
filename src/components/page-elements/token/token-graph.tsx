@@ -25,8 +25,8 @@ export const TokenGraphSection = () => {
         <TokenChartInfo />
         <MediumText>Contract Address</MediumText>
         <SmallText>To be announced</SmallText>
-        <MediumText>Buy King</MediumText>
-        <SmallText>New listings comming soon</SmallText>
+        <MediumText style={{ paddingTop: '4rem' }}>Buy King</MediumText>
+        <SmallText>New listings coming soon</SmallText>
       </TokenDetails>
     </TokenGraphContainer>
   );
@@ -159,7 +159,7 @@ const MediumText = styled.div`
 `;
 
 const SmallText = styled.div`
-  padding-top: 1.5rem;
+  padding-top: 0.875rem;
   width: 100%;
   height: 100%;
   text-align: center;

@@ -58,22 +58,34 @@ const ExclusiveContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 4rem;
+  gap: 2.5rem;
 
   width: 100%;
   height: 100%;
 
-  @media screen and (max-width: 960px) {
+  @media screen and (max-width: 1096px) {
     gap: 2rem;
+  }
+
+  @media screen and (max-width: 893px) {
+    padding-top: 7rem;
   }
 
   @media screen and (max-width: 640px) {
     gap: 1.5rem;
-    padding-top: 8rem;
+    padding-top: 10rem;
   }
 
   @media screen and (max-width: 540px) {
-    padding-top: 12rem;
+    padding-top: 14rem;
+  }
+
+  @media screen and (max-width: 420px) {
+    padding-top: 16rem;
+  }
+
+  @media screen and (max-width: 390px) {
+    padding-top: 20rem;
   }
 
   @media screen and (max-width: 390px) {
@@ -102,12 +114,15 @@ const SmallText = styled.p`
 const TextBox = styled.div`
   font-size: 18px;
   color: ${(props) => props.theme.white};
-  max-width: 964px;
-  line-height: 1.875rem;
+  max-width: 840px;
+  line-height: 2.375rem;
   @media screen and (max-width: 1092px) {
     max-width: 700px;
   }
   @media screen and (max-width: 892px) {
+    max-width: 600px;
+  }
+  @media screen and (max-width: 720px) {
     max-width: 500px;
   }
   @media screen and (max-width: 640px) {
@@ -120,5 +135,6 @@ const TextBox = styled.div`
   @media screen and (max-width: 390px) {
     max-width: 250px;
     font-size: 12px;
+    line-height: 1.875rem;
   }
 `;
