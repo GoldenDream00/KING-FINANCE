@@ -159,7 +159,7 @@ const MediumText = styled.div`
 `;
 
 const SmallText = styled.div`
-  padding-top: 0.875rem;
+  padding-top: 1.375rem;
   width: 100%;
   height: 100%;
   text-align: center;
@@ -167,6 +167,5 @@ const SmallText = styled.div`
   font-size: 15px;
   @media screen and (max-width: 420px) {
     font-size: 13px;
-    padding-top: 1.375rem;
   }
 `;
