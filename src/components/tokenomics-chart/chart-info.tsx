@@ -49,13 +49,15 @@ const StatusContainer = styled.div`
 const TokenColor = styled.div`
   min-width: 20px;
   min-height: 20px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
 `;
 
 const TokenInfo = styled.div`
-  display: flex;
+  /* display: flex; */
   padding-right: 1rem;
-  flex-direction: row;
+  /* flex-direction: row; */
   font-size: 16px;
   width: 100%;
   height: 100%;
