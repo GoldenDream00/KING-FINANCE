@@ -10,13 +10,18 @@ export const Exclusive = () => {
           An exclusive <span className="bold">use case</span>
         </SmallText>
         <TextBox>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat.
+          There's only one <span className="bold">$KING</span> to rule them all. <span className="bold">$KING</span> is
+          indeed our one and only currency that will play an essential role within our three branches.
         </TextBox>
         <TextBox>
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          Internal economical balance is found within <span className="bold">KING</span> through our coin distribution.
+          Our crypto-currency is an appreciative and deflationary asset that will allow you to purchase in game NFT’s,
+          digital land, online competition vouchers, real estate fractions and most importantly, an asset that will make
+          you an exclusive user of our demanded platforms (KingFloki, KingPad and KingLand).
+        </TextBox>
+        <TextBox>
+          In fine, <span className="bold">$KING</span> appreciates as the internal ecosystem grows, making you an actual
+          shareholder of the company and its success.
         </TextBox>
       </ExclusiveContainer>
     </ExclusiveWrapper>
@@ -53,7 +58,7 @@ const BackgroundSVG = styled.img`
 const ExclusiveContainer = styled.div`
   position: absolute;
   top: 0;
-  padding-top: 5rem;
+  padding-top: 10rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -69,28 +74,24 @@ const ExclusiveContainer = styled.div`
   }
 
   @media screen and (max-width: 893px) {
-    padding-top: 7rem;
+    padding-top: 11rem;
   }
 
+  @media screen and (max-width: 720px) {
+    gap: 1.5rem;
+    padding-top: 14rem;
+  }
   @media screen and (max-width: 640px) {
     gap: 1.5rem;
-    padding-top: 10rem;
+    padding-top: 18rem;
   }
 
   @media screen and (max-width: 540px) {
-    padding-top: 14rem;
-  }
-
-  @media screen and (max-width: 420px) {
-    padding-top: 16rem;
-  }
-
-  @media screen and (max-width: 390px) {
     padding-top: 20rem;
   }
 
-  @media screen and (max-width: 390px) {
-    padding-top: 15rem;
+  @media screen and (max-width: 420px) {
+    padding-top: 22rem;
   }
 `;
 
@@ -115,6 +116,7 @@ const SmallText = styled.p`
 
 const TextBox = styled.div`
   font-size: 18px;
+
   color: ${(props) => props.theme.white};
   max-width: 840px;
   line-height: 2.375rem;
@@ -138,5 +140,9 @@ const TextBox = styled.div`
     max-width: 250px;
     font-size: 12px;
     line-height: 1.875rem;
+  }
+  .bold {
+    font-family: 'gotham-book';
+    font-weight: bold;
   }
 `;

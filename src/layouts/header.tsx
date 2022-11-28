@@ -4,6 +4,8 @@ import { Container } from '../components/container/container';
 
 import { LogoHeader, MenuKingfloki, MenuKingland, MenuKingpad } from '../config/images';
 
+import { RiArrowDropDownLine } from 'react-icons/ri';
+
 export const Header = () => {
   return (
     <Container>
@@ -23,6 +25,11 @@ export const Header = () => {
             <KingLandButton className="btn-kingland" />
             <KingPadButton className="btn-kingpad" />
           </ButtonGroup>
+          <RectButtons>
+            <RectButton>
+              ENG <RiArrowDropDownLine size={25} />
+            </RectButton>
+          </RectButtons>
         </RectButtonGroup>
       </HeaderContent>
     </Container>

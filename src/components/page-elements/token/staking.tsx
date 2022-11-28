@@ -15,25 +15,22 @@ export const Staking = () => {
 };
 
 const StakingContainer = styled.div`
-  padding-top: 5rem;
+  padding-top: 10rem;
   display: flex;
   align-items: center;
   flex-direction: column;
   @media screen and (max-width: 892px) {
-    padding-top: 8rem;
+    padding-top: 13rem;
   }
   @media screen and (max-width: 640px) {
-    padding-top: 14rem;
+    padding-top: 19rem;
   }
 
   @media screen and (max-width: 540px) {
-    padding-top: 20rem;
+    padding-top: 27rem;
   }
   @media screen and (max-width: 420px) {
-    padding-top: 24rem;
-  }
-  @media screen and (max-width: 390px) {
-    padding-top: 22rem;
+    padding-top: 29rem;
   }
 `;
 
