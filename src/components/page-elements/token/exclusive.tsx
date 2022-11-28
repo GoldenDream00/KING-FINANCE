@@ -96,6 +96,7 @@ const ExclusiveContainer = styled.div`
 
 const SmallText = styled.p`
   font-size: 25px;
+  padding-bottom: 2rem;
   font-family: 'gotham-thin';
 
   @media screen and (max-width: 640px) {
