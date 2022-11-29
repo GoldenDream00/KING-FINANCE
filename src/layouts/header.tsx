@@ -6,13 +6,19 @@ import { Container } from '../components/container/container';
 
 import { LogoHeader, MenuKingfloki, MenuKingland, MenuKingpad } from '../config/images';
 
+import { useTranslation } from 'react-i18next';
+import { useStore } from '../context/StoreContext';
+
 export const Header = () => {
+  const { t, i18n } = useTranslation();
+
   const mbDropRef = useRef<HTMLDivElement>(null);
   const DsDropRef = useRef<HTMLDivElement>(null);
 
   const [isDeskOpen, deskSetOpen] = useState(false);
   const [isMobOpen, mobSetOpen] = useState(false);
-  const [lang, setLang] = useState('ENG');
+
+  const { lang, setLang } = useStore();
 
   const handleClickOutside = (event: React.MouseEvent<HTMLElement>) => {
     if (mbDropRef.current && !mbDropRef.current.contains(event.target as any)) {
@@ -27,29 +33,31 @@ export const Header = () => {
     document.addEventListener('mousedown', (event) => handleClickOutside(event as any));
   }, [mbDropRef, DsDropRef]);
 
-  const LanguageChoose = (idx?: number) => {
-    switch (idx) {
-      case 0:
+  const LanguageChoose = (e: any) => {
+    const language = e.target.innerHTML;
+    switch (language) {
+      case 'English':
         setLang('ENG');
         break;
-      case 1:
+      case 'Spanish':
         setLang('SPA');
         break;
-      case 2:
+      case 'Italian':
         setLang('ITA');
         break;
-      case 3:
+      case 'French':
         setLang('FRE');
         break;
-      case 4:
+      case 'German':
         setLang('GER');
         break;
-      case 5:
+      case 'Chinese':
         setLang('CHN');
         break;
       default:
         break;
     }
+    i18n.changeLanguage(language);
     deskSetOpen(false);
     mobSetOpen(false);
   };
@@ -61,20 +69,24 @@ export const Header = () => {
           <LogoButtons>
             <MobileLogo src={LogoHeader} alt="mobile-header-logo" />
             <RectButtons>
-              <RectButton>Docs</RectButton>
-              <RectButton>Staking</RectButton>
+              <RectButton>{t('header.docs')}</RectButton>
+              <RectButton>{t('header.staking')}</RectButton>
               <MobileDropDownContainer data-aria-expanded={isMobOpen} ref={mbDropRef}>
                 <DropdownButton className="dbtn" onClick={() => mobSetOpen(!isMobOpen)}>
                   {lang}
-                  <span className="material-symbols-rounded">keyboard_arrow_down</span>
+                  {!isMobOpen ? (
+                    <span className="material-symbols-rounded">keyboard_arrow_down</span>
+                  ) : (
+                    <span className="material-symbols-rounded">keyboard_arrow_up</span>
+                  )}
                 </DropdownButton>
                 <DropDownContent className="dcontent" style={{ transform: isMobOpen ? 'scale(1)' : 'scale(0)' }}>
-                  <DropdownItem onClick={() => LanguageChoose(0)}>English</DropdownItem>
-                  <DropdownItem onClick={() => LanguageChoose(1)}>Spanish</DropdownItem>
-                  <DropdownItem onClick={() => LanguageChoose(2)}>Italian</DropdownItem>
-                  <DropdownItem onClick={() => LanguageChoose(3)}>French</DropdownItem>
-                  <DropdownItem onClick={() => LanguageChoose(4)}>German</DropdownItem>
-                  <DropdownItem onClick={() => LanguageChoose(5)}>Chinese</DropdownItem>
+                  <DropdownItem onClick={LanguageChoose}>English</DropdownItem>
+                  <DropdownItem onClick={LanguageChoose}>Spanish</DropdownItem>
+                  <DropdownItem onClick={LanguageChoose}>Italian</DropdownItem>
+                  <DropdownItem onClick={LanguageChoose}>French</DropdownItem>
+                  <DropdownItem onClick={LanguageChoose}>German</DropdownItem>
+                  <DropdownItem onClick={LanguageChoose}>Chinese</DropdownItem>
                 </DropDownContent>
               </MobileDropDownContainer>
             </RectButtons>
@@ -88,15 +100,19 @@ export const Header = () => {
           <DesktopDropDownContainer data-aria-expanded={isDeskOpen} ref={DsDropRef}>
             <DropdownButton className="dbtn" onClick={() => deskSetOpen(!isDeskOpen)}>
               {lang}
-              <span className="material-symbols-rounded">keyboard_arrow_down</span>
+              {!isDeskOpen ? (
+                <span className="material-symbols-rounded">keyboard_arrow_down</span>
+              ) : (
+                <span className="material-symbols-rounded">keyboard_arrow_up</span>
+              )}
             </DropdownButton>
             <DropDownContent className="dcontent" style={{ transform: isDeskOpen ? 'scale(1)' : 'scale(0)' }}>
-              <DropdownItem onClick={() => LanguageChoose(0)}>English</DropdownItem>
-              <DropdownItem onClick={() => LanguageChoose(1)}>Spanish</DropdownItem>
-              <DropdownItem onClick={() => LanguageChoose(2)}>Italian</DropdownItem>
-              <DropdownItem onClick={() => LanguageChoose(3)}>French</DropdownItem>
-              <DropdownItem onClick={() => LanguageChoose(4)}>German</DropdownItem>
-              <DropdownItem onClick={() => LanguageChoose(5)}>Chinese</DropdownItem>
+              <DropdownItem onClick={LanguageChoose}>English</DropdownItem>
+              <DropdownItem onClick={LanguageChoose}>Spanish</DropdownItem>
+              <DropdownItem onClick={LanguageChoose}>Italian</DropdownItem>
+              <DropdownItem onClick={LanguageChoose}>French</DropdownItem>
+              <DropdownItem onClick={LanguageChoose}>German</DropdownItem>
+              <DropdownItem onClick={LanguageChoose}>Chinese</DropdownItem>
             </DropDownContent>
           </DesktopDropDownContainer>
         </RectButtonGroup>

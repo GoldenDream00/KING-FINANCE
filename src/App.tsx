@@ -10,6 +10,8 @@ import { Home } from './pages/home';
 import { NotFoundPage } from './pages/404';
 import { Token } from './pages/token';
 
+import './config/i18n';
+
 function App() {
   return (
     <Suspense fallback={<>Loading</>}>
