@@ -1,12 +1,58 @@
-import styled from 'styled-components';
+import React, { useState, useRef, useEffect } from 'react';
+
+import styled, { css } from 'styled-components';
 
 import { Container } from '../components/container/container';
 
 import { LogoHeader, MenuKingfloki, MenuKingland, MenuKingpad } from '../config/images';
 
-import { RiArrowDropDownLine } from 'react-icons/ri';
-
 export const Header = () => {
+  const mbDropRef = useRef<HTMLDivElement>(null);
+  const DsDropRef = useRef<HTMLDivElement>(null);
+
+  const [isDeskOpen, deskSetOpen] = useState(false);
+  const [isMobOpen, mobSetOpen] = useState(false);
+  const [lang, setLang] = useState('ENG');
+
+  const handleClickOutside = (event: React.MouseEvent<HTMLElement>) => {
+    if (mbDropRef.current && !mbDropRef.current.contains(event.target as any)) {
+      mobSetOpen(false);
+    }
+    if (DsDropRef.current && !DsDropRef.current.contains(event.target as any)) {
+      deskSetOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('mousedown', (event) => handleClickOutside(event as any));
+  }, [mbDropRef, DsDropRef]);
+
+  const LanguageChoose = (idx?: number) => {
+    switch (idx) {
+      case 0:
+        setLang('ENG');
+        break;
+      case 1:
+        setLang('SPA');
+        break;
+      case 2:
+        setLang('ITA');
+        break;
+      case 3:
+        setLang('FRE');
+        break;
+      case 4:
+        setLang('GER');
+        break;
+      case 5:
+        setLang('CHN');
+        break;
+      default:
+        break;
+    }
+    deskSetOpen(false);
+    mobSetOpen(false);
+  };
   return (
     <Container>
       <HeaderContent>
@@ -17,6 +63,20 @@ export const Header = () => {
             <RectButtons>
               <RectButton>Docs</RectButton>
               <RectButton>Staking</RectButton>
+              <MobileDropDownContainer data-aria-expanded={isMobOpen} ref={mbDropRef}>
+                <DropdownButton className="dbtn" onClick={() => mobSetOpen(!isMobOpen)}>
+                  {lang}
+                  <span className="material-symbols-rounded">keyboard_arrow_down</span>
+                </DropdownButton>
+                <DropDownContent className="dcontent" style={{ transform: isMobOpen ? 'scale(1)' : 'scale(0)' }}>
+                  <DropdownItem onClick={() => LanguageChoose(0)}>English</DropdownItem>
+                  <DropdownItem onClick={() => LanguageChoose(1)}>Spanish</DropdownItem>
+                  <DropdownItem onClick={() => LanguageChoose(2)}>Italian</DropdownItem>
+                  <DropdownItem onClick={() => LanguageChoose(3)}>French</DropdownItem>
+                  <DropdownItem onClick={() => LanguageChoose(4)}>German</DropdownItem>
+                  <DropdownItem onClick={() => LanguageChoose(5)}>Chinese</DropdownItem>
+                </DropDownContent>
+              </MobileDropDownContainer>
             </RectButtons>
           </LogoButtons>
 
@@ -25,11 +85,20 @@ export const Header = () => {
             <KingLandButton className="btn-kingland" />
             <KingPadButton className="btn-kingpad" />
           </ButtonGroup>
-          <RectButtons>
-            <RectButton>
-              ENG <RiArrowDropDownLine size={25} />
-            </RectButton>
-          </RectButtons>
+          <DesktopDropDownContainer data-aria-expanded={isDeskOpen} ref={DsDropRef}>
+            <DropdownButton className="dbtn" onClick={() => deskSetOpen(!isDeskOpen)}>
+              {lang}
+              <span className="material-symbols-rounded">keyboard_arrow_down</span>
+            </DropdownButton>
+            <DropDownContent className="dcontent" style={{ transform: isDeskOpen ? 'scale(1)' : 'scale(0)' }}>
+              <DropdownItem onClick={() => LanguageChoose(0)}>English</DropdownItem>
+              <DropdownItem onClick={() => LanguageChoose(1)}>Spanish</DropdownItem>
+              <DropdownItem onClick={() => LanguageChoose(2)}>Italian</DropdownItem>
+              <DropdownItem onClick={() => LanguageChoose(3)}>French</DropdownItem>
+              <DropdownItem onClick={() => LanguageChoose(4)}>German</DropdownItem>
+              <DropdownItem onClick={() => LanguageChoose(5)}>Chinese</DropdownItem>
+            </DropDownContent>
+          </DesktopDropDownContainer>
         </RectButtonGroup>
       </HeaderContent>
     </Container>
@@ -65,10 +134,10 @@ const RectButtonGroup = styled.div`
   display: flex;
   align-items: center;
   justify-content: end;
-  width: 100%;
+  /* width: 100%; */
   min-width: 1px;
   gap: 10px;
-  @media screen and (max-width: 840px) {
+  @media screen and (max-width: 1096px) {
     justify-content: space-between;
     flex-direction: column;
     align-items: flex-end;
@@ -103,6 +172,9 @@ const RectButtons = styled.div`
   display: flex;
   gap: 10px;
   font-family: 'gotham-bold';
+  @media screen and (max-width: 480px) {
+    gap: 0;
+  }
 `;
 
 const RectButton = styled.div`
@@ -123,6 +195,9 @@ const RectButton = styled.div`
   @media screen and (max-width: 640px) {
     background: none;
     padding: 10px;
+  }
+  @media screen and (max-width: 420px) {
+    font-size: 11px;
   }
 `;
 
@@ -148,9 +223,10 @@ const KingFlokiButton = styled.div`
   background-repeat: no-repeat;
   background-size: 80%;
   background-position: center center;
-  transition: all linear 0.6s;
   width: 125px;
   height: 23px;
+
+  transition: all linear 0.6s;
 
   &:hover {
     filter: grayscale(0) !important;
@@ -229,5 +305,105 @@ const KingPadButton = styled.div`
     width: 100px;
     height: 36px;
     background-size: 80%;
+  }
+`;
+
+const DropDownContainer = css`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-family: 'gotham-bold';
+  margin: 0 auto;
+  position: relative;
+  /* transition: all linear 0.6s;
+  transition: height 0.35s cubic-bezier(0.65, 0.05, 0.36, 1); */
+
+  &[data-aria-expanded='true'] {
+    .dcontent {
+      opacity: 1;
+    }
+  }
+  &[data-aria-expanded='false'] {
+    .dcontent {
+      opacity: 0;
+    }
+  }
+`;
+
+const DropdownButton = styled.div`
+  background: #1d1d1d;
+  border-radius: 28px;
+  letter-spacing: 0.875px;
+  color: ${(props) => props.theme.white};
+  text-transform: uppercase;
+  border: none;
+  padding: 0px 18px;
+  height: 47px;
+  font-size: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  @media screen and (max-width: 640px) {
+    background: none;
+    padding: 10px;
+  }
+  @media screen and (max-width: 420px) {
+    font-size: 11px;
+  }
+`;
+
+const DropDownContent = styled.div`
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  border-radius: 20px;
+  background: #1d1d1d;
+  letter-spacing: 0.875px;
+  transition: all linear 0.3s;
+  color: ${(props) => props.theme.white};
+
+  text-transform: uppercase;
+  top: 4rem;
+  z-index: 100;
+
+  @media screen and (max-width: 420px) {
+    margin-left: -20px;
+  }
+
+  &:hover {
+    .btn-kingfloki,
+    .btn-kingland,
+    .btn-kingpad {
+      filter: grayscale(1) brightness(0.5);
+    }
+  }
+`;
+const DropdownItem = styled.div`
+  padding: 15px 20px;
+
+  cursor: pointer;
+  color: ${(props) => props.theme.white};
+  transition: all linear 0.6s;
+  &:hover {
+    /* filter: grayscale(0) !important; */
+    color: ${(props) => props.theme.blackAlpha};
+  }
+`;
+
+const DesktopDropDownContainer = styled.div`
+  ${DropDownContainer};
+  display: flex;
+  @media screen and (max-width: 1096px) {
+    display: none;
+  }
+`;
+
+const MobileDropDownContainer = styled.div`
+  ${DropDownContainer};
+  display: none;
+  @media screen and (max-width: 1096px) {
+    display: flex;
   }
 `;

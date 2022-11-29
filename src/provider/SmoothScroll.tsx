@@ -36,8 +36,9 @@ export const SmoothScrollProvider = ({ children }: SmoothScrollProps) => {
 
   const setBodyHeight = () => {
     if (scrollingContainerRef.current !== null)
-      document.body.style.height = `${scrollingContainerRef.current.getBoundingClientRect().height}px`;
+      document.body.style.height = `${scrollingContainerRef?.current.scrollHeight}px`;
     console.log('document.body.style.height: ', document.body.style.height);
+    console.log('scrollingContainerRef.current.scrollHeight: ', scrollingContainerRef.current?.scrollHeight);
   };
 
   // 5.
