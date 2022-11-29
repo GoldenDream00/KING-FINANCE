@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext } from 'react';
+import { createContext, useState, useContext, useEffect } from 'react';
 import { localStorageGet, localStorageSet } from '../utils/localStorage';
 
 interface StoreContextProps {
@@ -11,10 +11,18 @@ const StoreContext = createContext<StoreContextProps | null>(null);
 const StoreProvider = (props: any) => {
   const [lang, setLang] = useState<string>(localStorageGet('lang'));
 
+  const loadLang = () => {
+    setLang(localStorageGet('lang') === '' ? 'ENG' : localStorageGet('lang'));
+  };
+
   const setLanguage = (language: string) => {
     setLang(language);
     localStorageSet('lang', language);
   };
+
+  useEffect(() => {
+    loadLang();
+  }, []);
 
   return (
     <StoreContext.Provider

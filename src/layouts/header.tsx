@@ -12,6 +12,8 @@ import { useStore } from '../context/StoreContext';
 export const Header = () => {
   const { t, i18n } = useTranslation();
 
+  console.log(t);
+
   const mbDropRef = useRef<HTMLDivElement>(null);
   const DsDropRef = useRef<HTMLDivElement>(null);
 
@@ -32,6 +34,10 @@ export const Header = () => {
   useEffect(() => {
     document.addEventListener('mousedown', (event) => handleClickOutside(event as any));
   }, [mbDropRef, DsDropRef]);
+
+  useEffect(() => {
+    setLang(lang);
+  }, [lang]);
 
   const LanguageChoose = (e: any) => {
     const language = e.target.innerHTML;
@@ -61,6 +67,7 @@ export const Header = () => {
     deskSetOpen(false);
     mobSetOpen(false);
   };
+
   return (
     <Container>
       <HeaderContent>
