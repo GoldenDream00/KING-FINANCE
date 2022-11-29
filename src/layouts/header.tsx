@@ -361,7 +361,7 @@ const DropDownContent = styled.div`
   border-radius: 20px;
   background: #1d1d1d;
   letter-spacing: 0.875px;
-  transition: all linear 0.3s;
+  transition: all linear 0.2s;
   color: ${(props) => props.theme.white};
 
   text-transform: uppercase;
