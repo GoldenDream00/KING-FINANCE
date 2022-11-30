@@ -1,5 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 
+import { Link } from 'react-router-dom';
+
 import styled, { css } from 'styled-components';
 
 import { Container } from '../components/container/container';
@@ -11,8 +13,6 @@ import { useStore } from '../context/StoreContext';
 
 export const Header = () => {
   const { t, i18n } = useTranslation();
-
-  console.log(t);
 
   const mbDropRef = useRef<HTMLDivElement>(null);
   const DsDropRef = useRef<HTMLDivElement>(null);
@@ -101,8 +101,12 @@ export const Header = () => {
 
           <ButtonGroup>
             <KingFlokiButton className="btn-kingfloki" />
-            <KingLandButton className="btn-kingland" />
-            <KingPadButton className="btn-kingpad" />
+            <a href={'https://kingland.vercel.app'} rel="noopener noreferrer">
+              <KingLandButton className="btn-kingland" />
+            </a>
+            <a href={'https://kingpad.vercel.app'} rel="noopener noreferrer">
+              <KingPadButton className="btn-kingpad" />
+            </a>
           </ButtonGroup>
           <DesktopDropDownContainer data-aria-expanded={isDeskOpen} ref={DsDropRef}>
             <DropdownButton className="dbtn" onClick={() => deskSetOpen(!isDeskOpen)}>
