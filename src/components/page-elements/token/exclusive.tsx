@@ -15,7 +15,7 @@ export const Exclusive = () => {
         </TextBox>
         <TextBox>
           Internal economical balance is found within <span className="bold">KING</span> through our coin distribution.
-          Our crypto-currency is an appreciative and deflationary asset that will allow you to purchase in game NFT’s,
+          Our crypto-currency is an appreciating and deflationary asset that will allow you to purchase in game NFT’s,
           digital land, online competition vouchers, real estate fractions and most importantly, an asset that will make
           you an exclusive user of our demanded platforms (KingFloki, KingPad and KingLand).
         </TextBox>
