@@ -130,7 +130,7 @@ const Element = styled.div`
   font-size: 15px;
   padding-top: 0.001rem;
   text-align: center;
-  min-height: 1px;
+  min-height: 25px;
   @media screen and (max-width: 540px) {
     font-size: 13px;
   }
