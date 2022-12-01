@@ -19,6 +19,7 @@ import {
   KingLand
 } from 'src/config/images';
 import { useTranslation } from 'react-i18next';
+import { useStore } from 'src/context/StoreContext';
 
 export const LandingDetails = () => {
   useEffect(() => {
@@ -27,6 +28,7 @@ export const LandingDetails = () => {
   }, []);
 
   const { t } = useTranslation();
+  const { lang } = useStore();
   return (
     <LandingDetailsWrapper>
       <Metaverse data-aos="fade-up" data-aos-delay="500" data-aos-duration="1000">
@@ -569,6 +571,7 @@ const KingPadSection = styled.div`
         flex-direction: column;
         align-items: flex-start;
         gap: 0.5rem;
+        max-width: 300px;
 
         @media screen and (max-width: 1366px) {
           font-size: 25px;
@@ -740,6 +743,7 @@ const KingLandSection = styled.div`
         align-items: flex-start;
         -webkit-align-items: flex-start;
         gap: 0.5rem;
+        max-width: 300px;
 
         @media screen and (max-width: 1366px) {
           font-size: 25px;
