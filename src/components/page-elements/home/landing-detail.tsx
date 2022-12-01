@@ -73,7 +73,7 @@ export const LandingDetails = () => {
         <img src={DeskBoxKingpad} className="desktop-box-kingpad" alt="desktop-box-kingpad" />
         <img src={MobileBoxKingPad} className="mobile-box-kingpad" alt="mobile-box-kingpad" />
         <div className="background-overlay">
-          <div className="kingpad-details">
+          <KingpadDetails language={lang}>
             <div className="kingpad-logo">
               <img src={KingPad} alt="king-pad" className="king-pad" />
             </div>
@@ -83,7 +83,7 @@ export const LandingDetails = () => {
               </p>
             </div>
             <button className="comming-soon">{t('home.comingsoon')}</button>
-          </div>
+          </KingpadDetails>
         </div>
       </KingPadSection>
       <KingLandSection data-aos="fade-up" data-aos-delay="500" data-aos-duration="1000">
@@ -525,104 +525,79 @@ const KingPadSection = styled.div`
       align-items: center;
     }
 
-    .kingpad-details {
+    .kingpad-logo {
+      .king-pad {
+        width: 100px;
+        height: 100px;
+
+        @media screen and (max-width: 1366px) {
+          width: 80px;
+          height: 80px;
+        }
+
+        @media screen and (max-width: 840px) {
+          width: 60px;
+          height: 60px;
+        }
+      }
+    }
+
+    .safe-place {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      gap: 1rem;
-      margin-left: 40rem;
 
       @media screen and (max-width: 1366px) {
-        margin-left: 35rem;
-      }
-
-      @media screen and (max-width: 1092px) {
-        margin-left: 30rem;
+        font-size: 25px;
       }
 
       @media screen and (max-width: 840px) {
-        margin-left: 25rem;
+        font-size: 20px;
+        margin-top: -10px;
+        max-width: 280px;
       }
 
       @media screen and (max-width: 640px) {
-        align-items: center;
-        margin-left: 0;
+        flex-direction: row;
+        margin-top: 0;
+        text-align: center;
       }
 
-      .kingpad-logo {
-        .king-pad {
-          width: 100px;
-          height: 100px;
-
-          @media screen and (max-width: 1366px) {
-            width: 80px;
-            height: 80px;
-          }
-
-          @media screen and (max-width: 840px) {
-            width: 60px;
-            height: 60px;
-          }
-        }
-      }
-
-      .safe-place {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-
-        @media screen and (max-width: 1366px) {
-          font-size: 25px;
-        }
-
-        @media screen and (max-width: 840px) {
-          font-size: 20px;
-          margin-top: -10px;
-          max-width: 280px;
-        }
-
-        @media screen and (max-width: 640px) {
-          flex-direction: row;
-          margin-top: 0;
-          text-align: center;
-        }
-
-        @media screen and (max-width: 480px) {
-          flex-direction: row;
-          font-size: 15px;
-        }
-      }
-
-      .comming-soon {
-        background: #191919 0% 0% no-repeat padding-box;
-        border-radius: 31px;
-        padding: 16px 24px;
-        font-family: 'gotham-bold';
+      @media screen and (max-width: 480px) {
+        flex-direction: row;
         font-size: 15px;
-        transition: all linear 0.3s;
-        color: #fff;
-        border: none;
-        text-transform: uppercase;
-        margin-top: 3px;
+      }
+    }
 
-        &:hover {
-          color: rgb(156, 153, 153);
-        }
+    .comming-soon {
+      background: #191919 0% 0% no-repeat padding-box;
+      border-radius: 31px;
+      padding: 16px 24px;
+      font-family: 'gotham-bold';
+      font-size: 15px;
+      transition: all linear 0.3s;
+      color: #fff;
+      border: none;
+      text-transform: uppercase;
+      margin-top: 3px;
 
-        @media screen and (max-width: 1366px) {
-          font-size: 15px;
-          padding: 12px 18px;
-        }
+      &:hover {
+        color: rgb(156, 153, 153);
+      }
 
-        @media screen and (max-width: 840px) {
-          font-size: 12px;
-          padding: 8px 12px;
-        }
+      @media screen and (max-width: 1366px) {
+        font-size: 15px;
+        padding: 12px 18px;
+      }
 
-        @media screen and (max-width: 640px) {
-          font-size: 15px;
-          padding: 12px 18px;
-        }
+      @media screen and (max-width: 840px) {
+        font-size: 12px;
+        padding: 8px 12px;
+      }
+
+      @media screen and (max-width: 640px) {
+        font-size: 15px;
+        padding: 12px 18px;
       }
     }
   }
@@ -868,11 +843,42 @@ const EarnText = styled.div<EarnTextProps>`
       }
     `}
 
-      ${(props) =>
+  ${(props) =>
     props.language === 'SPA' &&
     `
       @media screen and (max-width: 420px) {
         font-size: 2rem;
       }
-    `}
+  `}
+`;
+
+const KingpadDetails = styled.div<EarnTextProps>`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-left: 40rem;
+
+  @media screen and (max-width: 1366px) {
+    margin-left: 35rem;
+  }
+
+  @media screen and (max-width: 1092px) {
+    margin-left: 30rem;
+  }
+
+  @media screen and (max-width: 840px) {
+    margin-left: 25rem;
+  }
+
+  @media screen and (max-width: 640px) {
+    align-items: center;
+    margin-left: 0;
+  }
+
+  ${(props) =>
+    props.language === 'GER' &&
+    `
+      gap: 0.25rem;
+  `}
 `;
