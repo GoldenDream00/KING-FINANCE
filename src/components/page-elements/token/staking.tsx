@@ -1,14 +1,13 @@
+import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 import DesktopStaking from '../../../assets/Token/destop_staking.png';
 
 export const Staking = () => {
+  const { t } = useTranslation();
   return (
     <StakingContainer>
-      <SmallText>
-        <span className="bold">Staking </span>
-        platform
-      </SmallText>
-      <LaunchButton>Launch App</LaunchButton>
+      <SmallText dangerouslySetInnerHTML={{ __html: t('token.stakingplatform') }} />
+      <LaunchButton dangerouslySetInnerHTML={{ __html: t('token.launch') }} />
       <DesktopImg src={DesktopStaking} alt="desktop-staking" />
     </StakingContainer>
   );

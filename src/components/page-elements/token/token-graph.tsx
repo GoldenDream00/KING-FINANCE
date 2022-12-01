@@ -1,9 +1,11 @@
+import { useTranslation } from 'react-i18next';
 import { DeskTopTokenChart, MobileTokenChart } from 'src/components/tokenomics-chart';
 import { TokenChartInfo } from 'src/components/tokenomics-chart/chart-info';
 import { LogoHeader } from 'src/config/images';
 import styled, { css } from 'styled-components';
 
 export const TokenGraphSection = () => {
+  const { t } = useTranslation();
   return (
     <TokenGraphContainer>
       <TokenDetails>
@@ -23,10 +25,10 @@ export const TokenGraphSection = () => {
           <Img src={LogoHeader} />
         </MobileChartContainer>
         <TokenChartInfo />
-        <MediumText>Contract Address</MediumText>
-        <SmallText>To be announced</SmallText>
-        <MediumText style={{ paddingTop: '4rem' }}>Buy King</MediumText>
-        <SmallText>New listings coming soon</SmallText>
+        <MediumText>{t('token.contractaddress')}</MediumText>
+        <SmallText>{t('token.announce')}</SmallText>
+        <MediumText style={{ paddingTop: '4rem' }}>{t('token.buyking')}</MediumText>
+        <SmallText>{t('token.newlisting')}</SmallText>
       </TokenDetails>
     </TokenGraphContainer>
   );

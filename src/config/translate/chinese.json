@@ -29,5 +29,20 @@
     "privacy": "隐私政策",
     "terms": "使用条款"
   },
-  "token": {}
+  "token": {
+    "liquidity": "资产",
+    "staking": "赌注",
+    "burned": "烧毁",
+    "holdings": "持股",
+    "contractaddress": "合约地址",
+    "announce": "即将公布",
+    "buyking": "买王",
+    "newlisting": "新房源即将上市",
+    "exclusive": "独家用例",
+    "tokendetails1": "只有一个 <span style='font-family:gotham-bold'>$KING</span> 可以统治它们 <span style='font-family:gotham-bold'>$KING</span> 确实是我们的唯一一种货币，它将在我们的三个分支中发挥重要作用。",
+    "tokendetails2": "通过我们的硬币分配在 <span style='font-family:gotham-bold'>KING</span> 内部找到内部经济平衡。我们的加密货币是一种增值和通货紧缩的资产，可让您购买游戏 NFT。 digital land 在线竞赛优惠券、房地产分数，最重要的是，一项资产将使您成为我们所需平台（KingFloki KingPad 和 KingLand）的独家用户",
+    "tokendetails3": "总而言之，<span style='font-family:gotham-bold'>$KING</span> 会随着内部生态系统的发展而升值，让您成为公司的实际股东并取得成功",
+    "stakingplatform": "质押平台",
+    "launch": "启动应用程序"
+  }
 }

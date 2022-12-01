@@ -1,28 +1,17 @@
+import { useTranslation } from 'react-i18next';
 import { DeskBgMain } from 'src/config/images';
 import styled from 'styled-components';
 
 export const Exclusive = () => {
+  const { t } = useTranslation();
   return (
     <ExclusiveWrapper>
       <BackgroundSVG src={DeskBgMain} alt="desktop-background-svg" />
       <ExclusiveContainer>
-        <SmallText>
-          An exclusive <span className="bold">use case</span>
-        </SmallText>
-        <TextBox>
-          There's only one <span className="bold">$KING</span> to rule them all. <span className="bold">$KING</span> is
-          indeed our one and only currency that will play an essential role within our three branches.
-        </TextBox>
-        <TextBox>
-          Internal economical balance is found within <span className="bold">KING</span> through our coin distribution.
-          Our crypto-currency is an appreciating and deflationary asset that will allow you to purchase in game NFT’s,
-          digital land, online competition vouchers, real estate fractions and most importantly, an asset that will make
-          you an exclusive user of our demanded platforms (KingFloki, KingPad and KingLand).
-        </TextBox>
-        <TextBox>
-          In fine, <span className="bold">$KING</span> appreciates as the internal ecosystem grows, making you an actual
-          shareholder of the company and its success.
-        </TextBox>
+        <SmallText dangerouslySetInnerHTML={{ __html: t('token.exclusive') }} />
+        <TextBox dangerouslySetInnerHTML={{ __html: t('token.tokendetails1') }} />
+        <TextBox dangerouslySetInnerHTML={{ __html: t('token.tokendetails2') }} />
+        <TextBox dangerouslySetInnerHTML={{ __html: t('token.tokendetails3') }} />
       </ExclusiveContainer>
     </ExclusiveWrapper>
   );
