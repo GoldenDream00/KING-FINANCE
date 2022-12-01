@@ -1,8 +1,9 @@
-import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { DeskVideo1, MobileVideo1, TabletVideo1 } from 'src/config/images';
 import styled from 'styled-components';
 
 export const KingFinance = () => {
+  const { t } = useTranslation();
   return (
     <KingWrapper>
       <VideoSection>
@@ -24,7 +25,9 @@ export const KingFinance = () => {
               <span style={{ fontFamily: 'gotham-bold' }}>King</span>
               <span style={{ fontFamily: 'gotham-thin', marginLeft: '12px' }}>Finance</span>
             </KingFinanceLetter>
-            <BottomLetter>Unique. Visionary. Powerful</BottomLetter>
+            <BottomLetter>
+              {t('home.unique')}. {t('home.visionary')}. {t('home.powerful')}
+            </BottomLetter>
           </KingFinanceLetters>
         </VideoOverlay>
       </VideoSection>

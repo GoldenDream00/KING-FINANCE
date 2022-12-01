@@ -3,9 +3,11 @@ import styled from 'styled-components';
 import { CmcIcon, BscscanIcon, CoingeckoIcon } from 'src/config/images';
 
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 export const ExternalLinks = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   return (
     <Wrapper>
       <ExternalLinkWrapper>
@@ -21,12 +23,12 @@ export const ExternalLinks = () => {
       </ExternalLinkWrapper>
       <ExternalButtons>
         <div className="token-button" onClick={() => navigate('/token')}>
-          Token
+          {t('home.token')}
         </div>
-        <div className="token-button">Team</div>
-        <div className="token-button">Docs</div>
-        <div className="token-button">Media Kit</div>
-        <div className="token-button">King Pass</div>
+        <div className="token-button">{t('home.team')}</div>
+        <div className="token-button">{t('home.docs')}</div>
+        <div className="token-button">{t('home.mediakit')}</div>
+        <div className="token-button">{t('home.kingpass')}</div>
       </ExternalButtons>
     </Wrapper>
   );

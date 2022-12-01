@@ -2,6 +2,11 @@ import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import translationCN from './translate/chinese.json';
+import translateEN from './translate/english.json';
+import translateFR from './translate/french.json';
+import translateGE from './translate/german.json';
+import translateIT from './translate/italian.json';
+import translateSP from './translate/spanish.json';
 
 i18n
   // detect user language
@@ -19,44 +24,19 @@ i18n
     },
     resources: {
       English: {
-        translation: {
-          header: {
-            docs: 'Docs',
-            staking: 'Staking'
-          }
-        }
+        translation: translateEN
       },
       Spanish: {
-        translation: {
-          header: {
-            docs: 'asdf',
-            staking: 'ffff'
-          }
-        }
+        translation: translateSP
       },
       Italian: {
-        translation: {
-          header: {
-            docs: 'rr',
-            staking: 'eeee'
-          }
-        }
+        translation: translateIT
       },
       French: {
-        translation: {
-          header: {
-            docs: 'hh',
-            staking: 'kkkk'
-          }
-        }
+        translation: translateFR
       },
       German: {
-        translation: {
-          header: {
-            docs: 'werrwe',
-            staking: 'ww'
-          }
-        }
+        translation: translateGE
       },
       Chinese: {
         translation: translationCN

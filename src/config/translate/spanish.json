@@ -1,0 +1,33 @@
+{
+  "home": {
+    "docs": "Liquidez",
+    "staking": "Staking",
+    "unique": "Único",
+    "visionary": "Innovador",
+    "powerful": "Potente",
+    "kingdetails": "Coronando DeFi. <span style='font-family:gotham-bold'>KING</span> es la empresa matriz a cargo del desarrollo de tres de los servicios más innovadores de las finanzas descentralizadas. Nuestro ecosistema se basa en una “economía circular interna”, donde nuestras ramas se retroalimentan de forma continua y equilibrada a través de la generación individual de fondos.",
+    "immerse": "Sumérgete en <span style='font-family:gotham-bold'>KingPad</span>, <span style='font-family:gotham-bold'>Kingland</span> y <span style='font-family:gotham-bold'>KingFloki</span>.",
+    "ecosystem": "Una moneda que impulsa todo el ecosistema",
+    "connectwithking": "CONÉCTATE CON KING",
+    "awesomegame": "",
+    "metaverse": "",
+    "ingame": "",
+    "playto": "",
+    "earn": "",
+    "mintnow": "",
+    "playnow": "",
+    "safeplace": "",
+    "jointhebest": "",
+    "beking": "",
+    "realestate": "",
+    "comingsoon": "",
+    "token": "Token",
+    "team": "Equipo",
+    "mediakit": "Media Kit",
+    "kingpass": "King Pass",
+    "cookie": "Preferencias de cookies",
+    "privacy": "Política de privacidad",
+    "terms": "Términos de uso"
+  },
+  "token": {}
+}

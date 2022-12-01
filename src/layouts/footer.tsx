@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import {
   DeskBgMain,
   DeskFooterLogo,
@@ -11,6 +12,7 @@ import styled from 'styled-components';
 import { PageWrapper } from '../components/container/container';
 
 export const Footer = () => {
+  const { t } = useTranslation();
   return (
     <PageWrapper>
       <FooterContainer>
@@ -20,11 +22,11 @@ export const Footer = () => {
         <KingLogo src={DeskFooterLogo} />
 
         <CopyRight>
-          <Element>Cookie preferences</Element>
+          <Element>{t('home.cookie')}</Element>
           <Line>|</Line>
-          <Element>Privacy Police</Element>
+          <Element>{t('home.privacy')}</Element>
           <Line>|</Line>
-          <Element>Terms of use</Element>
+          <Element>{t('home.terms')}</Element>
         </CopyRight>
         <SocialLinkGroup>
           <SocialIcon src={TelegramIcon} />

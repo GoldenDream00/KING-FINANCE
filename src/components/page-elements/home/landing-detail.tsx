@@ -18,6 +18,7 @@ import {
   MobileBoxKingland,
   KingLand
 } from 'src/config/images';
+import { t } from 'i18next';
 
 export const LandingDetails = () => {
   useEffect(() => {
@@ -30,9 +31,9 @@ export const LandingDetails = () => {
       <Metaverse data-aos="fade-up" data-aos-delay="500" data-aos-duration="1000">
         <KingFlokiLogo />
         <MetaverseTitle>
-          <div className="awesome-game">An awesome game in the</div>
-          <div className="metaverse-letter">Metaverse</div>
-          <button className="metaverse-play-button">Play Now</button>
+          <div className="awesome-game">{t('home.awesomegame')}</div>
+          <div className="metaverse-letter">{t('home.metaverse')}</div>
+          <button className="metaverse-play-button">{t('home.playnow')}</button>
         </MetaverseTitle>
       </Metaverse>
       <Game>
@@ -41,10 +42,10 @@ export const LandingDetails = () => {
           <img src={MobileNftGame} className="mobile-nft-game-gif" alt="nft-game-gif" />
           <div className="background-overlay">
             <div className="in-game-nfts">
-              <div className="in-game">In game</div>
+              <div className="in-game">{t('home.ingame')}</div>
               <div className="nfts">NFTs</div>
             </div>
-            <button className="mint-button">Mint Now</button>
+            <button className="mint-button">{t('home.mintnow')}</button>
           </div>
         </div>
         <div className="play-to-earn" data-aos="fade-left" data-aos-delay="500" data-aos-duration="1000">
@@ -58,10 +59,10 @@ export const LandingDetails = () => {
           </video>
           <div className="background-overlay">
             <div className="to-earn">
-              <div className="play-to">Play to</div>
-              <div className="earn">EARN</div>
+              <div className="play-to">{t('home.playto')}</div>
+              <div className="earn">{t('home.earn')}</div>
             </div>
-            <button className="play-button">Play Now</button>
+            <button className="play-button">{t('home.playnow')}</button>
           </div>
         </div>
       </Game>
@@ -74,10 +75,10 @@ export const LandingDetails = () => {
               <img src={KingPad} alt="king-pad" className="king-pad" />
             </div>
             <div className="safe-place">
-              <p>A safe place</p>
-              <p>to join the best.</p>
+              <p>{t('home.safeplace')}</p>
+              <p>{t('home.jointhebest')}</p>
             </div>
-            <button className="comming-soon">COMING SOON</button>
+            <button className="comming-soon">{t('home.comingsoon')}</button>
           </div>
         </div>
       </KingPadSection>
@@ -90,10 +91,10 @@ export const LandingDetails = () => {
               <img src={KingLand} alt="king-land" className="king-land" />
             </div>
             <div className="real-estate">
-              <p>Be the king of </p>
-              <p>your Real Estate</p>
+              <p>{t('home.beking')} </p>
+              <p>{t('home.realestate')}</p>
             </div>
-            <button className="comming-soon">COMING SOON</button>
+            <button className="comming-soon">{t('home.comingsoon')}</button>
           </div>
         </div>
       </KingLandSection>
@@ -446,6 +447,7 @@ const Game = styled.div`
         color: #fff;
         text-transform: uppercase;
         border: none;
+        cursor: pointer;
 
         &:hover {
           color: rgb(156, 153, 153);

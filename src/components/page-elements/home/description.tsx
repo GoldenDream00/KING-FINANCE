@@ -1,21 +1,15 @@
 import styled from 'styled-components';
 
 import { DeskVideo2 } from 'src/config/images';
+import { useTranslation } from 'react-i18next';
 
 export const Description = () => {
+  const { t } = useTranslation();
   return (
     <DescriptionWrapper>
       <Details>
-        <p>
-          Crowning DeFi. <span className="bold">KING</span> is the parent company in charge of the development of three
-          of the most innovative services in decentralised finance. Our ecosystem is based on our ‘ internal circular
-          economy', where our branches feed each other continuously and in a balanced way throughout the individual
-          generation of funds.
-        </p>
-        <p>
-          Immerse yourself within <span className="bold">KingPad, KingLand</span> and
-          <span className="bold"> KingFloki</span>.
-        </p>
+        <p dangerouslySetInnerHTML={{ __html: t('home.kingdetails') }} />
+        <p dangerouslySetInnerHTML={{ __html: t('home.immerse') }} />
       </Details>
       <KingLogo>
         <video className="background-video" playsInline loop autoPlay muted id="my-video">
@@ -46,8 +40,8 @@ const Details = styled.div`
     margin: 0;
 
     .bold {
-      font-weight: bold;
-      font-family: Arial, Helvetica, sans-serif;
+      /* font-weight: bold; */
+      font-family: 'gotham-bold';
     }
   }
 

@@ -76,8 +76,8 @@ export const Header = () => {
           <LogoButtons>
             <MobileLogo src={LogoHeader} alt="mobile-header-logo" />
             <RectButtons>
-              <RectButton>{t('header.docs')}</RectButton>
-              <RectButton>{t('header.staking')}</RectButton>
+              <RectButton>{t('home.docs')}</RectButton>
+              <RectButton>{t('home.staking')}</RectButton>
               <MobileDropDownContainer data-aria-expanded={isMobOpen} ref={mbDropRef}>
                 <DropdownButton className="dbtn" onClick={() => mobSetOpen(!isMobOpen)}>
                   {lang}

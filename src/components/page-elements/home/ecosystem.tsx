@@ -10,10 +10,11 @@ import {
   KingPad,
   KingLand
 } from 'src/config/images';
+import { useTranslation } from 'react-i18next';
 
 export const EcoSystem = () => {
   const [bgSvg, setBgSvg] = useState(DeskBgMain);
-
+  const { t } = useTranslation();
   const changeBg = (idx: number) => {
     switch (idx) {
       case 0:
@@ -38,11 +39,7 @@ export const EcoSystem = () => {
       <EcoSystemWrapper>
         <BackgroundSVG src={bgSvg} alt="desktop-background-svg" />
         <EcoSystemContainer>
-          <WholeSystem>
-            <span className="bold">A coin </span>
-            to drive the
-            <span className="bold"> whole ecosystem</span>
-          </WholeSystem>
+          <WholeSystem dangerouslySetInnerHTML={{ __html: t('home.ecosystem') }} />
           <KingLogos>
             <KingFlokiWrapper onMouseOver={() => changeBg(1)} onMouseOut={() => changeBg(0)} />
             <KingPadWrapper onMouseOver={() => changeBg(2)} onMouseOut={() => changeBg(0)} />
@@ -52,7 +49,7 @@ export const EcoSystem = () => {
       </EcoSystemWrapper>
       <ConnectWrapper>
         <ConnectWithKing>
-          <ConnectLetter>Connect With King</ConnectLetter>
+          <ConnectLetter>{t('home.connectwithking')}</ConnectLetter>
           <SocialLinkGroup>
             <SocialBox>
               <svg

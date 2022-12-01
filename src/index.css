@@ -33,7 +33,7 @@ body {
 }
 
 button {
-  font-family: 'Rubik', sans-serif;
+  cursor: pointer;
 
   padding: 0;
   margin: 0;

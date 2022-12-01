@@ -1,12 +1,33 @@
 {
-  "header": {
+  "home": {
     "docs": "文件",
-    "staking": "赌注"
+    "staking": "赌注",
+    "unique": "独特的",
+    "visionary": "有远见的",
+    "powerful": "强大的",
+    "kingdetails": "加冕 DeFi。 <span style='font-family: gotham-bold'>KING</span> 是负责开发去中心化金融领域三项最具创新性服务的母公司。我们的生态系统基于我们的“内部循环经济”，我们的分支机构在整个资金生成过程中以平衡的方式不断地相互补充。",
+    "immerse": "让自己沉浸在 <span style='font-family: gotham-bold'>KingPad、KingLand</span> 和 <span style='font-family: gotham-bold'>KingFloki</span> 中。",
+    "ecosystem": "驱动整个生态系统的代币",
+    "connectwithking": " 与KING保持联系",
+    "awesomegame": "一个伟大的游戏",
+    "metaverse": "元宇宙",
+    "ingame": "在游戏中",
+    "playto": "玩赚",
+    "earn": "钱",
+    "mintnow": "现在薄荷",
+    "playnow": "现在播放",
+    "safeplace": "一个安全的地",
+    "jointhebest": "方加入最好的",
+    "beking": "成为王",
+    "realestate": "你的房地产之",
+    "comingsoon": "快来了",
+    "token": "代币",
+    "team": "团队",
+    "mediakit": "媒体",
+    "kingpass": "KING经过",
+    "cookie": "Cookie偏好",
+    "privacy": "隐私政策",
+    "terms": "使用条款"
   },
-  "unique": "",
-  "visionary": "",
-  "powerful": "",
-  "kingdetails": "",
-  "connectwithking": "",
-  "awesomegame": ""
+  "token": {}
 }
