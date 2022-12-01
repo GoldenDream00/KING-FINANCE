@@ -100,7 +100,9 @@ export const Header = () => {
           </LogoButtons>
 
           <ButtonGroup>
-            <KingFlokiButton className="btn-kingfloki" />
+            <a href={'https://kingland.vercel.app'} rel="noopener noreferrer">
+              <KingFlokiButton className="btn-kingfloki" />
+            </a>
             <a href={'https://kingland.vercel.app'} rel="noopener noreferrer">
               <KingLandButton className="btn-kingland" />
             </a>
@@ -268,7 +270,7 @@ const KingFlokiButton = styled.div`
     background-size: 80%;
   }
 
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 420px) {
     padding: 0;
     width: 100px;
     height: 36px;
@@ -297,7 +299,7 @@ const KingLandButton = styled.div`
     background-size: 80%;
   }
 
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 420px) {
     padding: 0;
     width: 100px;
     height: 36px;
@@ -327,7 +329,7 @@ const KingPadButton = styled.div`
     background-size: 80%;
   }
 
-  @media screen and (max-width: 360px) {
+  @media screen and (max-width: 420px) {
     padding: 0;
     width: 100px;
     height: 36px;

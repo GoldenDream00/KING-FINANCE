@@ -129,6 +129,7 @@ const Element = styled.div`
   height: fit-content;
   font-size: 15px;
   padding-top: 0.001rem;
+  text-align: center;
   @media screen and (max-width: 540px) {
     font-size: 13px;
   }

@@ -18,7 +18,7 @@ import {
   MobileBoxKingland,
   KingLand
 } from 'src/config/images';
-import { t } from 'i18next';
+import { useTranslation } from 'react-i18next';
 
 export const LandingDetails = () => {
   useEffect(() => {
@@ -26,6 +26,7 @@ export const LandingDetails = () => {
     Aos.refresh();
   }, []);
 
+  const { t } = useTranslation();
   return (
     <LandingDetailsWrapper>
       <Metaverse data-aos="fade-up" data-aos-delay="500" data-aos-duration="1000">

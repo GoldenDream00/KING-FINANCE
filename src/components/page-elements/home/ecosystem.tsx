@@ -224,6 +224,7 @@ const EcoSystemContainer = styled.div`
 const WholeSystem = styled.p`
   font-size: 25px;
   font-family: 'gotham-thin';
+  text-align: center;
 
   @media screen and (max-width: 640px) {
     font-size: 20px;
