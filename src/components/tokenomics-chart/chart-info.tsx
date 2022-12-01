@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { TokenData } from 'src/components/tokenomics-chart/data';
+import { useTranslation } from 'react-i18next';
 
 interface TokenStatusProps {
   color: string;
@@ -8,6 +8,33 @@ interface TokenStatusProps {
 }
 
 export const TokenChartInfo = () => {
+  const { t } = useTranslation();
+  const TokenData = [
+    {
+      id: `${t('token.staking')}`,
+      label: `${t('token.staking')} 4%`,
+      value: 4,
+      color: '#B1B1B1'
+    },
+    {
+      id: `${t('token.burned')}`,
+      label: `${t('token.burned')} 20%`,
+      value: 20,
+      color: '#FEE496'
+    },
+    {
+      id: `${t('token.holding')}`,
+      label: `${t('token.holding')} 60%`,
+      value: 60,
+      color: '#FBA037'
+    },
+    {
+      id: `${t('token.liquidity')}`,
+      label: `${t('token.liquidity')} 16%`,
+      value: 16,
+      color: '#FFFFFF'
+    }
+  ];
   return (
     <InfoContainer>
       {TokenData.map((token, index) => (
