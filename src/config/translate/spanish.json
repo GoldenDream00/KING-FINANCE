@@ -30,19 +30,19 @@
     "terms": "Términos de uso"
   },
   "token": {
-    "liquidity": "",
-    "staking": "",
-    "burned": "",
-    "holding": "",
-    "contractaddress": "",
-    "announce": "",
-    "buyking": "",
-    "newlisting": "",
-    "exclusive": "",
-    "tokendetails1": "",
-    "tokendetails2": "",
-    "tokendetails3": "",
-    "stakingplatform": "",
-    "launch": ""
+    "liquidity": "Liquidez",
+    "staking": "Staking",
+    "burned": "Burned",
+    "holding": "Holdings",
+    "contractaddress": "DIRECCIÓN DEL CONTRATO",
+    "announce": "por anunciar",
+    "buyking": "COMPRA KING",
+    "newlisting": "Nuevos listings próximamente",
+    "exclusive": "Una utilidad <span style='font-family: gotham-bold'>exclusiva</span>",
+    "tokendetails1": "Solo existe un <span style='font-family: gotham-bold'>$KING</span> para reinar. <span style='font-family: gotham-bold'>$KING</span> es la única moneda que jugará un papel esencial en nuestras tres ramas.",
+    "tokendetails2": "El equilibrio económico interno en <span style='font-family: gotham-bold'>KING</span> se encuentra en la distribución de la moneda. Nuestra cryptomoneda es un activo apreciativo y deflacionario que te permitirá comprar NFTs, terrenos digitales, cupones de competición online, fracciones de propiedades en el juego y, lo más importante, es un activo que te convertirá en un usuario exclusivo de nuestras plataformas (KingFloki, KingPad y KingLand).",
+    "tokendetails3": "En resumen, <span style='font-family: gotham-bold'>$KING</span> se revaloriza a medida que el ecosistema interno crece, convirtiéndote en un accionista real de la empresa y su éxito.",
+    "stakingplatform": "Plataforma de staking",
+    "launch": "ABRE LA APP"
   }
 }

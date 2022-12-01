@@ -30,19 +30,19 @@
     "terms": "Bedingungen von verwenden"
   },
   "token": {
-    "liquidity": "",
-    "staking": "",
-    "burned": "",
-    "holding": "",
-    "contractaddress": "",
-    "announce": "",
-    "buyking": "",
-    "newlisting": "",
-    "exclusive": "",
-    "tokendetails1": "",
-    "tokendetails2": "",
-    "tokendetails3": "",
-    "stakingplatform": "",
-    "launch": ""
+    "liquidity": "Liquidität",
+    "staking": "Staking",
+    "burned": "Burned",
+    "holding": "Holdings",
+    "contractaddress": "VERTRAGSADRESSE",
+    "announce": "wird noch bekannt gegeben",
+    "buyking": "KING KAUFEN",
+    "newlisting": "Noue listings in Kürze",
+    "exclusive": "Ein exklusiver <span style='font-family: gotham-bold'>Anwendungsfall</span>",
+    "tokendetails1": "Es gibt nur einen <span style='font-family: gotham-bold'>$KING</span>, der sie alle regiert. <span style='font-family: gotham-bold'>$KING</span> ist unsere einzige Währung, die in unseren drei Niederlassungen eine wichtige Rolle spielen wird.",
+    "tokendetails2": "Das interne wirtschaftliche Gleichgewicht wird bei <span style='font-family: gotham-bold'>KING</span> durch unsere Münzverteilung hergestellt. Unsere Kryptowährung ist ein wertsteigernder und deflationärer Vermögenswert, der es Ihnen ermöglicht, im Spiel NFTs, digitales Land, Online-Wettbewerbsgutscheine, Immobilienanteile und vor allem einen Vermögenswert zu erwerben, der Sie zu einem exklusiven Nutzer unserer gefragten Plattformen (KingFloki, KingPad und KingLand) macht.",
+    "tokendetails3": "Kurz gesagt, <span style='font-family: gotham-bold'>$KING</span> steigt mit dem Wachstum des internen Ökosystems und macht Sie zu einem echten Anteilseigner des Unternehmens und seines Erfolgs.",
+    "stakingplatform": "Staking Plattform",
+    "launch": "APP STARTEN"
   }
 }
