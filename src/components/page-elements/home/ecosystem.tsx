@@ -234,6 +234,10 @@ const WholeSystem = styled.p`
     font-size: 15px;
   }
 
+  @media screen and (max-width: 420px) {
+    font-size: 12px;
+  }
+
   .bold {
     font-family: 'gotham-book';
     font-weight: bold;

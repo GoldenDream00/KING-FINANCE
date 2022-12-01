@@ -100,7 +100,7 @@ export const Header = () => {
           </LogoButtons>
 
           <ButtonGroup>
-            <a href={'https://kingland.vercel.app'} rel="noopener noreferrer">
+            <a href={'https://www.kingflokiworld.com'} rel="noopener noreferrer">
               <KingFlokiButton className="btn-kingfloki" />
             </a>
             <a href={'https://kingland.vercel.app'} rel="noopener noreferrer">

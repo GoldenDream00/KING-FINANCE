@@ -332,6 +332,7 @@ const Game = styled.div`
           margin-top: 0.5rem;
           font-family: 'gotham-bold';
           font-size: 5rem;
+          text-align: center;
 
           @media screen and (max-width: 640px) {
             font-size: 2.5rem;
@@ -433,7 +434,7 @@ const Game = styled.div`
           margin-top: 0.5rem;
           font-family: 'gotham-bold';
           font-size: 4rem;
-
+          text-align: center;
           @media screen and (max-width: 640px) {
             font-size: 2.5rem;
           }
