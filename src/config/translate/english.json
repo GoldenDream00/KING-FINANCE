@@ -29,5 +29,20 @@
     "privacy": "Privacy Police",
     "terms": "Terms of use"
   },
-  "token": {}
+  "token": {
+    "liquidity": "LIQUIDITY",
+    "staking": "STAKING",
+    "burned": "BURNED",
+    "holding": "HOLDINGS",
+    "contractaddress": "CONTRACT ADDRESS",
+    "announce": "To be announced",
+    "buyking": "BUY KING",
+    "newlisting": "New listings coming soon",
+    "exclusive": "An exclusive <span style='font-family:gotham-bold'>use case</span>",
+    "tokendetails1": "There's only one <span style='font-family:gotham-bold'>$KING</span> to rule them all. <span style='font-family:gotham-bold'>$KING</span> is indeed our one and only currency that will play an essential role within our three branches.",
+    "tokendetails2": "Internal economical balance is found within <span style='font-family:gotham-bold'>KING</span> through our coin distribution. Our crypto-currency is an appreciative and deflationary asset that will allow you to purchase in game NFT’s, digital land, online competition vouchers, real estate fractions and most importantly, an asset that will make you an exclusive user of our demanded platforms (KingFloki, KingPad and KingLand).",
+    "tokendetails3": "In fine, <span style='font-family:gotham-bold'>$KING</span> appreciates as the internal ecosystem grows, making you an actual shareholder of the company and its success.",
+    "stakingplatform": "<span style='font-family:gotham-bold'>Staking</span> platform",
+    "launch": "LAUNCH APP"
+  }
 }

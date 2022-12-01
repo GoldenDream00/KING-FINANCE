@@ -105,6 +105,7 @@ const SmallText = styled.p`
 
 const TextBox = styled.div`
   font-size: 18px;
+  z-index: 100;
 
   color: ${(props) => props.theme.white};
   max-width: 840px;

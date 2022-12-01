@@ -29,5 +29,20 @@
     "privacy": "Datenschutz Bestimmungen",
     "terms": "Bedingungen von verwenden"
   },
-  "token": {}
+  "token": {
+    "liquidity": "",
+    "staking": "",
+    "burned": "",
+    "holding": "",
+    "contractaddress": "",
+    "announce": "",
+    "buyking": "",
+    "newlisting": "",
+    "exclusive": "",
+    "tokendetails1": "",
+    "tokendetails2": "",
+    "tokendetails3": "",
+    "stakingplatform": "",
+    "launch": ""
+  }
 }

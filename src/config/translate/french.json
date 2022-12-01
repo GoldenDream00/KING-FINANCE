@@ -29,5 +29,20 @@
     "privacy": "Politique de confidentialité",
     "terms": "Conditions d’utilisation"
   },
-  "token": {}
+  "token": {
+    "liquidity": "",
+    "staking": "",
+    "burned": "",
+    "holding": "",
+    "contractaddress": "",
+    "announce": "",
+    "buyking": "",
+    "newlisting": "",
+    "exclusive": "",
+    "tokendetails1": "",
+    "tokendetails2": "",
+    "tokendetails3": "",
+    "stakingplatform": "",
+    "launch": ""
+  }
 }
