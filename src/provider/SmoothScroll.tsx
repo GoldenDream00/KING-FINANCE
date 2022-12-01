@@ -26,12 +26,12 @@ export const SmoothScrollProvider = ({ children }: SmoothScrollProps) => {
   };
 
   useEffect(() => {
-    setTimeout(setBodyHeight, 100);
+    setTimeout(setBodyHeight, 500);
   }, []);
 
   // 4.
   useEffect(() => {
-    setTimeout(setBodyHeight, 100);
+    setTimeout(setBodyHeight, 500);
   }, [windowSize, navigate]);
 
   const setBodyHeight = () => {
