@@ -29,7 +29,6 @@ export const LandingDetails = () => {
 
   const { t } = useTranslation();
   const { lang } = useStore();
-  console.log('lang: ', lang);
   return (
     <LandingDetailsWrapper>
       <Metaverse data-aos="fade-up" data-aos-delay="500" data-aos-duration="1000">
@@ -63,8 +62,8 @@ export const LandingDetails = () => {
           </video>
           <div className="background-overlay">
             <div className="to-earn">
-              <div className="play-to">{t('home.playto')}</div>
-              <div className="earn">{t('home.earn')}</div>
+              <div className="play-to">{t('home.playto')} </div>
+              <EarnText language={lang}>{t('home.earn')}</EarnText>
             </div>
             <button className="play-button">{t('home.playnow')}</button>
           </div>
@@ -79,8 +78,9 @@ export const LandingDetails = () => {
               <img src={KingPad} alt="king-pad" className="king-pad" />
             </div>
             <div className="safe-place">
-              <p>{t('home.safeplace')}</p>
-              <p>{t('home.jointhebest')}</p>
+              <p>
+                {t('home.safeplace')} {t('home.jointhebest')}
+              </p>
             </div>
             <button className="comming-soon">{t('home.comingsoon')}</button>
           </div>
@@ -95,8 +95,9 @@ export const LandingDetails = () => {
               <img src={KingLand} alt="king-land" className="king-land" />
             </div>
             <div className="real-estate">
-              <p>{t('home.beking')} </p>
-              <p>{t('home.realestate')}</p>
+              <p>
+                {t('home.beking')} {t('home.realestate')}
+              </p>
             </div>
             <button className="comming-soon">{t('home.comingsoon')}</button>
           </div>
@@ -325,7 +326,7 @@ const Game = styled.div`
           }
 
           @media screen and (max-width: 480px) {
-            font-size: 1.5rem;
+            font-size: 1.25rem;
           }
         }
 
@@ -427,17 +428,7 @@ const Game = styled.div`
           }
 
           @media screen and (max-width: 480px) {
-            font-size: 1.5rem;
-          }
-        }
-
-        .earn {
-          margin-top: 0.5rem;
-          font-family: 'gotham-bold';
-          font-size: 4rem;
-          text-align: center;
-          @media screen and (max-width: 640px) {
-            font-size: 2.5rem;
+            font-size: 1.25rem;
           }
         }
       }
@@ -587,11 +578,13 @@ const KingPadSection = styled.div`
         @media screen and (max-width: 840px) {
           font-size: 20px;
           margin-top: -10px;
+          max-width: 280px;
         }
 
         @media screen and (max-width: 640px) {
           flex-direction: row;
           margin-top: 0;
+          text-align: center;
         }
 
         @media screen and (max-width: 480px) {
@@ -734,14 +727,8 @@ const KingLandSection = styled.div`
 
       .real-estate {
         display: flex;
-        display: -webkit-flex;
-        display: -moz-flex;
-        display: -ms-flex;
         flex-direction: column;
-        -webkit-flex-direction: column;
         align-items: flex-start;
-        -webkit-align-items: flex-start;
-        max-width: 380px;
 
         @media screen and (max-width: 1366px) {
           font-size: 25px;
@@ -750,16 +737,16 @@ const KingLandSection = styled.div`
         @media screen and (max-width: 840px) {
           font-size: 20px;
           margin-top: -10px;
+          max-width: 280px;
         }
 
         @media screen and (max-width: 640px) {
           flex-direction: row;
-          -webkit-flex-direction: row;
           margin-top: 0;
+          text-align: center;
         }
 
         @media screen and (max-width: 480px) {
-          -webkit-flex-direction: row;
           font-size: 15px;
         }
       }
@@ -796,4 +783,96 @@ const KingLandSection = styled.div`
       }
     }
   }
+`;
+
+// interface EarnTextProviderProps {
+//   language: string;
+//   children?: string;
+// }
+
+// const EarnTextProvider = ({ language, children }: EarnTextProviderProps) => {
+//   return <EarnText language={language}>{children}</EarnText>;
+// };
+
+interface EarnTextProps {
+  language: string;
+}
+
+const EarnText = styled.div<EarnTextProps>`
+  margin-top: 0.5rem;
+  font-family: 'gotham-bold';
+  font-size: 4rem;
+  text-align: center;
+  @media screen and (max-width: 640px) {
+    font-size: 2.5rem;
+  }
+
+  /* @media screen and (max-width: 1092px) {
+    font-size: ${(props) => (props.language === 'GER' || props.language === 'ITA' ? '3.5rem' : '4rem')};
+  }
+
+  @media screen and (max-width: 840px) {
+    font-size: ${(props) =>
+    props.language === 'GER' || props.language === 'ITA' || props.language === 'SPA' ? '3rem' : '4rem'};
+  }
+
+  @media screen and (max-width: 640px) {
+    font-size: ${(props) => (props.language === 'GER' || props.language === 'ITA' ? '2rem' : '2.5rem')};
+  }
+
+  @media screen and (max-width: 480px) {
+    font-size: ${(props) => (props.language === 'GER' || props.language === 'ITA' ? '1.5rem' : '2.5rem')};
+  }
+
+  @media screen and (max-width: 420px) {
+    font-size: ${(props) => (props.language === 'GER' || props.language === 'ITA' ? '1rem' : '2.5rem')};
+  } */
+
+  ${(props) =>
+    props.language === 'GER' &&
+    `
+      @media screen and (max-width: 1092px) {
+        font-size: 3.5rem;
+      }
+      @media screen and (max-width: 840px) {
+        font-size: 3rem;
+      }
+      @media screen and (max-width: 640px) {
+        font-size: 2rem;
+      }
+      @media screen and (max-width: 480px) {
+        font-size: 1.5rem;
+      }
+      @media screen and (max-width: 420px) {
+        font-size: 1rem;
+      }
+    `}
+
+  ${(props) =>
+    props.language === 'ITA' &&
+    `
+      @media screen and (max-width: 1092px) {
+        font-size: 3.5rem;
+      }
+      @media screen and (max-width: 840px) {
+        font-size: 3rem;
+      }
+      @media screen and (max-width: 640px) {
+        font-size: 2rem;
+      }
+      @media screen and (max-width: 480px) {
+        font-size: 1.5rem;
+      }
+      @media screen and (max-width: 420px) {
+        font-size: 1rem;
+      }
+    `}
+
+      ${(props) =>
+    props.language === 'SPA' &&
+    `
+      @media screen and (max-width: 420px) {
+        font-size: 2rem;
+      }
+    `}
 `;
