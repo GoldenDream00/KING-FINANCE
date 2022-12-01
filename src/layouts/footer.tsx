@@ -126,7 +126,7 @@ const Element = styled.div`
   font-family: 'gotham-book';
   text-transform: none;
   width: fit-content;
-  height: fit-content;
+  height: 25px;
   font-size: 15px;
   padding-top: 0.001rem;
   text-align: center;
