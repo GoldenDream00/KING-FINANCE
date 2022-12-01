@@ -430,7 +430,7 @@ const Game = styled.div`
         .earn {
           margin-top: 0.5rem;
           font-family: 'gotham-bold';
-          font-size: 5rem;
+          font-size: 4rem;
 
           @media screen and (max-width: 640px) {
             font-size: 2.5rem;
