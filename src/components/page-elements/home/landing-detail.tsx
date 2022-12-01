@@ -43,7 +43,7 @@ export const LandingDetails = () => {
         <div className="nft-game" data-aos="fade-right" data-aos-delay="500" data-aos-duration="1000">
           <img src={DeskNftGame} className="desktop-nft-game-gif" alt="nft-game-gif" />
           <img src={MobileNftGame} className="mobile-nft-game-gif" alt="nft-game-gif" />
-          <div className="background-overlay" lang={lang}>
+          <div className="background-overlay">
             <div className="in-game-nfts">
               <div className="in-game">{t('home.ingame')}</div>
               <div className="nfts">NFTs</div>
@@ -63,7 +63,7 @@ export const LandingDetails = () => {
           <div className="background-overlay">
             <div className="to-earn">
               <div className="play-to">{t('home.playto')} </div>
-              <EarnText language={lang}>{t('home.earn')}</EarnText>
+              <EarnText language={lang}> {t('home.earn')}</EarnText>
             </div>
             <button className="play-button">{t('home.playnow')}</button>
           </div>
@@ -74,15 +74,12 @@ export const LandingDetails = () => {
         <img src={MobileBoxKingPad} className="mobile-box-kingpad" alt="mobile-box-kingpad" />
         <div className="background-overlay">
           <KingpadDetails language={lang}>
-            <div className="kingpad-logo">
-              <img src={KingPad} alt="king-pad" className="king-pad" />
-            </div>
-            <div className="safe-place">
-              <p>
-                {t('home.safeplace')} {t('home.jointhebest')}
-              </p>
-            </div>
-            <button className="comming-soon">{t('home.comingsoon')}</button>
+            <KingLogo src={KingPad} alt="king-pad" className="king-pad" />
+            <KingDetailText language={lang}>
+              <p>{t('home.safeplace')} </p>
+              <p> {t('home.jointhebest')}</p>
+            </KingDetailText>
+            <ComingSoonBtn>{t('home.comingsoon')}</ComingSoonBtn>
           </KingpadDetails>
         </div>
       </KingPadSection>
@@ -90,17 +87,14 @@ export const LandingDetails = () => {
         <img src={DeskBoxKingland} className="desktop-box-kingland" alt="desktop-box-kingland" />
         <img src={MobileBoxKingland} className="mobile-box-kingland" alt="mobile-box-kingland" />
         <div className="background-overlay">
-          <div className="kingland-details">
-            <div className="kingland-logo">
-              <img src={KingLand} alt="king-land" className="king-land" />
-            </div>
-            <div className="real-estate">
-              <p>
-                {t('home.beking')} {t('home.realestate')}
-              </p>
-            </div>
-            <button className="comming-soon">{t('home.comingsoon')}</button>
-          </div>
+          <KingpadDetails language={lang}>
+            <KingLogo src={KingLand} alt="king-land" className="king-land" />
+            <KingDetailText language={lang}>
+              <p>{t('home.beking')}</p>
+              <p>{t('home.realestate')}</p>
+            </KingDetailText>
+            <ComingSoonBtn>{t('home.comingsoon')}</ComingSoonBtn>
+          </KingpadDetails>
         </div>
       </KingLandSection>
     </LandingDetailsWrapper>
@@ -138,13 +132,8 @@ const Metaverse = styled.div`
 
   @media screen and (max-width: 640px) {
     display: flex;
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flex;
     flex-direction: column;
-    -webkit-flex-direction: column;
     align-items: center;
-    -webkit-aligm-items: center;
     height: 250px;
   }
 
@@ -524,82 +513,6 @@ const KingPadSection = styled.div`
       margin-top: 1.5rem;
       align-items: center;
     }
-
-    .kingpad-logo {
-      .king-pad {
-        width: 100px;
-        height: 100px;
-
-        @media screen and (max-width: 1366px) {
-          width: 80px;
-          height: 80px;
-        }
-
-        @media screen and (max-width: 840px) {
-          width: 60px;
-          height: 60px;
-        }
-      }
-    }
-
-    .safe-place {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-
-      @media screen and (max-width: 1366px) {
-        font-size: 25px;
-      }
-
-      @media screen and (max-width: 840px) {
-        font-size: 20px;
-        margin-top: -10px;
-        max-width: 280px;
-      }
-
-      @media screen and (max-width: 640px) {
-        flex-direction: row;
-        margin-top: 0;
-        text-align: center;
-      }
-
-      @media screen and (max-width: 480px) {
-        flex-direction: row;
-        font-size: 15px;
-      }
-    }
-
-    .comming-soon {
-      background: #191919 0% 0% no-repeat padding-box;
-      border-radius: 31px;
-      padding: 16px 24px;
-      font-family: 'gotham-bold';
-      font-size: 15px;
-      transition: all linear 0.3s;
-      color: #fff;
-      border: none;
-      text-transform: uppercase;
-      margin-top: 3px;
-
-      &:hover {
-        color: rgb(156, 153, 153);
-      }
-
-      @media screen and (max-width: 1366px) {
-        font-size: 15px;
-        padding: 12px 18px;
-      }
-
-      @media screen and (max-width: 840px) {
-        font-size: 12px;
-        padding: 8px 12px;
-      }
-
-      @media screen and (max-width: 640px) {
-        font-size: 15px;
-        padding: 12px 18px;
-      }
-    }
   }
 `;
 
@@ -682,93 +595,9 @@ const KingLandSection = styled.div`
         align-items: center;
         margin-left: 0;
       }
-
-      .kingland-logo {
-        .king-land {
-          width: 100px;
-          height: 100px;
-
-          @media screen and (max-width: 1366px) {
-            width: 80px;
-            height: 80px;
-          }
-
-          @media screen and (max-width: 840px) {
-            width: 60px;
-            height: 60px;
-          }
-        }
-      }
-
-      .real-estate {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-
-        @media screen and (max-width: 1366px) {
-          font-size: 25px;
-        }
-
-        @media screen and (max-width: 840px) {
-          font-size: 20px;
-          margin-top: -10px;
-          max-width: 280px;
-        }
-
-        @media screen and (max-width: 640px) {
-          flex-direction: row;
-          margin-top: 0;
-          text-align: center;
-        }
-
-        @media screen and (max-width: 480px) {
-          font-size: 15px;
-        }
-      }
-
-      .comming-soon {
-        background: #191919 0% 0% no-repeat padding-box;
-        border-radius: 31px;
-        padding: 16px 24px;
-        font-family: 'gotham-bold';
-        font-size: 15px;
-        transition: all linear 0.3s;
-        color: #fff;
-        border: none;
-        text-transform: uppercase;
-
-        &:hover {
-          color: rgb(156, 153, 153);
-        }
-
-        @media screen and (max-width: 1366px) {
-          font-size: 15px;
-          padding: 12px 18px;
-        }
-
-        @media screen and (max-width: 840px) {
-          font-size: 12px;
-          padding: 8px 12px;
-        }
-
-        @media screen and (max-width: 640px) {
-          font-size: 15px;
-          padding: 12px 18px;
-        }
-      }
     }
   }
 `;
-
-// interface EarnTextProviderProps {
-//   language: string;
-//   children?: string;
-// }
-
-// const EarnTextProvider = ({ language, children }: EarnTextProviderProps) => {
-//   return <EarnText language={language}>{children}</EarnText>;
-// };
-
 interface EarnTextProps {
   language: string;
 }
@@ -781,27 +610,6 @@ const EarnText = styled.div<EarnTextProps>`
   @media screen and (max-width: 640px) {
     font-size: 2.5rem;
   }
-
-  /* @media screen and (max-width: 1092px) {
-    font-size: ${(props) => (props.language === 'GER' || props.language === 'ITA' ? '3.5rem' : '4rem')};
-  }
-
-  @media screen and (max-width: 840px) {
-    font-size: ${(props) =>
-    props.language === 'GER' || props.language === 'ITA' || props.language === 'SPA' ? '3rem' : '4rem'};
-  }
-
-  @media screen and (max-width: 640px) {
-    font-size: ${(props) => (props.language === 'GER' || props.language === 'ITA' ? '2rem' : '2.5rem')};
-  }
-
-  @media screen and (max-width: 480px) {
-    font-size: ${(props) => (props.language === 'GER' || props.language === 'ITA' ? '1.5rem' : '2.5rem')};
-  }
-
-  @media screen and (max-width: 420px) {
-    font-size: ${(props) => (props.language === 'GER' || props.language === 'ITA' ? '1rem' : '2.5rem')};
-  } */
 
   ${(props) =>
     props.language === 'GER' &&
@@ -879,6 +687,83 @@ const KingpadDetails = styled.div<EarnTextProps>`
   ${(props) =>
     props.language === 'GER' &&
     `
-      gap: 0.25rem;
+      gap: 0.5rem;
+      @media screen and (max-width: 640px) {
+        gap: 1rem;
+      }
   `}
+`;
+
+const KingDetailText = styled.div<EarnTextProps>`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  @media screen and (max-width: 1366px) {
+    font-size: 25px;
+  }
+
+  @media screen and (max-width: 840px) {
+    font-size: 20px;
+    margin-top: -10px;
+  }
+
+  @media screen and (max-width: 640px) {
+    margin-top: 0;
+    text-align: center;
+    gap: 7px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media screen and (max-width: 480px) {
+    font-size: 15px;
+  }
+`;
+
+const KingLogo = styled.img`
+  width: 100px;
+  height: 100px;
+
+  @media screen and (max-width: 1366px) {
+    width: 80px;
+    height: 80px;
+  }
+
+  @media screen and (max-width: 840px) {
+    width: 60px;
+    height: 60px;
+  }
+`;
+
+const ComingSoonBtn = styled.button`
+  background: #191919 0% 0% no-repeat padding-box;
+  border-radius: 31px;
+  padding: 16px 24px;
+  font-family: 'gotham-bold';
+  font-size: 15px;
+  transition: all linear 0.3s;
+  color: #fff;
+  border: none;
+  text-transform: uppercase;
+  margin-top: 3px;
+
+  &:hover {
+    color: rgb(156, 153, 153);
+  }
+
+  @media screen and (max-width: 1366px) {
+    font-size: 15px;
+    padding: 12px 18px;
+  }
+
+  @media screen and (max-width: 840px) {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+
+  @media screen and (max-width: 640px) {
+    font-size: 15px;
+    padding: 12px 18px;
+  }
 `;
