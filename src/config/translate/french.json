@@ -30,19 +30,19 @@
     "terms": "Conditions d’utilisation"
   },
   "token": {
-    "liquidity": "Liquidez",
+    "liquidity": "Liquidité",
     "staking": "Staking",
     "burned": "Burned",
     "holding": "Holdings",
-    "contractaddress": "DIRECCIÓN DEL CONTRATO",
-    "announce": "por anunciar",
-    "buyking": "COMPRA KING",
-    "newlisting": "Nuevos listings próximamente",
-    "exclusive": "Una utilidad <span style='font-family: gotham-bold'>exclusiva</span>",
-    "tokendetails1": "Solo existe un <span style='font-family: gotham-bold'>$KING</span> para reinar. $KING es la única moneda que jugará un papel esencial en nuestras tres ramas.",
-    "tokendetails2": "El equilibrio económico interno en <span style='font-family: gotham-bold'>KING</span> se encuentra en la distribución de la moneda. Nuestra cryptomoneda es un activo apreciativo y deflacionario que te permitirá comprar NFTs, terrenos digitales, cupones de competición online, fracciones de propiedades en el juego y, lo más importante, es un activo que te convertirá en un usuario exclusivo de nuestras plataformas (KingFloki, KingPad y KingLand).",
-    "tokendetails3": " En resumen, <span style='font-family: gotham-bold'>$KING</span> se revaloriza a medida que el ecosistema interno crece, convirtiéndote en un accionista real de la empresa y su éxito.",
-    "stakingplatform": "Plataforma de staking",
-    "launch": "ABRE LA APP"
+    "contractaddress": "ADRESSE DU CONTRAT",
+    "announce": " à annoncer",
+    "buyking": "ACHÈTE KING",
+    "newlisting": "Nouvelles listings bientôt disponibles",
+    "exclusive": "Un utilitaire <span style='font-family: gotham-bold'>exclusif</span>",
+    "tokendetails1": "Il n’y a qu’un seul <span style='font-family: gotham-bold'>$KING</span> pour régner. <span style='font-family: gotham-bold'>$KING</span> est la seule monnaie qui jouera un rôle essentiel dans nos trois sections.",
+    "tokendetails2": "L’équilibre économique interne de <span style='font-family: gotham-bold'>$KING</span> se trouve dans la distribution de la monnaie. Notre crypto-monnaie est un actif appréciatif et déflationniste qui vous permettra d’acheter des NFT, des terrains numériques, des coupons de concours en ligne, des fractions de propriété dans le jeu, et surtout, c’est un actif qui fera de vous un utilisateur exclusif de nos plate-formes (KingFloki, KingPaad et KingLand).",
+    "tokendetails3": "Bref, <span style='font-family: gotham-bold'>$KING</span> s’apprécie au fur et à mesure que l’écosystème interne se développe, faisant de vous un véritable actionnaire de l’entreprise et de son succès.",
+    "stakingplatform": "Plate-forme de staking",
+    "launch": "LANCER L’APP"
   }
 }
