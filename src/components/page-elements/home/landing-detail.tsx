@@ -29,6 +29,7 @@ export const LandingDetails = () => {
 
   const { t } = useTranslation();
   const { lang } = useStore();
+  console.log('lang: ', lang);
   return (
     <LandingDetailsWrapper>
       <Metaverse data-aos="fade-up" data-aos-delay="500" data-aos-duration="1000">
@@ -43,7 +44,7 @@ export const LandingDetails = () => {
         <div className="nft-game" data-aos="fade-right" data-aos-delay="500" data-aos-duration="1000">
           <img src={DeskNftGame} className="desktop-nft-game-gif" alt="nft-game-gif" />
           <img src={MobileNftGame} className="mobile-nft-game-gif" alt="nft-game-gif" />
-          <div className="background-overlay">
+          <div className="background-overlay" lang={lang}>
             <div className="in-game-nfts">
               <div className="in-game">{t('home.ingame')}</div>
               <div className="nfts">NFTs</div>
@@ -346,7 +347,7 @@ const Game = styled.div`
         border: none;
         padding: 18px 24px;
         font-family: 'gotham-bold';
-        font-size: 20px;
+        font-size: 15px;
         transition: all linear 0.3s;
         text-transform: uppercase;
         color: #fff;
@@ -361,13 +362,13 @@ const Game = styled.div`
         }
 
         @media screen and (max-width: 640px) {
-          padding: 18px 24px;
-          font-size: 15px;
+          padding: 12px 24px;
+          font-size: 11px;
         }
 
         @media screen and (max-width: 420px) {
           padding: 12px 16px;
-          font-size: 15px;
+          font-size: 10px;
         }
       }
     }
@@ -444,14 +445,13 @@ const Game = styled.div`
       .play-button {
         background: #191919 0% 0% no-repeat padding-box;
         border-radius: 31px;
+        border: none;
         padding: 18px 24px;
         font-family: 'gotham-bold';
-        font-size: 20px;
+        font-size: 15px;
         transition: all linear 0.3s;
-        color: #fff;
         text-transform: uppercase;
-        border: none;
-        cursor: pointer;
+        color: #fff;
 
         &:hover {
           color: rgb(156, 153, 153);
@@ -463,13 +463,13 @@ const Game = styled.div`
         }
 
         @media screen and (max-width: 640px) {
-          padding: 18px 24px;
-          font-size: 15px;
+          padding: 12px 24px;
+          font-size: 11px;
         }
 
         @media screen and (max-width: 420px) {
           padding: 12px 16px;
-          font-size: 15px;
+          font-size: 10px;
         }
       }
     }
@@ -521,8 +521,7 @@ const KingPadSection = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-end;
-    margin-right: 5rem;
+    align-items: flex-start;
     gap: 1rem;
     top: 0;
     font-family: 'gotham-bold';
@@ -539,15 +538,24 @@ const KingPadSection = styled.div`
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      gap: 2rem;
+      gap: 1rem;
+      margin-left: 40rem;
 
       @media screen and (max-width: 1366px) {
-        gap: 1rem;
+        margin-left: 35rem;
+      }
+
+      @media screen and (max-width: 1092px) {
+        margin-left: 30rem;
+      }
+
+      @media screen and (max-width: 840px) {
+        margin-left: 25rem;
       }
 
       @media screen and (max-width: 640px) {
-        gap: 1rem;
         align-items: center;
+        margin-left: 0;
       }
 
       .kingpad-logo {
@@ -571,8 +579,6 @@ const KingPadSection = styled.div`
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        gap: 0.5rem;
-        max-width: 300px;
 
         @media screen and (max-width: 1366px) {
           font-size: 25px;
@@ -637,15 +643,10 @@ const KingLandSection = styled.div`
   border-radius: 50px;
   position: relative;
   display: flex;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
   justify-content: flex-end;
-  -webkit-justify-content: flex-end;
 
   @media screen and (max-width: 640px) {
     justify-content: center;
-    -webkit-justify-content: center;
   }
 
   .desktop-box-kingland {
@@ -674,16 +675,9 @@ const KingLandSection = styled.div`
     width: 100%;
     height: 100%;
     display: flex;
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flex;
     flex-direction: column;
-    -webkit-flex-direction: column;
     justify-content: center;
-    -webkit-justify-content: center;
-    align-items: flex-end;
-    -webkit-align-items: flex-end;
-    margin-right: 5rem;
+    align-items: flex-start;
     gap: 1rem;
     top: 0;
     font-family: 'gotham-bold';
@@ -699,22 +693,26 @@ const KingLandSection = styled.div`
 
     .kingland-details {
       display: flex;
-      display: -webkit-flex;
-      display: -moz-flex;
-      display: -ms-flex;
-      -webkit-flex-direction: column;
       flex-direction: column;
       align-items: flex-start;
-      -webkit-align-items: flex-start;
-      gap: 2rem;
+      gap: 1rem;
+      margin-left: 40rem;
 
       @media screen and (max-width: 1366px) {
-        gap: 1rem;
+        margin-left: 35rem;
+      }
+
+      @media screen and (max-width: 1092px) {
+        margin-left: 30rem;
+      }
+
+      @media screen and (max-width: 840px) {
+        margin-left: 25rem;
       }
 
       @media screen and (max-width: 640px) {
-        gap: 1rem;
         align-items: center;
+        margin-left: 0;
       }
 
       .kingland-logo {
@@ -743,8 +741,7 @@ const KingLandSection = styled.div`
         -webkit-flex-direction: column;
         align-items: flex-start;
         -webkit-align-items: flex-start;
-        gap: 0.5rem;
-        max-width: 300px;
+        max-width: 380px;
 
         @media screen and (max-width: 1366px) {
           font-size: 25px;
