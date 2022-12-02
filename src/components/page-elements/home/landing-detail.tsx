@@ -658,6 +658,18 @@ const EarnText = styled.div<EarnTextProps>`
         font-size: 2rem;
       }
   `}
+
+    ${(props) =>
+    props.language === 'FRE' &&
+    `
+      @media screen and (max-width: 480px) {
+        font-size: 2rem;
+      }
+
+      @media screen and (max-width: 420px) {
+        font-size: 1.5rem;
+      }
+  `}
 `;
 
 const KingpadDetails = styled.div<EarnTextProps>`

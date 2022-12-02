@@ -1,13 +1,15 @@
 import { useTranslation } from 'react-i18next';
 import { DeskBgMain } from 'src/config/images';
+import { useStore } from 'src/context/StoreContext';
 import styled from 'styled-components';
 
 export const Exclusive = () => {
   const { t } = useTranslation();
+  const { lang } = useStore();
   return (
     <ExclusiveWrapper>
       <BackgroundSVG src={DeskBgMain} alt="desktop-background-svg" />
-      <ExclusiveContainer>
+      <ExclusiveContainer language={lang}>
         <SmallText dangerouslySetInnerHTML={{ __html: t('token.exclusive') }} />
         <TextBox dangerouslySetInnerHTML={{ __html: t('token.tokendetails1') }} />
         <TextBox dangerouslySetInnerHTML={{ __html: t('token.tokendetails2') }} />
@@ -43,8 +45,11 @@ const BackgroundSVG = styled.img`
   width: 100%;
   height: 100%;
 `;
+interface ExclusiveContainerProps {
+  language: string;
+}
 
-const ExclusiveContainer = styled.div`
+const ExclusiveContainer = styled.div<ExclusiveContainerProps>`
   position: absolute;
   top: 0;
   padding-top: 10rem;
@@ -73,14 +78,29 @@ const ExclusiveContainer = styled.div`
   @media screen and (max-width: 640px) {
     gap: 1.5rem;
     padding-top: 18rem;
+    ${(props) =>
+      props.language === 'CHN' &&
+      `
+      padding-top: 11rem;
+    `}
   }
 
   @media screen and (max-width: 540px) {
     padding-top: 20rem;
+    ${(props) =>
+      props.language === 'CHN' &&
+      `
+      padding-top: 14rem;
+    `}
   }
 
   @media screen and (max-width: 420px) {
     padding-top: 22rem;
+    ${(props) =>
+      props.language === 'CHN' &&
+      `
+      padding-top: 16rem;
+    `}
   }
 `;
 

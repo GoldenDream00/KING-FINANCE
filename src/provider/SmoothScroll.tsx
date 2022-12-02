@@ -26,12 +26,14 @@ export const SmoothScrollProvider = ({ children }: SmoothScrollProps) => {
   };
 
   useEffect(() => {
-    setTimeout(setBodyHeight, 500);
+    setBodyHeight();
+    requestAnimationFrame(() => smoothScrollingHandler());
   }, []);
 
   // 4.
   useEffect(() => {
-    setTimeout(setBodyHeight, 500);
+    setBodyHeight();
+    requestAnimationFrame(() => smoothScrollingHandler());
   }, [windowSize, navigate]);
 
   const setBodyHeight = () => {
@@ -42,9 +44,9 @@ export const SmoothScrollProvider = ({ children }: SmoothScrollProps) => {
   };
 
   // 5.
-  useEffect(() => {
-    requestAnimationFrame(() => smoothScrollingHandler());
-  }, []);
+  // useEffect(() => {
+  //   requestAnimationFrame(() => smoothScrollingHandler());
+  // }, []);
 
   const smoothScrollingHandler = () => {
     data.current = window.scrollY;
