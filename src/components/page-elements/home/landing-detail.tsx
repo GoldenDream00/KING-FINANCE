@@ -271,6 +271,7 @@ const Game = styled.div`
       width: 100%;
       height: 100%;
       display: block;
+      border-radius: 15%;
 
       @media screen and (max-width: 768px) {
         display: none;
@@ -281,6 +282,11 @@ const Game = styled.div`
       width: 100%;
       height: 100%;
       display: none;
+      border-radius: 60px;
+
+      @media screen and (max-width: 480px) {
+        border-radius: 35px;
+      }
 
       @media screen and (max-width: 768px) {
         display: block;
@@ -379,6 +385,7 @@ const Game = styled.div`
       width: 100%;
       height: 100%;
       display: block;
+      border-radius: 15%;
 
       @media screen and (max-width: 768px) {
         display: none;
@@ -389,6 +396,10 @@ const Game = styled.div`
       width: 100%;
       height: 100%;
       display: none;
+      border-radius: 56px;
+      @media screen and (max-width: 480px) {
+        border-radius: 35px;
+      }
 
       @media screen and (max-width: 768px) {
         display: block;

@@ -26,11 +26,10 @@ export const SmoothScrollProvider = ({ children }: SmoothScrollProps) => {
   };
 
   const handleScroll = () => {
-    console.log('load');
     setBodyHeight();
     requestAnimationFrame(() => smoothScrollingHandler());
   };
-  window.addEventListener('load', handleScroll);
+  window.addEventListener('load', () => handleScroll);
 
   // document.addEventListener('scroll', handleScroll);
   setTimeout(handleScroll, 1000);
