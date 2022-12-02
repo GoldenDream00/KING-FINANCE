@@ -121,7 +121,9 @@ const CopyRight = styled.div`
   }
 `;
 
-const Element = styled.div`
+const Element = styled.button`
+  background: none;
+
   cursor: pointer;
   color: ${(props) => props.theme.white};
   font-family: 'gotham-book';
