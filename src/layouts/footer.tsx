@@ -139,7 +139,11 @@ const Element = styled.button`
   }
 `;
 
-const Line = styled.div``;
+const Line = styled.button`
+  background: none;
+  border: none;
+  color: ${(props) => props.theme.white};
+`;
 
 const SocialLinkGroup = styled.div`
   display: flex;
