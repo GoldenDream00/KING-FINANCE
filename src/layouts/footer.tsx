@@ -130,7 +130,7 @@ const Element = styled.button`
   text-transform: none;
   width: fit-content;
   font-size: 15px;
-  padding-top: 0.001rem;
+  padding-top: 0.1rem;
   text-align: center;
   @media screen and (max-width: 540px) {
     font-size: 13px;
