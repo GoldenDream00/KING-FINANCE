@@ -105,7 +105,6 @@ const KingLogo = styled.img`
 const CopyRight = styled.div`
   display: flex;
 
-  font-family: 'gotham-book';
   gap: 2rem;
   width: 100%;
   justify-content: center;
@@ -126,7 +125,6 @@ const Element = styled.button`
   min-height: 28px;
   cursor: pointer;
   color: ${(props) => props.theme.white};
-  font-family: 'gotham-book';
   text-transform: none;
   width: fit-content;
   font-size: 15px;
