@@ -123,6 +123,7 @@ const CopyRight = styled.div`
 const Element = styled.button`
   background: none;
   min-height: 28px;
+  border: none;
   cursor: pointer;
   color: ${(props) => props.theme.white};
   text-transform: none;
