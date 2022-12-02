@@ -120,7 +120,7 @@ const CopyRight = styled.div`
   }
 `;
 
-const Element = styled.button`
+const Element = styled.div`
   background: none;
   min-height: 28px;
   cursor: pointer;
