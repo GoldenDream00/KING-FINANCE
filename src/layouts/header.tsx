@@ -40,25 +40,31 @@ export const Header = () => {
   }, [lang]);
 
   const LanguageChoose = (e: any) => {
-    const language = e.target.innerHTML;
+    let language = e.target.innerHTML;
     switch (language) {
-      case 'English':
+      case 'ENGLISH':
         setLang('ENG');
+        language = 'English';
         break;
-      case 'Spanish':
+      case 'ESPAÑOL':
         setLang('SPA');
+        language = 'Spanish';
         break;
-      case 'Italian':
+      case 'ITALIANO':
         setLang('ITA');
+        language = 'Italian';
         break;
-      case 'French':
+      case 'FRANÇAIS':
         setLang('FRE');
+        language = 'French';
         break;
-      case 'German':
+      case 'DEUTSCH':
         setLang('GER');
+        language = 'German';
         break;
-      case 'Chinese':
+      case '中文':
         setLang('CHN');
+        language = 'Chinese';
         break;
       default:
         break;
@@ -88,12 +94,12 @@ export const Header = () => {
                   )}
                 </DropdownButton>
                 <DropDownContent className="dcontent" style={{ transform: isMobOpen ? 'scale(1)' : 'scale(0)' }}>
-                  <DropdownItem onClick={LanguageChoose}>English</DropdownItem>
-                  <DropdownItem onClick={LanguageChoose}>Spanish</DropdownItem>
-                  <DropdownItem onClick={LanguageChoose}>Italian</DropdownItem>
-                  <DropdownItem onClick={LanguageChoose}>French</DropdownItem>
-                  <DropdownItem onClick={LanguageChoose}>German</DropdownItem>
-                  <DropdownItem onClick={LanguageChoose}>Chinese</DropdownItem>
+                  <DropdownItem onClick={LanguageChoose}>ENGLISH</DropdownItem>
+                  <DropdownItem onClick={LanguageChoose}>ESPAÑOL</DropdownItem>
+                  <DropdownItem onClick={LanguageChoose}>ITALIANO</DropdownItem>
+                  <DropdownItem onClick={LanguageChoose}>FRANÇAIS</DropdownItem>
+                  <DropdownItem onClick={LanguageChoose}>DEUTSCH</DropdownItem>
+                  <DropdownItem onClick={LanguageChoose}>中文</DropdownItem>
                 </DropDownContent>
               </MobileDropDownContainer>
             </RectButtons>
@@ -120,12 +126,12 @@ export const Header = () => {
               )}
             </DropdownButton>
             <DropDownContent className="dcontent" style={{ transform: isDeskOpen ? 'scale(1)' : 'scale(0)' }}>
-              <DropdownItem onClick={LanguageChoose}>English</DropdownItem>
-              <DropdownItem onClick={LanguageChoose}>Spanish</DropdownItem>
-              <DropdownItem onClick={LanguageChoose}>Italian</DropdownItem>
-              <DropdownItem onClick={LanguageChoose}>French</DropdownItem>
-              <DropdownItem onClick={LanguageChoose}>German</DropdownItem>
-              <DropdownItem onClick={LanguageChoose}>Chinese</DropdownItem>
+              <DropdownItem onClick={LanguageChoose}>ENGLISH</DropdownItem>
+              <DropdownItem onClick={LanguageChoose}>ESPAÑOL</DropdownItem>
+              <DropdownItem onClick={LanguageChoose}>ITALIANO</DropdownItem>
+              <DropdownItem onClick={LanguageChoose}>FRANÇAIS</DropdownItem>
+              <DropdownItem onClick={LanguageChoose}>DEUTSCH</DropdownItem>
+              <DropdownItem onClick={LanguageChoose}>中文</DropdownItem>
             </DropDownContent>
           </DesktopDropDownContainer>
         </RectButtonGroup>
