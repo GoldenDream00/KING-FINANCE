@@ -47,7 +47,7 @@ export const Header = () => {
         language = 'English';
         break;
       case 'ESPAÑOL':
-        setLang('SPA');
+        setLang('ESP');
         language = 'Spanish';
         break;
       case 'ITALIANO':
@@ -55,15 +55,15 @@ export const Header = () => {
         language = 'Italian';
         break;
       case 'FRANÇAIS':
-        setLang('FRE');
+        setLang('FR');
         language = 'French';
         break;
       case 'DEUTSCH':
-        setLang('GER');
+        setLang('DE');
         language = 'German';
         break;
       case '中文':
-        setLang('CHN');
+        setLang('中文');
         language = 'Chinese';
         break;
       default:
@@ -403,8 +403,16 @@ const DropDownContent = styled.div`
   top: 4rem;
   z-index: 100;
 
+  @media screen and (max-width: 720px) {
+    margin-left: -20px;
+  }
+
   @media screen and (max-width: 420px) {
     margin-left: -20px;
+  }
+
+  @media screen and (max-width: 360px) {
+    margin-left: -40px;
   }
 
   &:hover {

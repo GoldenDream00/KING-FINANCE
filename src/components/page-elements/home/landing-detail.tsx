@@ -612,7 +612,7 @@ const EarnText = styled.div<EarnTextProps>`
   }
 
   ${(props) =>
-    props.language === 'GER' &&
+    props.language === 'DE' &&
     `
       @media screen and (max-width: 1092px) {
         font-size: 3.5rem;
@@ -652,7 +652,7 @@ const EarnText = styled.div<EarnTextProps>`
     `}
 
   ${(props) =>
-    props.language === 'SPA' &&
+    props.language === 'ESP' &&
     `
       @media screen and (max-width: 420px) {
         font-size: 2rem;
@@ -660,7 +660,7 @@ const EarnText = styled.div<EarnTextProps>`
   `}
 
     ${(props) =>
-    props.language === 'FRE' &&
+    props.language === 'FR' &&
     `
       @media screen and (max-width: 480px) {
         font-size: 2rem;
@@ -697,7 +697,7 @@ const KingpadDetails = styled.div<EarnTextProps>`
   }
 
   ${(props) =>
-    props.language === 'GER' &&
+    props.language === 'DE' &&
     `
       gap: 0.5rem;
       @media screen and (max-width: 640px) {

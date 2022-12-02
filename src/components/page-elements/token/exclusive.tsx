@@ -79,7 +79,7 @@ const ExclusiveContainer = styled.div<ExclusiveContainerProps>`
     gap: 1.5rem;
     padding-top: 18rem;
     ${(props) =>
-      props.language === 'CHN' &&
+      props.language === '中文' &&
       `
       padding-top: 11rem;
     `}
@@ -88,7 +88,7 @@ const ExclusiveContainer = styled.div<ExclusiveContainerProps>`
   @media screen and (max-width: 540px) {
     padding-top: 20rem;
     ${(props) =>
-      props.language === 'CHN' &&
+      props.language === '中文' &&
       `
       padding-top: 14rem;
     `}
@@ -97,7 +97,7 @@ const ExclusiveContainer = styled.div<ExclusiveContainerProps>`
   @media screen and (max-width: 420px) {
     padding-top: 22rem;
     ${(props) =>
-      props.language === 'CHN' &&
+      props.language === '中文' &&
       `
       padding-top: 16rem;
     `}
