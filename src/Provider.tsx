@@ -16,9 +16,9 @@ const theme = {
 export const Provider = ({ children }: ProviderProps) => {
   return (
     <ThemeProvider theme={theme}>
-      <SmoothScrollProvider>
-        <StoreProvider>{children}</StoreProvider>
-      </SmoothScrollProvider>
+      <StoreProvider>
+        <SmoothScrollProvider>{children}</SmoothScrollProvider>
+      </StoreProvider>
     </ThemeProvider>
   );
 };

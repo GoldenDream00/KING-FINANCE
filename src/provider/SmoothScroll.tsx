@@ -25,28 +25,30 @@ export const SmoothScrollProvider = ({ children }: SmoothScrollProps) => {
     rounded: 0
   };
 
-  useEffect(() => {
+  const handleScroll = () => {
+    console.log('load');
     setBodyHeight();
     requestAnimationFrame(() => smoothScrollingHandler());
-  }, []);
+  };
+  window.addEventListener('load', handleScroll);
 
-  // 4.
+  // document.addEventListener('scroll', handleScroll);
+  setTimeout(handleScroll, 1000);
+
   useEffect(() => {
-    setBodyHeight();
-    requestAnimationFrame(() => smoothScrollingHandler());
-  }, [windowSize, navigate]);
+    handleScroll();
+  }, [windowSize.height, windowSize, navigate]);
 
   const setBodyHeight = () => {
     if (scrollingContainerRef.current !== null)
-      document.body.style.height = `${scrollingContainerRef?.current.scrollHeight}px`;
-    console.log('document.body.style.height: ', document.body.style.height);
-    console.log('scrollingContainerRef.current.scrollHeight: ', scrollingContainerRef.current?.scrollHeight);
+      document.body.style.height = `${scrollingContainerRef.current.getBoundingClientRect().height}px`;
+    // console.log('scrollingContainerRef.current', document.body.style.height);
   };
 
   // 5.
-  // useEffect(() => {
-  //   requestAnimationFrame(() => smoothScrollingHandler());
-  // }, []);
+  useEffect(() => {
+    requestAnimationFrame(() => smoothScrollingHandler());
+  }, []);
 
   const smoothScrollingHandler = () => {
     data.current = window.scrollY;
