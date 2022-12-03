@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import styled, { css } from 'styled-components';
 
@@ -21,6 +21,8 @@ export const Header = () => {
   const [isMobOpen, mobSetOpen] = useState(false);
 
   const { lang, setLang } = useStore();
+
+  const navigate = useNavigate();
 
   const handleClickOutside = (event: React.MouseEvent<HTMLElement>) => {
     if (mbDropRef.current && !mbDropRef.current.contains(event.target as any)) {
@@ -77,10 +79,10 @@ export const Header = () => {
   return (
     <Container>
       <HeaderContent>
-        <DesktopLogo src={LogoHeader} alt="logo-header" />
+        <DesktopLogo src={LogoHeader} alt="logo-header" onClick={() => navigate('/')} />
         <RectButtonGroup>
           <LogoButtons>
-            <MobileLogo src={LogoHeader} alt="mobile-header-logo" />
+            <MobileLogo src={LogoHeader} alt="mobile-header-logo" onClick={() => navigate('/')} />
             <RectButtons>
               <RectButton>{t('home.docs')}</RectButton>
               <RectButton>{t('home.staking')}</RectButton>
@@ -159,6 +161,7 @@ const DesktopLogo = styled.img`
   display: block;
   width: 75px;
   height: auto;
+  cursor: pointer;
 
   @media screen and (max-width: 640px) {
     display: none;
@@ -190,6 +193,7 @@ const LogoButtons = styled.div`
 const MobileLogo = styled.img`
   display: none;
   margin-left: 1rem;
+  cursor: pointer;
 
   @media screen and (max-width: 640px) {
     display: block;

@@ -11,8 +11,10 @@ import {
   KingLand
 } from 'src/config/images';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 
 export const EcoSystem = () => {
+  const navigate = useNavigate();
   const [bgSvg, setBgSvg] = useState(DeskBgMain);
   const { t } = useTranslation();
   const changeBg = (idx: number) => {
@@ -41,9 +43,15 @@ export const EcoSystem = () => {
         <EcoSystemContainer>
           <WholeSystem dangerouslySetInnerHTML={{ __html: t('home.ecosystem') }} />
           <KingLogos>
-            <KingFlokiWrapper onMouseOver={() => changeBg(1)} onMouseOut={() => changeBg(0)} />
-            <KingPadWrapper onMouseOver={() => changeBg(2)} onMouseOut={() => changeBg(0)} />
-            <KingLandWrapper onMouseOver={() => changeBg(3)} onMouseOut={() => changeBg(0)} />
+            <a href={'https://www.kingflokiworld.com'} rel="noopener noreferrer">
+              <KingFlokiWrapper onMouseOver={() => changeBg(1)} onMouseOut={() => changeBg(0)} />
+            </a>
+            <a href={'https://kingland.vercel.app'} rel="noopener noreferrer">
+              <KingPadWrapper onMouseOver={() => changeBg(2)} onMouseOut={() => changeBg(0)} />
+            </a>
+            <a href={'https://kingpad.vercel.app'} rel="noopener noreferrer">
+              <KingLandWrapper onMouseOver={() => changeBg(3)} onMouseOut={() => changeBg(0)} />
+            </a>
           </KingLogos>
         </EcoSystemContainer>
       </EcoSystemWrapper>

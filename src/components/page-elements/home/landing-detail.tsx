@@ -36,7 +36,9 @@ export const LandingDetails = () => {
         <MetaverseTitle>
           <div className="awesome-game">{t('home.awesomegame')}</div>
           <div className="metaverse-letter">{t('home.metaverse')}</div>
-          <button className="metaverse-play-button">{t('home.playnow')}</button>
+          <a href={'https://www.kingflokiworld.com'} rel="noopener noreferrer">
+            <button className="metaverse-play-button">{t('home.playnow')}</button>
+          </a>
         </MetaverseTitle>
       </Metaverse>
       <Game>
@@ -65,7 +67,9 @@ export const LandingDetails = () => {
               <div className="play-to">{t('home.playto')} </div>
               <EarnText language={lang}> {t('home.earn')}</EarnText>
             </div>
-            <button className="play-button">{t('home.playnow')}</button>
+            <a href={'https://www.kingflokiworld.com'} rel="noopener noreferrer">
+              <button className="play-button">{t('home.playnow')}</button>
+            </a>
           </div>
         </div>
       </Game>
@@ -79,7 +83,9 @@ export const LandingDetails = () => {
               <p>{t('home.safeplace')} </p>
               <p> {t('home.jointhebest')}</p>
             </KingDetailText>
-            <ComingSoonBtn>{t('home.comingsoon')}</ComingSoonBtn>
+            <a href={'https://kingpad.vercel.app'} rel="noopener noreferrer">
+              <ComingSoonBtn>{t('home.comingsoon')}</ComingSoonBtn>
+            </a>
           </KingpadDetails>
         </div>
       </KingPadSection>
@@ -93,7 +99,9 @@ export const LandingDetails = () => {
               <p>{t('home.beking')}</p>
               <p>{t('home.realestate')}</p>
             </KingDetailText>
-            <ComingSoonBtn>{t('home.comingsoon')}</ComingSoonBtn>
+            <a href={'https://kingland.vercel.app'} rel="noopener noreferrer">
+              <ComingSoonBtn>{t('home.comingsoon')}</ComingSoonBtn>
+            </a>
           </KingpadDetails>
         </div>
       </KingLandSection>
