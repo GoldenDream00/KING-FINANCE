@@ -52,6 +52,7 @@ export const DeskTopTokenChart = () => {
       arcLinkLabelsStraightLength={56}
       arcLabelsSkipAngle={10}
       tooltip={() => <></>}
+      theme={{ fontSize: 20 }}
       arcLabelsTextColor={{
         from: 'color',
         modifiers: [['brighter', 4]]
@@ -132,6 +133,7 @@ export const MobileTokenChart = () => {
         from: 'color',
         modifiers: [['brighter', 4]]
       }}
+      theme={{ fontSize: 30 }}
       enableArcLinkLabels={false}
       tooltip={() => <></>}
       defs={[
