@@ -59,7 +59,7 @@ export const EcoSystem = () => {
         <ConnectWithKing>
           <ConnectLetter>{t('home.connectwithking')}</ConnectLetter>
           <SocialLinkGroup>
-            <SocialBox>
+            <SocialBox href={'https://t.me/KlNGfinance'} rel="noopener noreferrer">
               <svg
                 className="social-icon"
                 id="Layer_2"
@@ -78,7 +78,7 @@ export const EcoSystem = () => {
                 </g>
               </svg>
             </SocialBox>
-            <SocialBox>
+            <SocialBox href={'https://twitter.com/klngfinance'} rel="noopener noreferrer">
               <svg
                 id="Layer_2"
                 className="social-icon"
@@ -374,7 +374,7 @@ const SocialLinkGroup = styled.div`
   }
 `;
 
-const SocialBox = styled.div`
+const SocialBox = styled.a`
   background: #272727 0% 0% no-repeat padding-box;
   border-radius: 18px;
   width: 60px;
@@ -388,7 +388,7 @@ const SocialBox = styled.div`
   align-items: center;
   -webkit-align-items: center;
   cursor: pointer;
-
+  color: ${(props) => props.theme.white};
   @media screen and (max-width: 480px) {
     width: 50px;
     height: 50px;
