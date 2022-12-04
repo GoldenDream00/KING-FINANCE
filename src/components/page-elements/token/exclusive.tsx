@@ -68,12 +68,28 @@ const ExclusiveContainer = styled.div<ExclusiveContainerProps>`
   }
 
   @media screen and (max-width: 893px) {
-    padding-top: 11rem;
+    padding-top: 12rem;
+    ${(props) =>
+      props.language === 'DE' &&
+      `
+      padding-top: 15rem;
+    `}
+
+    ${(props) =>
+      props.language === '中文' &&
+      `
+      padding-top: 8rem;
+    `}
   }
 
   @media screen and (max-width: 720px) {
     gap: 1.5rem;
-    padding-top: 14rem;
+    padding-top: 15rem;
+    ${(props) =>
+      props.language === '中文' &&
+      `
+      padding-top: 8rem;
+    `}
   }
   @media screen and (max-width: 640px) {
     gap: 1.5rem;
@@ -92,14 +108,29 @@ const ExclusiveContainer = styled.div<ExclusiveContainerProps>`
       `
       padding-top: 14rem;
     `}
+
+    ${(props) =>
+      props.language === 'DE' &&
+      `
+      padding-top: 26rem;
+    `}
   }
 
   @media screen and (max-width: 420px) {
-    padding-top: 22rem;
+    padding-top: 24rem;
     ${(props) =>
       props.language === '中文' &&
       `
       padding-top: 16rem;
+    `}
+  }
+
+  @media screen and (max-width: 390px) {
+    padding-top: 22rem;
+    ${(props) =>
+      props.language === '中文' &&
+      `
+      padding-top: 14rem;
     `}
   }
 `;
