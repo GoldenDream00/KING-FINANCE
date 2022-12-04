@@ -188,22 +188,22 @@ const EcoSystemWrapper = styled.div`
   align-items: center;
   gap: 5rem;
   position: relative;
-  margin-top: 5rem;
+  margin-top: 7rem;
 
   color: ${(props) => props.theme.white};
 
   @media screen and (max-width: 1092px) {
-    margin-top: 7rem;
+    margin-top: 9rem;
   }
 
   @media screen and (max-width: 640px) {
     height: 280px;
-    margin-top: 3rem;
+    margin-top: 6rem;
   }
 
   @media screen and (max-width: 420px) {
     height: 200px;
-    margin-top: 1rem;
+    margin-top: 5rem;
   }
 `;
 
