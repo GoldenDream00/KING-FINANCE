@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import useWindowSize from '../hook/useWindowSize';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 interface SmoothScrollProps {
   children: React.ReactNode;
@@ -13,6 +14,8 @@ export const SmoothProvider = ({ children }: SmoothScrollProps) => {
   const windowSize = useWindowSize();
 
   const navigate = useNavigate();
+
+  const { t } = useTranslation();
 
   // 2.
   const scrollingContainerRef = useRef<HTMLDivElement>(null);
@@ -35,7 +38,7 @@ export const SmoothProvider = ({ children }: SmoothScrollProps) => {
 
   useEffect(() => {
     handleScroll();
-  }, [windowSize, navigate]);
+  }, [windowSize, navigate, t]);
 
   const setBodyHeight = () => {
     if (scrollingContainerRef.current !== null)

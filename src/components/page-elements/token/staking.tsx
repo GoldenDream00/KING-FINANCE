@@ -111,7 +111,7 @@ const StakingContainer = styled.div<StakingContainerProps>`
     ${(props) =>
       props.language === '中文' &&
       `
-      padding-top: 22rem;
+      padding-top: 26rem;
     `}
   }
   @media screen and (max-width: 390px) {
@@ -129,6 +129,11 @@ const StakingContainer = styled.div<StakingContainerProps>`
       props.language === 'DE' &&
       `
       padding-top: 36rem;
+    `}
+    ${(props) =>
+      props.language === '中文' &&
+      `
+      padding-top: 22rem;
     `}
   }
 `;

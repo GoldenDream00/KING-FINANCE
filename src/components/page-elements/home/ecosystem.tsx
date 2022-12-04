@@ -11,10 +11,12 @@ import {
   KingLand
 } from 'src/config/images';
 import { useTranslation } from 'react-i18next';
+import { useStore } from 'src/context/StoreContext';
 
 export const EcoSystem = () => {
   const [bgSvg, setBgSvg] = useState(DeskBgMain);
   const { t } = useTranslation();
+  const { lang } = useStore();
   const changeBg = (idx: number) => {
     switch (idx) {
       case 0:
@@ -36,7 +38,7 @@ export const EcoSystem = () => {
 
   return (
     <>
-      <EcoSystemWrapper>
+      <EcoSystemWrapper language={lang}>
         <BackgroundSVG src={bgSvg} alt="desktop-background-svg" />
         <EcoSystemContainer>
           <WholeSystem dangerouslySetInnerHTML={{ __html: t('home.ecosystem') }} />
@@ -179,7 +181,11 @@ export const EcoSystem = () => {
   );
 };
 
-const EcoSystemWrapper = styled.div`
+interface EcoSystemWrapperProps {
+  language: string;
+}
+
+const EcoSystemWrapper = styled.div<EcoSystemWrapperProps>`
   width: 100%;
   height: 450px;
   display: flex;
@@ -190,20 +196,70 @@ const EcoSystemWrapper = styled.div`
   position: relative;
   margin-top: 7rem;
 
+  ${(props) =>
+    props.language === '中文' &&
+    `
+      margin-top: 0rem;
+    `}
+
   color: ${(props) => props.theme.white};
 
   @media screen and (max-width: 1092px) {
     margin-top: 9rem;
+
+    ${(props) =>
+      props.language === '中文' &&
+      `
+      margin-top: 0rem;
+    `}
   }
 
   @media screen and (max-width: 640px) {
     height: 280px;
     margin-top: 6rem;
+
+    ${(props) =>
+      props.language === 'FR' &&
+      `
+      margin-top: 0rem;
+    `}
+
+    ${(props) =>
+      props.language === '中文' &&
+      `
+      margin-top: -4rem;
+    `}
+  }
+
+  @media screen and (max-width: 480px) {
+    ${(props) =>
+      props.language === 'FR' &&
+      `
+        margin-top: 5rem;
+    `}
   }
 
   @media screen and (max-width: 420px) {
     height: 200px;
     margin-top: 5rem;
+
+    ${(props) =>
+      props.language === 'FR' &&
+      `
+      margin-top: 3rem;
+    `}
+
+    ${(props) =>
+      props.language === 'DE' &&
+      `
+      margin-top: 7rem;
+    `}
+
+    ${(props) =>
+      props.language === '中文' &&
+      `
+      margin-top: -4rem;
+    `}
   }
 `;
 

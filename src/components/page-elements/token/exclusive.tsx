@@ -119,6 +119,11 @@ const ExclusiveContainer = styled.div<ExclusiveContainerProps>`
   @media screen and (max-width: 420px) {
     padding-top: 24rem;
     ${(props) =>
+      props.language === 'DE' &&
+      `
+      padding-top: 26rem;
+    `}
+    ${(props) =>
       props.language === '中文' &&
       `
       padding-top: 16rem;
