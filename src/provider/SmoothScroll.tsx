@@ -8,7 +8,7 @@ interface SmoothScrollProps {
   children: React.ReactNode;
 }
 
-export const SmoothScrollProvider = ({ children }: SmoothScrollProps) => {
+export const SmoothProvider = ({ children }: SmoothScrollProps) => {
   // 1.
   const windowSize = useWindowSize();
 
@@ -19,7 +19,7 @@ export const SmoothScrollProvider = ({ children }: SmoothScrollProps) => {
 
   // 3.
   const data = {
-    ease: 0.1,
+    ease: 0.08,
     current: 0,
     previous: 0,
     rounded: 0
@@ -31,17 +31,16 @@ export const SmoothScrollProvider = ({ children }: SmoothScrollProps) => {
   };
   window.addEventListener('load', () => handleScroll);
 
-  // document.addEventListener('scroll', handleScroll);
-  setTimeout(handleScroll, 1000);
+  // setTimeout(handleScroll, 1000);
 
   useEffect(() => {
     handleScroll();
-  }, [windowSize.height, windowSize, navigate]);
+  }, [windowSize, navigate]);
 
   const setBodyHeight = () => {
     if (scrollingContainerRef.current !== null)
       document.body.style.height = `${scrollingContainerRef.current.getBoundingClientRect().height}px`;
-    // console.log('scrollingContainerRef.current', document.body.style.height);
+    console.log('scrollingContainerRef.current', document.body.style.height);
   };
 
   // 5.

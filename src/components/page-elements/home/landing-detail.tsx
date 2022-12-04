@@ -111,6 +111,35 @@ export const LandingDetails = () => {
 
 const LandingDetailsWrapper = styled.div`
   width: 100%;
+  height: 1620px;
+
+  @media screen and (max-width: 1366px) {
+    height: 1400px;
+  }
+
+  @media screen and (max-width: 1092px) {
+    height: 1200px;
+  }
+
+  @media screen and (max-width: 840px) {
+    height: 1000px;
+  }
+
+  @media screen and (max-width: 768px) {
+    height: 1200px;
+  }
+
+  @media screen and (max-width: 640px) {
+    height: 1520px;
+  }
+
+  @media screen and (max-width: 480px) {
+    height: 1280px;
+  }
+
+  @media screen and (max-width: 420px) {
+    height: 1100px;
+  }
 
   display: flex;
   flex-direction: column;

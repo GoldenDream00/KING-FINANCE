@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 import {
   DeskBgMain,
   DeskFooterLogo,
@@ -13,13 +14,14 @@ import { PageWrapper } from '../components/container/container';
 
 export const Footer = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   return (
     <PageWrapper>
       <FooterContainer>
-        <FooterBackground src={DeskBgMain} />
+        <FooterBackground src={DeskBgMain} alt="logo-header" />
       </FooterContainer>
       <FooterContent>
-        <KingLogo src={DeskFooterLogo} />
+        <KingLogo src={DeskFooterLogo} alt="king-logo" onClick={() => navigate('/')} />
 
         <CopyRight>
           <Element>{t('home.cookie')}</Element>
@@ -29,8 +31,12 @@ export const Footer = () => {
           <Element>{t('home.terms')}</Element>
         </CopyRight>
         <SocialLinkGroup>
-          <SocialIcon src={TelegramIcon} />
-          <SocialIcon src={TwitterIcon} />
+          <a href={'https://t.me/KlNGfinance'} rel="noopener noreferrer">
+            <SocialIcon src={TelegramIcon} />
+          </a>
+          <a href={'https://twitter.com/klngfinance'} rel="noopener noreferrer">
+            <SocialIcon src={TwitterIcon} />
+          </a>
           <SocialIcon src={YoutubeIcon} />
           <SocialIcon src={GithubIcon} />
           <SocialIcon src={MediumIcon} />
@@ -92,6 +98,7 @@ const FooterContent = styled.div`
 const KingLogo = styled.img`
   width: 100px;
   height: 100px;
+  cursor: pointer;
   @media screen and (max-width: 1024px) {
     width: 80px;
     height: 80px;

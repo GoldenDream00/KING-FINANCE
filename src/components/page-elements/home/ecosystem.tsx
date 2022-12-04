@@ -11,10 +11,8 @@ import {
   KingLand
 } from 'src/config/images';
 import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
 
 export const EcoSystem = () => {
-  const navigate = useNavigate();
   const [bgSvg, setBgSvg] = useState(DeskBgMain);
   const { t } = useTranslation();
   const changeBg = (idx: number) => {
@@ -190,15 +188,22 @@ const EcoSystemWrapper = styled.div`
   align-items: center;
   gap: 5rem;
   position: relative;
+  margin-top: 5rem;
 
   color: ${(props) => props.theme.white};
 
+  @media screen and (max-width: 1092px) {
+    margin-top: 7rem;
+  }
+
   @media screen and (max-width: 640px) {
     height: 280px;
+    margin-top: 3rem;
   }
 
   @media screen and (max-width: 420px) {
     height: 200px;
+    margin-top: 1rem;
   }
 `;
 
@@ -332,7 +337,6 @@ export const ConnectWrapper = styled.div`
 
 const ConnectWithKing = styled.div`
   letter-spacing: 2.6px;
-  padding-top: 3rem;
 
   display: flex;
   flex-direction: column;
@@ -342,6 +346,8 @@ const ConnectWithKing = styled.div`
   gap: 1.5rem;
 
   z-index: 1;
+  width: 100%;
+  height: 100px;
 `;
 
 const ConnectLetter = styled.div`

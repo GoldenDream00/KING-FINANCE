@@ -26,6 +26,7 @@ const DescriptionWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: stretch;
+  height: 652px;
 `;
 
 const Details = styled.div`

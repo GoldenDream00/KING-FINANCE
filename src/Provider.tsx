@@ -1,8 +1,7 @@
 import { ThemeProvider } from 'styled-components';
-import { SmoothScrollProvider } from './provider/SmoothScroll';
-
 import { COLORS, TEXT_SIZE } from './config/config';
 import StoreProvider from './context/StoreContext';
+import { SmoothProvider } from './provider/SmoothScroll';
 
 interface ProviderProps {
   children: React.ReactNode;
@@ -17,7 +16,7 @@ export const Provider = ({ children }: ProviderProps) => {
   return (
     <ThemeProvider theme={theme}>
       <StoreProvider>
-        <SmoothScrollProvider>{children}</SmoothScrollProvider>
+        <SmoothProvider>{children}</SmoothProvider>
       </StoreProvider>
     </ThemeProvider>
   );

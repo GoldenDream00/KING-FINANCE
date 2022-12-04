@@ -4,14 +4,13 @@ import { Route, Routes, BrowserRouter as Router, Navigate } from 'react-router-d
 import { PUBLIC_ROUTES } from './config/routes';
 
 import { Provider } from './Provider';
-import { Layout } from './layouts/layout';
-
 import { Home } from './pages/home';
 import { NotFoundPage } from './pages/404';
 import { Token } from './pages/token';
 
-import './config/i18n';
+import { Layout } from 'src/layouts/layout';
 
+import './config/i18n';
 function App() {
   return (
     <Suspense fallback={<>Loading</>}>

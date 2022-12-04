@@ -7,16 +7,18 @@ import { ExternalLinks } from 'src/components/page-elements/home/external-links'
 
 export const Home = () => {
   return (
-    <PageWrapper>
-      <KingFinance />
-      <Container>
-        <Description />
-      </Container>
-      <EcoSystem />
-      <Container>
-        <LandingDetails />
-        <ExternalLinks />
-      </Container>
-    </PageWrapper>
+    <>
+      <PageWrapper>
+        <KingFinance />
+        <Container>
+          <Description />
+        </Container>
+        <EcoSystem />
+        <Container>
+          <LandingDetails />
+          <ExternalLinks />
+        </Container>
+      </PageWrapper>
+    </>
   );
 };

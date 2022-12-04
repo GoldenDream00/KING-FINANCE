@@ -11,10 +11,10 @@ export const Token = () => {
         <TokenGraphSection />
       </Container>
       <Exclusive />
-      <Container>
-        <Staking />
-        <ExternalLinks />
-      </Container>
+      {/*  <Container>
+         <Staking />
+         <ExternalLinks />
+       </Container> */}
     </PageWrapper>
   );
 };

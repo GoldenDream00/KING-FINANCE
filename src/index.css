@@ -25,6 +25,7 @@ body {
   background-color: #000;
   margin: 0;
   padding: 0;
+  width: 100vw;
 
   /* base font */
   font-family: 'gotham-book';
@@ -46,4 +47,10 @@ p {
 
 ::-webkit-scrollbar {
   display: none;
+}
+
+.scroller {
+  width: auto;
+  height: 100vh;
+  overflow: hidden;
 }
