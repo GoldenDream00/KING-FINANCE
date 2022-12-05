@@ -27,6 +27,21 @@ const TeamIntroContainer = styled.div`
   height: 500px;
   display: flex;
   justify-content: center;
+  @media screen and (max-width: 1092px) {
+    height: 400px;
+  }
+
+  @media screen and (max-width: 640px) {
+    height: 450px;
+  }
+
+  @media screen and (max-width: 420px) {
+    height: 480px;
+  }
+
+  @media screen and (max-width: 390px) {
+    height: 520px;
+  }
 `;
 
 const KingTeam = styled.div`

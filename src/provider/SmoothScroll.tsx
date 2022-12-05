@@ -35,7 +35,7 @@ export const SmoothProvider = ({ children }: SmoothScrollProps) => {
 
   useEffect(() => {
     handleScroll();
-  }, [windowSize, navigate, t]);
+  }, [navigate, t, windowSize.width]);
 
   const setBodyHeight = () => {
     if (scrollingContainerRef.current !== null)
