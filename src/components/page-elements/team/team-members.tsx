@@ -73,10 +73,19 @@ export const TeamMembers = () => {
 
 const TeamMembersContainer = styled.div`
   width: 100%;
+  height: 800px;
+  @media screen and (max-width: 1366px) {
+    height: 640px;
+  }
+  @media screen and (max-width: 560px) {
+    height: 900px;
+  }
   display: flex;
   justify-content: center;
-  padding-top: 2rem;
-  padding-bottom: 4rem;
+  padding-bottom: 2rem;
+  @media screen and (max-width: 480px) {
+    padding-bottom: 0rem;
+  }
 `;
 
 const MemberCards = styled.div`
