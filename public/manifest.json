@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "King Finance",
+  "name": "King's main purpose is to create digital services that enrich people's lives through DeFi. Our internal economy is built by KingPad, KingLand and King Floki.",
   "icons": [
     {
       "src": "favicon.ico",
@@ -8,14 +8,14 @@
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "android-chrome-192x192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo512.png",
+      "src": "android-chrome-256x256.png",
       "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "256x256"
     }
   ],
   "start_url": ".",
