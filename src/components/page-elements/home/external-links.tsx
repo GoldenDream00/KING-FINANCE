@@ -25,7 +25,9 @@ export const ExternalLinks = () => {
         <div className="token-button" onClick={() => navigate('/token')}>
           {t('home.token')}
         </div>
-        <div className="token-button">{t('home.team')}</div>
+        <div className="token-button" onClick={() => navigate('/team')}>
+          {t('home.team')}
+        </div>
         <div className="token-button">{t('home.docs')}</div>
         <div className="token-button">{t('home.mediakit')}</div>
         <div className="token-button">{t('home.kingpass')}</div>

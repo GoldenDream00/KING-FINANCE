@@ -22,7 +22,7 @@ export const SmoothProvider = ({ children }: SmoothScrollProps) => {
 
   // 3.
   const data = {
-    ease: 0.08,
+    ease: 0.1,
     current: 0,
     previous: 0,
     rounded: 0
@@ -32,9 +32,6 @@ export const SmoothProvider = ({ children }: SmoothScrollProps) => {
     setBodyHeight();
     requestAnimationFrame(() => smoothScrollingHandler());
   };
-  window.addEventListener('load', () => handleScroll);
-
-  // setTimeout(handleScroll, 1000);
 
   useEffect(() => {
     handleScroll();
@@ -43,7 +40,6 @@ export const SmoothProvider = ({ children }: SmoothScrollProps) => {
   const setBodyHeight = () => {
     if (scrollingContainerRef.current !== null)
       document.body.style.height = `${scrollingContainerRef.current.getBoundingClientRect().height}px`;
-    console.log('scrollingContainerRef.current', document.body.style.height);
   };
 
   // 5.

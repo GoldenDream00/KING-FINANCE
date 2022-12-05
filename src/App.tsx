@@ -8,6 +8,7 @@ import { Home } from './pages/home';
 import { NotFoundPage } from './pages/404';
 import { Token } from './pages/token';
 
+import { Team } from './pages/team';
 import { Layout } from 'src/layouts/layout';
 
 import './config/i18n';
@@ -21,6 +22,7 @@ function App() {
               <Route path={PUBLIC_ROUTES.default} element={<Home />} />
               <Route path={PUBLIC_ROUTES.home} element={<Home />} />
               <Route path={PUBLIC_ROUTES.token} element={<Token />} />
+              <Route path={PUBLIC_ROUTES.team} element={<Team />} />
               <Route path={PUBLIC_ROUTES.error404} element={<NotFoundPage />} />
               <Route path="*" element={<Navigate to={PUBLIC_ROUTES.error404} replace />} />
             </Routes>
