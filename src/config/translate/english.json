@@ -44,5 +44,8 @@
     "tokendetails3": "In fine, <span style='font-family:gotham-bold'>$KING</span> appreciates as the internal ecosystem grows, making you an actual shareholder of the company and its success.",
     "stakingplatform": "<span style='font-family:gotham-bold'>Staking</span> platform",
     "launch": "LAUNCH APP"
+  },
+  "team": {
+    "details": "<span style='font-family:gotham-bold'>KING</span>'s team is formed by highly reliable and committed people with years of experience in decentralised finance and the business field. At <span style='font-family:gotham-bold'>KING</span> we vouch for reliability, commitment, flexibility, innovation, diversity and leadership."
   }
 }

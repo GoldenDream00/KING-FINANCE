@@ -1,6 +1,8 @@
+import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 
 export const TeamIntro = () => {
+  const { t } = useTranslation();
   return (
     <TeamIntroContainer>
       <KingTeam>
@@ -12,11 +14,7 @@ export const TeamIntro = () => {
           <span style={{ fontFamily: 'gotham-thin' }}>Meet the</span>
           <span style={{ fontFamily: 'gotham-bold' }}> Kings</span>
         </MeetKing>
-        <Details>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat.
-        </Details>
+        <Details dangerouslySetInnerHTML={{ __html: t('team.details') }} />
       </KingTeam>
     </TeamIntroContainer>
   );
