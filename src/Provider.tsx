@@ -16,9 +16,7 @@ export const Provider = ({ children }: ProviderProps) => {
   return (
     <ThemeProvider theme={theme}>
       <StoreProvider>
-        {/* <SmoothProvider> */}
-        {children}
-        {/* </SmoothProvider> */}
+        <SmoothProvider>{children}</SmoothProvider>
       </StoreProvider>
     </ThemeProvider>
   );
