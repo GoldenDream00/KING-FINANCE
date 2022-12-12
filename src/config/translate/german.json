@@ -46,6 +46,7 @@
     "launch": "APP STARTEN"
   },
   "team": {
+    "meetkings": "<span style='font-family: gotham-thin'>Lerne die</span> <span style='font-family: gotham-bold'>Kings</span> kennen",
     "details": "Das <span style='font-family: gotham-bold'>KING</span>-Team besteht aus äußerst zuverlässigen und engagierten Personen mit langjähriger Erfahrung im dezentralen Finanz- und Geschäftswesen. Bei <span style='font-family: gotham-bold'>KING</span> garantieren wir Zuverlässigkeit, Engagement, Flexibilität, Innovation, Vielfalt und Führung."
   }
 }

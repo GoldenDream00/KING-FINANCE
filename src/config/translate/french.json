@@ -46,6 +46,7 @@
     "launch": "LANCER L’APP"
   },
   "team": {
+    "meetkings": "<span style='font-family: gotham-thin'>Rencontrez les</span>  <span style='font-family: gotham-bold'>Kings</span>",
     "details": "L'équipe  <span style='font-family: gotham-bold'>KING</span> est composée de personnes hautement fiables et engagées avec des années d'expérience dans la finance et les affaires décentralisées. Chez  <span style='font-family: gotham-bold'>KING</span>, nous garantissons fiabilité, engagement, flexibilité, innovation, diversité et leadership."
   }
 }

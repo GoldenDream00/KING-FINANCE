@@ -10,10 +10,7 @@ export const TeamIntro = () => {
           <p style={{ fontFamily: 'gotham-bold' }}>King</p>
           <p style={{ fontFamily: 'gotham-thin' }}>Team</p>
         </KingTeamLetter>
-        <MeetKing>
-          <span style={{ fontFamily: 'gotham-thin' }}>Meet the</span>
-          <span style={{ fontFamily: 'gotham-bold' }}> Kings</span>
-        </MeetKing>
+        <MeetKing dangerouslySetInnerHTML={{ __html: t('team.meetkings') }} />
         <Details dangerouslySetInnerHTML={{ __html: t('team.details') }} />
       </KingTeam>
     </TeamIntroContainer>

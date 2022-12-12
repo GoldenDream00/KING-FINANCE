@@ -46,6 +46,7 @@
     "launch": "LAUNCH APP"
   },
   "team": {
+    "meetkings": "<span style='font-family: gotham-thin'>Meet the</span> <span style='font-family: gotham-bold'>Kings</span>",
     "details": "<span style='font-family:gotham-bold'>KING</span>'s team is formed by highly reliable and committed people with years of experience in decentralised finance and the business field. At <span style='font-family:gotham-bold'>KING</span> we vouch for reliability, commitment, flexibility, innovation, diversity and leadership."
   }
 }
