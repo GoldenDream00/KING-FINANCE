@@ -99,7 +99,7 @@ export const EcoSystem = () => {
                 </g>
               </svg>
             </SocialBox>
-            <SocialBox>
+            <SocialBox href={'https://www.youtube.com/@kingfinanceco'} rel="noopener noreferrer">
               <svg
                 id="Layer_2"
                 className="social-icon"
@@ -141,7 +141,7 @@ export const EcoSystem = () => {
                 </g>
               </svg>
             </SocialBox>
-            <SocialBox>
+            <SocialBox href={'https://medium.com/@kingfinance'} rel="noopener noreferrer">
               <svg
                 id="Layer_2"
                 className="social-icon"
