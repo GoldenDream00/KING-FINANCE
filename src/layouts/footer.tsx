@@ -37,9 +37,13 @@ export const Footer = () => {
           <a href={'https://twitter.com/klngfinance'} rel="noopener noreferrer">
             <SocialIcon src={TwitterIcon} />
           </a>
-          <SocialIcon src={YoutubeIcon} />
+          <a href={'https://www.youtube.com/@kingfinanceco'} rel="noopener noreferrer">
+            <SocialIcon src={YoutubeIcon} />
+          </a>
           <SocialIcon src={GithubIcon} />
-          <SocialIcon src={MediumIcon} />
+          <a href={'https://medium.com/@kingfinance'} rel="noopener noreferrer">
+            <SocialIcon src={MediumIcon} />
+          </a>
         </SocialLinkGroup>
       </FooterContent>
     </PageWrapper>
