@@ -78,7 +78,7 @@ export const EcoSystem = () => {
                 </g>
               </svg>
             </SocialBox>
-            <SocialBox href={'https://twitter.com/klngfinance'} rel="noopener noreferrer">
+            <SocialBox href={'https://twitter.com/kingfinance'} rel="noopener noreferrer">
               <svg
                 id="Layer_2"
                 className="social-icon"

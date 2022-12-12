@@ -34,7 +34,7 @@ export const Footer = () => {
           <a href={'https://t.me/KlNGfinance'} rel="noopener noreferrer">
             <SocialIcon src={TelegramIcon} />
           </a>
-          <a href={'https://twitter.com/klngfinance'} rel="noopener noreferrer">
+          <a href={'https://twitter.com/kingfinance'} rel="noopener noreferrer">
             <SocialIcon src={TwitterIcon} />
           </a>
           <a href={'https://www.youtube.com/@kingfinanceco'} rel="noopener noreferrer">
