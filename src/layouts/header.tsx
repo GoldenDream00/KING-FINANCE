@@ -111,10 +111,10 @@ export const Header = () => {
             <a href={'https://www.kingflokiworld.com'} rel="noopener noreferrer">
               <KingFlokiButton className="btn-kingfloki" />
             </a>
-            <a href={'https://kingland.vercel.app'} rel="noopener noreferrer">
+            <a href={'https://kingland.finance'} rel="noopener noreferrer">
               <KingLandButton className="btn-kingland" />
             </a>
-            <a href={'https://kingpad.vercel.app'} rel="noopener noreferrer">
+            <a href={'https://kingpad.finance'} rel="noopener noreferrer">
               <KingPadButton className="btn-kingpad" />
             </a>
           </ButtonGroup>
