@@ -21,7 +21,7 @@ export const MemberCard = ({ img, name, job, telegram, twitter }: MemberCardProp
             <img src={TwitterIcon} alt="twitter" />
           </Twitter>
           <Telegram href={telegram} rel="noopener noreferrer">
-            <img src={TelegramIcon} alt="twitter" />
+            <img src={TelegramIcon} alt="telegram" />
           </Telegram>
         </Links>
       </CardDetails>

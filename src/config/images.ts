@@ -29,7 +29,7 @@ import KingPadSvg from '../assets/Desktop/Svg/kingpad.svg';
 import TelegramSvg from '../assets/Desktop/Svg/iconboxtg.svg';
 import TwitterSvg from '../assets/Desktop/Svg/iconboxtwitter.svg';
 import YoutubeSvg from '../assets/Desktop/Svg/iconboxyt.svg';
-import GithubSvg from '../assets/Desktop/Svg/iconboxgithub.svg';
+import GitbookSvg from '../assets/Desktop/Svg/iconboxgitbook.svg';
 import MediumSvg from '../assets/Desktop/Svg/iconboxmedium.svg';
 
 import DeskNftgameGif from '../assets/Desktop/Video/desk-nft-game.gif';
@@ -99,7 +99,7 @@ export const KingPad = KingPadSvg;
 export const TelegramIcon = TelegramSvg;
 export const TwitterIcon = TwitterSvg;
 export const YoutubeIcon = YoutubeSvg;
-export const GithubIcon = GithubSvg;
+export const GitbookIcon = GitbookSvg;
 export const MediumIcon = MediumSvg;
 
 export const DeskNftGame = DeskNftgameGif;

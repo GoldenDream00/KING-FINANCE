@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import {
   DeskBgMain,
   DeskFooterLogo,
-  GithubIcon,
+  GitbookIcon,
   MediumIcon,
   TelegramIcon,
   TwitterIcon,
@@ -40,7 +40,9 @@ export const Footer = () => {
           <a href={'https://www.youtube.com/@kingfinanceco'} rel="noopener noreferrer">
             <SocialIcon src={YoutubeIcon} />
           </a>
-          <SocialIcon src={GithubIcon} />
+          <a href="https://king-finance.gitbook.io/king-whitepaper/" rel="noopener noreferrer">
+            <SocialIcon src={GitbookIcon} />
+          </a>
           <a href={'https://medium.com/@kingfinance'} rel="noopener noreferrer">
             <SocialIcon src={MediumIcon} />
           </a>
