@@ -84,7 +84,9 @@ export const Header = () => {
           <LogoButtons>
             <MobileLogo src={LogoHeader} alt="mobile-header-logo" onClick={() => navigate('/')} />
             <RectButtons>
-              <RectButton>{t('home.docs')}</RectButton>
+              <a href="https://king-finance.gitbook.io/king-whitepaper/" rel="noopener noreferrer">
+                <RectButton>{t('home.docs')}</RectButton>
+              </a>
               <RectButton>{t('home.staking')}</RectButton>
               <MobileDropDownContainer data-aria-expanded={isMobOpen} ref={mbDropRef}>
                 <DropdownButton className="dbtn" onClick={() => mobSetOpen(!isMobOpen)}>
