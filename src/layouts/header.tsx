@@ -87,7 +87,9 @@ export const Header = () => {
               <a href="https://king-finance.gitbook.io/king-whitepaper/" rel="noopener noreferrer">
                 <RectButton>{t('home.docs')}</RectButton>
               </a>
-              <RectButton>{t('home.staking')}</RectButton>
+              <a href="https://kingworld.finance/token" rel="noopener noreferrer">
+                <RectButton>{t('home.staking')}</RectButton>
+              </a>
               <MobileDropDownContainer data-aria-expanded={isMobOpen} ref={mbDropRef}>
                 <DropdownButton className="dbtn" onClick={() => mobSetOpen(!isMobOpen)}>
                   {lang}

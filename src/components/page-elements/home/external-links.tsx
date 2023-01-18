@@ -28,7 +28,9 @@ export const ExternalLinks = () => {
         <div className="token-button" onClick={() => navigate('/team')}>
           {t('home.team')}
         </div>
-        <div className="token-button">{t('home.docs')}</div>
+        <ALink href={'https://king-finance.gitbook.io/king-whitepaper/'} rel="noopener noreferrer">
+          <div className="token-button">{t('home.docs')}</div>
+        </ALink>
         <div className="token-button">{t('home.mediakit')}</div>
         <div className="token-button">{t('home.kingpass')}</div>
       </ExternalButtons>
@@ -106,3 +108,9 @@ const ExternalButtons = styled.div`
     gap: 3rem;
   }
 `;
+
+const ALink = styled.a`
+  outline: none;
+  text-decoration: none;
+  width: 100%;
+`

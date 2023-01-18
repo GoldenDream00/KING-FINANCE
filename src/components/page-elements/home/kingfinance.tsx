@@ -26,7 +26,7 @@ export const KingFinance = () => {
               <span style={{ fontFamily: 'gotham-thin', marginLeft: '12px' }}>Finance</span>
             </KingFinanceLetter>
             <BottomLetter>
-              {t('home.unique')}. {t('home.visionary')}. {t('home.powerful')}
+              {t('home.unique')}. {t('home.visionary')}. {t('home.powerful')}.
             </BottomLetter>
           </KingFinanceLetters>
         </VideoOverlay>

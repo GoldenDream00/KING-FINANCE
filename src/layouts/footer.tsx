@@ -24,8 +24,6 @@ export const Footer = () => {
         <KingLogo src={DeskFooterLogo} alt="king-logo" onClick={() => navigate('/')} />
 
         <CopyRight>
-          <Element>{t('home.cookie')}</Element>
-          <Line>|</Line>
           <Element>{t('home.privacy')}</Element>
           <Line>|</Line>
           <Element>{t('home.terms')}</Element>
