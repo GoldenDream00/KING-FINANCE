@@ -83,6 +83,7 @@ const StatusTitle = styled.div<StatusTitleProps>`
 
 const StatusValue = styled.div`
   font-size: 15px;
+  font-family: 'gotham-book';
   @media screen and (max-width: 450px) {
     font-size: 13px;
   }
