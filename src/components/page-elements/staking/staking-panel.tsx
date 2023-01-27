@@ -168,6 +168,7 @@ const KingPanelInput = styled.input`
   color: #ffffff;
   font-size: 15px;
   text-align: center;
+  outline: none;
   opacity: ${(props) => (props.disabled ?? false ? 0.5 : 1)};
   @media screen and (max-width: 1024px) {
     height: 44px;
