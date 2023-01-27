@@ -3,6 +3,7 @@ export const PUBLIC_ROUTES = {
   home: '/home',
   token: '/token',
   team: '/team',
+  staking: '/staking',
   error404: '/error404'
 };
 

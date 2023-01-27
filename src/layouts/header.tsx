@@ -84,12 +84,10 @@ export const Header = () => {
           <LogoButtons>
             <MobileLogo src={LogoHeader} alt="mobile-header-logo" onClick={() => navigate('/')} />
             <RectButtons>
-              <a href="https://king-finance.gitbook.io/king-whitepaper/" rel="noopener noreferrer">
+              <a href="https://king-finance.gitbook.io/king-whitepaper/" rel="noopener noreferrer" target={'_blank'}>
                 <RectButton>{t('home.docs')}</RectButton>
               </a>
-              <a href="https://kingworld.finance/token" rel="noopener noreferrer">
-                <RectButton>{t('home.staking')}</RectButton>
-              </a>
+              <RectButton onClick={() => navigate('/staking')}>{t('home.staking')}</RectButton>
               <MobileDropDownContainer data-aria-expanded={isMobOpen} ref={mbDropRef}>
                 <DropdownButton className="dbtn" onClick={() => mobSetOpen(!isMobOpen)}>
                   {lang}
@@ -112,13 +110,13 @@ export const Header = () => {
           </LogoButtons>
 
           <ButtonGroup>
-            <a href={'https://www.kingflokiworld.com'} rel="noopener noreferrer">
+            <a href={'https://www.kingflokiworld.com'} rel="noopener noreferrer" target={'_blank'}>
               <KingFlokiButton className="btn-kingfloki" />
             </a>
-            <a href={'https://kingland.finance'} rel="noopener noreferrer">
+            <a href={'https://kingland.finance'} rel="noopener noreferrer" target={'_blank'}>
               <KingLandButton className="btn-kingland" />
             </a>
-            <a href={'https://kingpad.finance'} rel="noopener noreferrer">
+            <a href={'https://kingpad.finance'} rel="noopener noreferrer" target={'_blank'}>
               <KingPadButton className="btn-kingpad" />
             </a>
           </ButtonGroup>

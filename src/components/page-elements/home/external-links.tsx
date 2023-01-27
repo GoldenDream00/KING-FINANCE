@@ -11,9 +11,11 @@ export const ExternalLinks = () => {
   return (
     <Wrapper>
       <ExternalLinkWrapper>
-        <div className="medium-link">
-          <img src={CmcIcon} alt="medium-link-icon" className="link-icon" />
-        </div>
+        <a href={'https://medium.com/@kingfinance'} rel="noopener noreferrer" target={'_blank'}>
+          <div className="medium-link">
+            <img src={CmcIcon} alt="medium-link-icon" className="link-icon" />
+          </div>
+        </a>
         <div className="coingecko-link">
           <img src={CoingeckoIcon} alt="coingecko-link-icon" className="link-icon" />
         </div>
@@ -28,7 +30,7 @@ export const ExternalLinks = () => {
         <div className="token-button" onClick={() => navigate('/team')}>
           {t('home.team')}
         </div>
-        <ALink href={'https://king-finance.gitbook.io/king-whitepaper/'} rel="noopener noreferrer">
+        <ALink href={'https://king-finance.gitbook.io/king-whitepaper/'} rel="noopener noreferrer" target={'_blank'}>
           <div className="token-button">{t('home.docs')}</div>
         </ALink>
         <div className="token-button">{t('home.mediakit')}</div>
@@ -113,4 +115,4 @@ const ALink = styled.a`
   outline: none;
   text-decoration: none;
   width: 100%;
-`
+`;

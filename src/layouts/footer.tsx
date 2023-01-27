@@ -29,19 +29,19 @@ export const Footer = () => {
           <Element>{t('home.terms')}</Element>
         </CopyRight>
         <SocialLinkGroup>
-          <a href={'https://t.me/KlNGfinance'} rel="noopener noreferrer">
+          <a href={'https://t.me/KlNGfinance'} rel="noopener noreferrer" target={'_blank'}>
             <SocialIcon src={TelegramIcon} />
           </a>
-          <a href={'https://twitter.com/kingfinance'} rel="noopener noreferrer">
+          <a href={'https://twitter.com/kingfinance'} rel="noopener noreferrer" target={'_blank'}>
             <SocialIcon src={TwitterIcon} />
           </a>
-          <a href={'https://www.youtube.com/@kingfinanceco'} rel="noopener noreferrer">
+          <a href={'https://www.youtube.com/@kingfinanceco'} rel="noopener noreferrer" target={'_blank'}>
             <SocialIcon src={YoutubeIcon} />
           </a>
-          <a href="https://king-finance.gitbook.io/king-whitepaper/" rel="noopener noreferrer">
+          <a href="https://king-finance.gitbook.io/king-whitepaper/" rel="noopener noreferrer" target={'_blank'}>
             <SocialIcon src={GitbookIcon} />
           </a>
-          <a href={'https://medium.com/@kingfinance'} rel="noopener noreferrer">
+          <a href={'https://medium.com/@kingfinance'} rel="noopener noreferrer" target={'_blank'}>
             <SocialIcon src={MediumIcon} />
           </a>
         </SocialLinkGroup>
