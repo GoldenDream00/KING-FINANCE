@@ -84,9 +84,13 @@ export const Header = () => {
           <LogoButtons>
             <MobileLogo src={LogoHeader} alt="mobile-header-logo" onClick={() => navigate('/')} />
             <RectButtons>
-              <a href="https://king-finance.gitbook.io/king-whitepaper/" rel="noopener noreferrer" target={'_blank'}>
+              <Alink
+                href="https://king-finance.gitbook.io/king-whitepaper/"
+                rel="noopener noreferrer"
+                target={'_blank'}
+              >
                 <RectButton>{t('home.docs')}</RectButton>
-              </a>
+              </Alink>
               <RectButton onClick={() => navigate('/staking')}>{t('home.staking')}</RectButton>
               <MobileDropDownContainer data-aria-expanded={isMobOpen} ref={mbDropRef}>
                 <DropdownButton className="dbtn" onClick={() => mobSetOpen(!isMobOpen)}>
@@ -455,4 +459,9 @@ const MobileDropDownContainer = styled.div`
   @media screen and (max-width: 1096px) {
     display: flex;
   }
+`;
+
+const Alink = styled.a`
+  outline: none;
+  text-decoration: none;
 `;
