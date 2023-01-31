@@ -57,9 +57,9 @@ export const getFreeData = async () => {
     const provider = new ethers.providers.JsonRpcProvider(rpc);
     const StakingContract = new ethers.Contract(contracts.King.staking, contracts.King.abi, provider);
     const _totalUserRewards = await StakingContract.totalUsersRewards();
-    const totalUserRewards = _totalUserRewards.toString();
+    const totalUserRewards = parseFloat(ethers.utils.formatUnits(_totalUserRewards.toString(), 9)).toFixed(4);
     const _totalLocked = await StakingContract.totalUsersStake();
-    const totalLocked = ethers.utils.formatUnits(_totalLocked.toString(), 9);
+    const totalLocked = parseFloat(ethers.utils.formatUnits(_totalLocked.toString(), 9)).toFixed(4);
     freeData.push(totalUserRewards, totalLocked);
     return freeData;
 }
@@ -68,7 +68,7 @@ export const getUserData = async (address: string | undefined) => {
     const userData = [];
     if(Staking !== null) {
         const userInfos = await Staking.userInfo(address);
-        const deposit = ethers.utils.formatUnits(userInfos[0].toString(), 9);
+        const deposit = parseFloat(ethers.utils.formatUnits(userInfos[0].toString(), 9)).toFixed(4);
         const lockTime = (parseInt(userInfos[2]) ).toString();
         
         const _rewardDebt = ethers.utils.formatUnits(userInfos[1], 5)
@@ -77,12 +77,8 @@ export const getUserData = async (address: string | undefined) => {
         
         const _kingBalance = await currencyContract.balanceOf(address);
         const kingBalance = ethers.utils.formatUnits(_kingBalance.toString(), 9);
-        const _userAllowance = await currencyContract.allowance(address, contracts.King.address);
-        const userAllowance = parseInt(_userAllowance);
-        userData.push(deposit, lockTime, rewardDebt, kingBalance, userAllowance);
+        userData.push(deposit, lockTime, rewardDebt, kingBalance);
         console.log({ userData })
         return userData;
     }
 }
-
-// ethers.utils.parseUnits(amount.toString(), 9)

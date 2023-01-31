@@ -11,11 +11,7 @@ import { useWeb3Store } from 'src/context/Web3Context';
 export const StakingPanel = () => {
   const [editState, setEditState] = useState({
     tokenAmount: 0,
-    withdrawAmount: 0,
-    rewardsClaimed: 0,
-    kingPrice: 0,
-    apy: 0,
-    tvl: 0
+    withdrawAmount: 0
   });
   const [isLoad, setLoad] = useState(false);
 
@@ -40,20 +36,17 @@ export const StakingPanel = () => {
           handleTime(parseInt(userData[1].toString()));
           setPendingReward(userData[2].toString());
           setKingBalance(userData[3]);
-          const allowance = userData[4];
-          console.log({ allowance });
         }
       })();
     }
-  }, [isInitialized]);
+  }, [isInitialized, isLoad]);
 
   const handleTime = (timeStamp: number) => {
     if (timeStamp !== 0) {
       const now = Math.floor(Date.now() / 1000);
       const remain = Number(timeStamp) - now;
       if (remain < 0) {
-        const str = 'Lock time over';
-        setUnlockIn(str);
+        setUnlockIn('over');
       } else {
         let days: string | number = Math.floor(remain / 86400);
         let hours: string | number = Math.floor((remain - days * 86400) / 3600);
@@ -123,7 +116,7 @@ export const StakingPanel = () => {
           <KingBalanceText>
             <StatusText title="Pending reward" value={pendingReward ?? 0} />
             <StatusText title="Deposited" value={deposited ?? 0} />
-            <StatusText title="Unlock in" value={unlockIn} />
+            <StatusText title="Unlock in" value={unlockIn === 'over' ? 'Lock time over' : unlockIn} />
           </KingBalanceText>
         </StakingBalancePanel>
         <StakingField>
@@ -139,6 +132,7 @@ export const StakingPanel = () => {
               <KingPanelButtons>
                 {isApprove ? (
                   <KingPanelButton
+                    disabled={isLoad}
                     onClick={() =>
                       handleAsync(async () => await tokenDeposit(editState.tokenAmount), 'Successfully Deposited')
                     }
@@ -154,7 +148,7 @@ export const StakingPanel = () => {
                   </KingPanelButton>
                 )}
                 <KingPanelButton
-                  disabled={deposited === 0}
+                  disabled={parseFloat(deposited.toString()) === 0 || isLoad}
                   onClick={() => handleAsync(async () => await compound(), 'Successfully compounded')}
                 >
                   {isLoad ? <Spinner /> : 'Compound'}
@@ -168,13 +162,13 @@ export const StakingPanel = () => {
               <KingPanelInput
                 type="number"
                 placeholder="Amount"
-                disabled={deposited === 0}
+                disabled={unlockIn !== 'over'}
                 value={editState.withdrawAmount === 0 ? '' : editState.withdrawAmount}
                 onChange={(e) => handleEditState('withdrawAmount', e.currentTarget.value)}
               />
               <KingPanelButtons>
                 <KingPanelButton
-                  disabled={deposited === 0}
+                  disabled={unlockIn !== 'over'}
                   onClick={() =>
                     handleAsync(async () => await withdraw(editState.withdrawAmount), 'Successfully withdrawn')
                   }
