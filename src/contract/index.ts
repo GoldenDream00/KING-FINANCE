@@ -53,7 +53,7 @@ export const withdraw = async (amount: number) => {
 
 export const getFreeData = async () => {
     const freeData = [];
-    const rpc = "https://data-seed-prebsc-1-s1.binance.org:8545/";
+    const rpc = "https://bsc-testnet.public.blastapi.io";
     const provider = new ethers.providers.JsonRpcProvider(rpc);
     const StakingContract = new ethers.Contract(contracts.King.staking, contracts.King.abi, provider);
     const _totalUserRewards = await StakingContract.totalUsersRewards();
