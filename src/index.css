@@ -66,3 +66,23 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
+
+.material-symbols-rounded {
+  font-size: 20px !important;
+}
+
+.Toastify__toast-body {
+  color: #444C63;
+  font-size: 16px;
+  padding-left: 20px;
+  line-height: 20px;
+  padding: 0px;
+  padding-top: 25px;
+  width: 100%;
+  font-weight: 400;
+  margin-left: 25px !important;
+} 
+
+.Toastify__toast, .Toastify__toast-container, .Toastify__toast-container--top-right {
+  width: 380px !important;
+}

@@ -10,6 +10,7 @@ import { LogoHeader, MenuKingfloki, MenuKingland, MenuKingpad } from '../config/
 
 import { useTranslation } from 'react-i18next';
 import { useStore } from '../context/StoreContext';
+import { CustomConnectButton } from 'src/components/button';
 
 export const Header = () => {
   const { t, i18n } = useTranslation();
@@ -25,10 +26,10 @@ export const Header = () => {
   const navigate = useNavigate();
 
   const handleClickOutside = (event: React.MouseEvent<HTMLElement>) => {
-    if (mbDropRef.current && !mbDropRef.current.contains(event.target as any)) {
+    if (mbDropRef.current != null && !mbDropRef.current.contains(event.target as any)) {
       mobSetOpen(false);
     }
-    if (DsDropRef.current && !DsDropRef.current.contains(event.target as any)) {
+    if (DsDropRef.current != null && !DsDropRef.current.contains(event.target as any)) {
       deskSetOpen(false);
     }
   };
@@ -84,14 +85,8 @@ export const Header = () => {
           <LogoButtons>
             <MobileLogo src={LogoHeader} alt="mobile-header-logo" onClick={() => navigate('/')} />
             <RectButtons>
-              <Alink
-                href="https://king-finance.gitbook.io/king-whitepaper/"
-                rel="noopener noreferrer"
-                target={'_blank'}
-              >
-                <RectButton>{t('home.docs')}</RectButton>
-              </Alink>
               <RectButton onClick={() => navigate('/staking')}>{t('home.staking')}</RectButton>
+
               <MobileDropDownContainer data-aria-expanded={isMobOpen} ref={mbDropRef}>
                 <DropdownButton className="dbtn" onClick={() => mobSetOpen(!isMobOpen)}>
                   {lang}
@@ -110,6 +105,9 @@ export const Header = () => {
                   <DropdownItem onClick={LanguageChoose}>中文</DropdownItem>
                 </DropDownContent>
               </MobileDropDownContainer>
+              <MobileWalletButton>
+                <CustomConnectButton />
+              </MobileWalletButton>
             </RectButtons>
           </LogoButtons>
 
@@ -142,6 +140,10 @@ export const Header = () => {
               <DropdownItem onClick={LanguageChoose}>中文</DropdownItem>
             </DropDownContent>
           </DesktopDropDownContainer>
+          <DeskWalletButton>
+            <CustomConnectButton />
+          </DeskWalletButton>
+          {/* <RectButton>{t('home.docs')}</RectButton> */}
         </RectButtonGroup>
       </HeaderContent>
     </Container>
@@ -217,6 +219,7 @@ const RectButtons = styled.div`
   display: flex;
   gap: 10px;
   font-family: 'gotham-bold';
+  align-items: center;
   @media screen and (max-width: 480px) {
     gap: 0;
   }
@@ -241,8 +244,9 @@ const RectButton = styled.div`
     background: none;
     padding: 10px;
   }
-  @media screen and (max-width: 420px) {
-    font-size: 11px;
+  @media screen and (max-width: 480px) {
+    font-size: 10px;
+    padding: 0;
   }
 `;
 
@@ -394,8 +398,8 @@ const DropdownButton = styled.div`
     background: none;
     padding: 10px;
   }
-  @media screen and (max-width: 420px) {
-    font-size: 11px;
+  @media screen and (max-width: 480px) {
+    font-size: 10px;
   }
 `;
 
@@ -464,4 +468,18 @@ const MobileDropDownContainer = styled.div`
 const Alink = styled.a`
   outline: none;
   text-decoration: none;
+`;
+
+const DeskWalletButton = styled.div`
+  display: block;
+  @media screen and (max-width: 1096px) {
+    display: none;
+  }
+`;
+
+const MobileWalletButton = styled.div`
+  display: none;
+  @media screen and (max-width: 1096px) {
+    display: block;
+  }
 `;

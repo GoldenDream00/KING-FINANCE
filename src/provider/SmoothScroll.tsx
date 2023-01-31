@@ -71,5 +71,6 @@ const SmoothScrollContainer = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
+  margin: 0 auto;
   overflow: hidden;
 `;

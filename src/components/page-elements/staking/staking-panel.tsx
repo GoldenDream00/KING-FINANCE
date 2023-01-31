@@ -1,38 +1,186 @@
+/* eslint-disable @typescript-eslint/restrict-plus-operands */
+import { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
 import styled from 'styled-components';
 import { StatusText } from './staking-status';
+import { approve, compound, getUserData, isApproved, tokenDeposit, withdraw } from 'src/contract';
+import { Spinner } from 'src/components/spinner';
+import { useAccount } from 'wagmi';
+import { useWeb3Store } from 'src/context/Web3Context';
 
 export const StakingPanel = () => {
+  const [editState, setEditState] = useState({
+    tokenAmount: 0,
+    withdrawAmount: 0,
+    rewardsClaimed: 0,
+    kingPrice: 0,
+    apy: 0,
+    tvl: 0
+  });
+  const [isLoad, setLoad] = useState(false);
+
+  const [unlockIn, setUnlockIn] = useState<string | number>(0);
+  const [deposited, setDeposited] = useState<string | number>(0);
+  const [pendingReward, setPendingReward] = useState<string | number>(0);
+  const [kingBalance, setKingBalance] = useState<string | number>(0);
+  const [isApprove, setApprove] = useState(false);
+
+  const { isConnected, address } = useAccount();
+
+  const { isInitialized } = useWeb3Store();
+
+  useEffect(() => {
+    if (isInitialized) {
+      (async () => {
+        const userData = await getUserData(address);
+        const isApp = await isApproved(address);
+        setApprove(isApp);
+        if (userData !== undefined) {
+          setDeposited(userData[0].toString());
+          handleTime(parseInt(userData[1].toString()));
+          setPendingReward(userData[2].toString());
+          setKingBalance(userData[3]);
+          const allowance = userData[4];
+          console.log({ allowance });
+        }
+      })();
+    }
+  }, [isInitialized]);
+
+  const handleTime = (timeStamp: number) => {
+    if (timeStamp !== 0) {
+      const now = Math.floor(Date.now() / 1000);
+      const remain = Number(timeStamp) - now;
+      if (remain < 0) {
+        const str = 'Lock time over';
+        setUnlockIn(str);
+      } else {
+        let days: string | number = Math.floor(remain / 86400);
+        let hours: string | number = Math.floor((remain - days * 86400) / 3600);
+        let minutes: string | number = Math.floor((remain - days * 86400 - hours * 3600) / 60);
+        let seconds: string | number = remain - days * 86400 - hours * 3600 - minutes * 60;
+        if (days < 10) {
+          days = '0' + days;
+        }
+        if (hours < 10) {
+          hours = '0' + hours;
+        }
+        if (minutes < 10) {
+          minutes = '0' + minutes;
+        }
+        if (seconds < 10) {
+          seconds = '0' + seconds;
+        }
+        const res = days + ' : ' + hours + ' : ' + minutes + ' : ' + seconds;
+        setUnlockIn(res);
+        setTimeout(() => handleTime(timeStamp--), 1000);
+      }
+    }
+  };
+
+  const handleEditState = (prop: string, value: string | number | boolean) => {
+    setEditState({ ...editState, [prop]: value });
+  };
+
+  const handleAsync = (func: () => Promise<void>, successMsg: string) => {
+    // eslint-disable-next-line @typescript-eslint/no-misused-promises, no-async-promise-executor
+    const promise = new Promise(async function (resolve, reject) {
+      try {
+        setLoad(true);
+        await func();
+        resolve('');
+      } catch (err) {
+        reject(err);
+      }
+    });
+    promise
+      .then((result) => {
+        console.log({ result });
+        toast.success(successMsg);
+        setLoad(false);
+      })
+      .catch((err) => {
+        console.log({ err });
+        const revertData = err.reason;
+        toast.error(`Transaction failed: ${revertData ?? err}`);
+        setLoad(false);
+      });
+  };
+
+  const tokenApprove = async () => {
+    await approve();
+    setApprove(true);
+  };
+
   return (
     <StakingPanelContainer>
       <StakingPanelWrapper>
         <StakingBalancePanel>
           <KingBalanceCircle>
             <KingBalanceTitle>$King Balance</KingBalanceTitle>
-            <KingBalanceValue>123.456</KingBalanceValue>
+            <KingBalanceValue>{kingBalance}</KingBalanceValue>
           </KingBalanceCircle>
           <KingBalanceText>
-            <StatusText title="Pending reward" value="123.456" />
-            <StatusText title="Deposited" value="123.456" />
-            <StatusText title="Unlock in" value="14 | 12 | 04 | 33" />
+            <StatusText title="Pending reward" value={pendingReward ?? 0} />
+            <StatusText title="Deposited" value={deposited ?? 0} />
+            <StatusText title="Unlock in" value={unlockIn} />
           </KingBalanceText>
         </StakingBalancePanel>
         <StakingField>
           <KingPanel>
             <KingPanelTitle>Stake $King</KingPanelTitle>
             <KingPanelAction>
-              <KingPanelInput type="number" placeholder="Amount" />
+              <KingPanelInput
+                type="number"
+                placeholder="Amount"
+                value={editState.tokenAmount === 0 ? '' : editState.tokenAmount}
+                onChange={(e) => handleEditState('tokenAmount', e.currentTarget.value)}
+              />
               <KingPanelButtons>
-                <KingPanelButton>Approve</KingPanelButton>
-                <KingPanelButton disabled={true}>Compound</KingPanelButton>
+                {isApprove ? (
+                  <KingPanelButton
+                    onClick={() =>
+                      handleAsync(async () => await tokenDeposit(editState.tokenAmount), 'Successfully Deposited')
+                    }
+                  >
+                    {isLoad ? <Spinner /> : 'Deposit'}
+                  </KingPanelButton>
+                ) : (
+                  <KingPanelButton
+                    disabled={!isConnected ? true : isLoad}
+                    onClick={() => handleAsync(async () => await tokenApprove(), 'Successfully Approved')}
+                  >
+                    {isLoad ? <Spinner /> : 'Approve'}
+                  </KingPanelButton>
+                )}
+                <KingPanelButton
+                  disabled={deposited === 0}
+                  onClick={() => handleAsync(async () => await compound(), 'Successfully compounded')}
+                >
+                  {isLoad ? <Spinner /> : 'Compound'}
+                </KingPanelButton>
               </KingPanelButtons>
             </KingPanelAction>
           </KingPanel>
           <KingPanel>
             <KingPanelTitle>Withdraw $King</KingPanelTitle>
             <KingPanelAction>
-              <KingPanelInput type="number" placeholder="Amount" disabled={true} />
+              <KingPanelInput
+                type="number"
+                placeholder="Amount"
+                disabled={deposited === 0}
+                value={editState.withdrawAmount === 0 ? '' : editState.withdrawAmount}
+                onChange={(e) => handleEditState('withdrawAmount', e.currentTarget.value)}
+              />
               <KingPanelButtons>
-                <KingPanelButton disabled={true}>Withdraw</KingPanelButton>
+                <KingPanelButton
+                  disabled={deposited === 0}
+                  onClick={() =>
+                    handleAsync(async () => await withdraw(editState.withdrawAmount), 'Successfully withdrawn')
+                  }
+                >
+                  {isLoad ? <Spinner /> : 'Withdraw'}
+                </KingPanelButton>
               </KingPanelButtons>
             </KingPanelAction>
           </KingPanel>

@@ -1,12 +1,22 @@
+import { useEffect, useState } from 'react';
+import { getFreeData } from 'src/contract';
 import styled from 'styled-components';
 
 export const StakingStatus = () => {
+  const [freeData, setFreeData] = useState<string[]>([]);
+
+  useEffect(() => {
+    (async () => {
+      const _freeData = await getFreeData();
+      setFreeData(_freeData);
+    })();
+  }, []);
   return (
     <StakingStatusContainer>
       <StakingStatusText>
         <StakingStatusGroup1>
-          <StatusText title="Total Locked" value="323,678,919,968" isFlag={true} />
-          <StatusText title="User Rewards claimed" value="13,821,588,206" />
+          <StatusText title="Total Locked" value={freeData[1] ?? 0} isFlag={true} />
+          <StatusText title="User Rewards claimed" value={freeData[0] ?? 0} />
         </StakingStatusGroup1>
         <StakingStatusGroup2>
           <StatusText title="KING price" value="0.003564 $" />
@@ -39,7 +49,7 @@ const StakingStatusText = styled.div`
 
 interface StatusTextProps {
   title: string;
-  value: string;
+  value: string | number;
   isFlag?: boolean;
 }
 

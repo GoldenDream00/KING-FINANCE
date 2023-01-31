@@ -59,7 +59,7 @@ export const EcoSystem = () => {
         <ConnectWithKing>
           <ConnectLetter>{t('home.connectwithking')}</ConnectLetter>
           <SocialLinkGroup>
-            <SocialBox href={'https://t.me/KlNGfinance'} rel="noopener noreferrer">
+            <SocialBox href={'https://t.me/KlNGfinance'} rel="noopener noreferrer" target="_blank">
               <svg
                 className="social-icon"
                 id="Layer_2"
@@ -78,7 +78,7 @@ export const EcoSystem = () => {
                 </g>
               </svg>
             </SocialBox>
-            <SocialBox href={'https://twitter.com/kingfinance'} rel="noopener noreferrer">
+            <SocialBox href={'https://twitter.com/kingfinance'} rel="noopener noreferrer" target="_blank">
               <svg
                 id="Layer_2"
                 className="social-icon"
@@ -99,7 +99,7 @@ export const EcoSystem = () => {
                 </g>
               </svg>
             </SocialBox>
-            <SocialBox href={'https://www.youtube.com/@kingfinanceco'} rel="noopener noreferrer">
+            <SocialBox href={'https://www.youtube.com/@kingfinanceco'} rel="noopener noreferrer" target="_blank">
               <svg
                 id="Layer_2"
                 className="social-icon"
@@ -120,7 +120,11 @@ export const EcoSystem = () => {
                 </g>
               </svg>
             </SocialBox>
-            <SocialBox href={'https://king-finance.gitbook.io/king-whitepaper/'} rel="noopener noreferrer">
+            <SocialBox
+              href={'https://king-finance.gitbook.io/king-whitepaper/'}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
               <svg
                 id="Layer_2"
                 className="social-icon"
@@ -130,20 +134,24 @@ export const EcoSystem = () => {
                 fill="currentColor"
               >
                 <g id="svg2575">
-                 <g id="gitbook-icon" transform="translate(0 0)">
-                    <path id="Path_31018" className="st0" d="M10.9,17.3c0.4,0,0.7,0.3,0.7,0.7c0,0.4-0.3,0.7-0.7,0.7c-0.4,0-0.7-0.3-0.7-0.7
+                  <g id="gitbook-icon" transform="translate(0 0)">
+                    <path
+                      id="Path_31018"
+                      className="st0"
+                      d="M10.9,17.3c0.4,0,0.7,0.3,0.7,0.7c0,0.4-0.3,0.7-0.7,0.7c-0.4,0-0.7-0.3-0.7-0.7
                       C10.3,17.6,10.6,17.3,10.9,17.3C10.9,17.3,10.9,17.3,10.9,17.3 M21.4,13.1c-0.4,0-0.7-0.3-0.7-0.7c0-0.4,0.3-0.7,0.7-0.7
                       s0.7,0.3,0.7,0.7C22.1,12.8,21.8,13.1,21.4,13.1 M21.4,10.4c-1.1,0-2.1,0.9-2.1,2.1c0,0.2,0,0.4,0.1,0.6l-6.8,3.6
                       c-0.4-0.6-1-0.9-1.7-0.9c-0.8,0-1.5,0.4-1.9,1.1l-6.1-3.2c-0.6-0.4-1.1-1.4-1.1-2.4c0-0.5,0.2-0.9,0.5-1c0.2-0.1,0.4-0.1,0.6,0
                       l0,0c1.6,0.9,7,3.6,7.2,3.7c0.4,0.1,0.5,0.2,1.1-0.1l11-5.7c0.2-0.1,0.4-0.2,0.4-0.5c0-0.3-0.3-0.5-0.3-0.5
                       c-0.6-0.3-1.6-0.7-2.5-1.2c-2-0.9-4.3-2-5.3-2.5c-0.9-0.5-1.6-0.1-1.7,0l-0.2,0.1C8.1,6.1,2.1,9.1,1.7,9.3c-0.6,0.4-1,1.1-1,2
                       c-0.1,1.5,0.7,3,1.7,3.5l6.5,3.4c0.1,1,1,1.8,2,1.8c1.1,0,2-0.9,2.1-2l7.1-3.9c0.9,0.7,2.2,0.5,2.9-0.4s0.5-2.2-0.4-2.9
-                      C22.3,10.5,21.9,10.4,21.4,10.4"/>
+                      C22.3,10.5,21.9,10.4,21.4,10.4"
+                    />
                   </g>
                 </g>
               </svg>
             </SocialBox>
-            <SocialBox href={'https://medium.com/@kingfinance'} rel="noopener noreferrer">
+            <SocialBox href={'https://medium.com/@kingfinance'} rel="noopener noreferrer" target="_blank">
               <svg
                 id="Layer_2"
                 className="social-icon"
