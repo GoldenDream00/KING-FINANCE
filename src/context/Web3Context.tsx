@@ -26,6 +26,8 @@ export const Web3Provider = (props: propsType) => {
         // console.log(signer);
         initializeWeb3(provider, signer);
         setInitialized(true);
+      } else {
+        setInitialized(false);
       }
     })();
   }, [isConnected, signer]);
