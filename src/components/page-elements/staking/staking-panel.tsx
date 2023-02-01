@@ -39,14 +39,13 @@ export const StakingPanel = () => {
       }
     }
 
-    // setApprove(userData[4]);
+    setApprove(userData[3]);
+    setKingBalance(userData[4]);
   };
 
   useEffect(() => {
     if (isInitialized) {
       getData();
-      // const kingBalance = await getKingBalance(address);
-      // setKingBalance(kingBalance);
     }
   }, [isInitialized, isConnected, isLoad]);
 
