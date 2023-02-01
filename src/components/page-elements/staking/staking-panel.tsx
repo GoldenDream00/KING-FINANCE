@@ -15,31 +15,40 @@ export const StakingPanel = () => {
   });
   const [isLoad, setLoad] = useState(false);
 
-  const [unlockIn, setUnlockIn] = useState<string | number>(0);
+  const [unlockIn, setUnlockIn] = useState<string>('');
   const [deposited, setDeposited] = useState<string | number>(0);
   const [pendingReward, setPendingReward] = useState<string | number>(0);
   const [kingBalance, setKingBalance] = useState<string | number>(0);
   const [isApprove, setApprove] = useState(false);
+  const [isFlag, setFlag] = useState(false);
 
   const { isConnected, address } = useAccount();
 
   const { isInitialized } = useWeb3Store();
 
+  const getData = async () => {
+    const userData = await getUserData(address);
+
+    if (userData !== undefined) {
+      setDeposited(userData[0].toString());
+      setPendingReward(userData[2].toString());
+      setKingBalance(userData[3]);
+      console.log({ userData });
+      if (!isFlag) {
+        handleTime(parseInt(userData[1].toString()));
+        setFlag(true);
+      }
+    }
+
+    const isApp = await isApproved(address);
+    setApprove(isApp);
+  };
+
   useEffect(() => {
     if (isInitialized) {
-      (async () => {
-        const userData = await getUserData(address);
-        const isApp = await isApproved(address);
-        setApprove(isApp);
-        if (userData !== undefined) {
-          setDeposited(userData[0].toString());
-          handleTime(parseInt(userData[1].toString()));
-          setPendingReward(userData[2].toString());
-          setKingBalance(userData[3]);
-        }
-      })();
+      getData();
     }
-  }, [isInitialized, isLoad]);
+  }, [isInitialized, isConnected, isLoad]);
 
   const handleTime = (timeStamp: number) => {
     if (timeStamp !== 0) {
@@ -65,8 +74,10 @@ export const StakingPanel = () => {
           seconds = '0' + seconds;
         }
         const res = days + ' : ' + hours + ' : ' + minutes + ' : ' + seconds;
-        setUnlockIn(res);
-        setTimeout(() => handleTime(timeStamp--), 1000);
+        if (res !== unlockIn) {
+          setUnlockIn(res);
+        }
+        setTimeout(() => handleTime(timeStamp), 1000);
       }
     }
   };
@@ -160,10 +171,10 @@ export const StakingPanel = () => {
             <KingPanelTitle>Withdraw $King</KingPanelTitle>
             <KingPanelAction>
               <KingPanelInput
-                type="number"
+                type={unlockIn !== 'over' ? 'text' : 'number'}
                 placeholder="Amount"
                 disabled={unlockIn !== 'over'}
-                value={editState.withdrawAmount === 0 ? '' : editState.withdrawAmount}
+                value={unlockIn !== 'over' ? unlockIn : editState.withdrawAmount === 0 ? '' : editState.withdrawAmount}
                 onChange={(e) => handleEditState('withdrawAmount', e.currentTarget.value)}
               />
               <KingPanelButtons>
