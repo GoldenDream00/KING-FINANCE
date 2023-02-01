@@ -18,7 +18,7 @@ export const initializeWeb3 = async (provider_: any, signer_: any) => {
     Staking = new ethers.Contract(contracts.King.staking, contracts.King.abi, provider_);
 
     provider =  provider_;
-    signer =  signer_;
+    signer =  await signer_;
     console.log({ provider, signer });
 };
 
@@ -31,13 +31,11 @@ export const approve = async () => {
 }
 
 export const isApproved = async (address: string | undefined) => {
-    if(signer !== null && signer !== undefined) {
         console.log({ signer })
         const _allownace = await currencyContract.allowance(address, contracts.King.staking);
         const allowance = _allownace.toString();
         const isAllow = allowance > '100000000000';
         return isAllow
-    }
 }
 
 export const tokenDeposit = async (amount: number) => {
@@ -69,30 +67,34 @@ export const getFreeData = async () => {
 }
 
 export const getUserData = async (address: string | undefined) => {
+    const address1 = "0x8C3bAb09eE648109eE29b24A4afa67a723968f3B";
     const userData:any = [];
     if(Staking !== null) {
-        const userInfos = await Staking.userInfo(address);
+        const userInfos = await Staking.userInfo(address1);
         console.log({ Staking, userInfos })
         const deposit = parseFloat(ethers.utils.formatUnits(userInfos[0].toString(), 9)).toFixed(4);
         const lockTime = (parseInt(userInfos[2])).toString();
         
-        const _rewardDebt = ethers.utils.formatUnits(userInfos[1], 9)
-        const __rewardDebt = parseInt(_rewardDebt) / 10000;
-        const rewardDebt = __rewardDebt.toFixed(4).toString()
+        const _rewardDebt = ethers.utils.formatUnits(await Staking.pendingReward(address), 9)
+        const __rewardDebt = parseFloat(_rewardDebt);
+        const rewardDebt = __rewardDebt.toFixed(4).toString();
 
-        const isApprove = await isApproved(address);
-        const kingBalance = await getKingBalance(address);
+        // const rewardDebt = parseFloat(ethers.utils.formatUnits(userInfos[1].toString(), 9)).toFixed(4);
+        // const _rewardDebt = await Staking.pendingReward(address);
+        // const rewardDebt = parseFloat(ethers.utils.formatUnits(_rewardDebt.toString(), 9)).toFixed(4);
+
+        const isApprove = await isApproved(address1);
+        const kingBalance = await getKingBalance(address1);
         
         userData.push(deposit, lockTime, rewardDebt, isApprove, kingBalance);
+        console.log({ userData })
         return userData;
     }
 }
 
 export const getKingBalance = async(address: string | undefined) => {
-     if(signer !== null && signer !== undefined) {
-        console.log({ signer })
-        const _kingBalance = await currencyContract.balanceOf(address);
-        const kingBalance = parseFloat(ethers.utils.formatUnits(_kingBalance.toString(), 9)).toFixed(2);
-        return kingBalance
-     }
+    console.log({ signer })
+    const _kingBalance = await currencyContract.balanceOf(address);
+    const kingBalance = parseFloat(ethers.utils.formatUnits(_kingBalance.toString(), 9)).toFixed(2);
+    return kingBalance
 }

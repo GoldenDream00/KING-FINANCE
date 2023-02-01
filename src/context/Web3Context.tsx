@@ -21,11 +21,15 @@ export const Web3Provider = (props: propsType) => {
   const [isInitialized, setInitialized] = useState(false);
   useEffect(() => {
     (async () => {
-      if (isConnected) {
-        // eslint-disable-next-line no-console
-        // console.log(signer);
-        initializeWeb3(provider, signer);
-        setInitialized(true);
+      if (isConnected && signer !== undefined) {
+        initializeWeb3(provider, signer)
+          .then(() => {
+            console.log('true');
+            setInitialized(true);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
       } else {
         setInitialized(false);
       }

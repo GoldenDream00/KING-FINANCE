@@ -37,10 +37,9 @@ export const StakingPanel = () => {
         handleTime(parseInt(userData[1].toString()));
         setFlag(true);
       }
+      setApprove(userData[3]);
+      setKingBalance(userData[4]);
     }
-
-    setApprove(userData[3]);
-    setKingBalance(userData[4]);
   };
 
   useEffect(() => {
@@ -189,7 +188,7 @@ export const StakingPanel = () => {
               />
               <KingPanelButtons>
                 <KingPanelButton
-                  disabled={unlockIn !== 'over' || !isConnected}
+                  disabled={unlockIn !== 'over' || !isConnected || isLoad}
                   onClick={() =>
                     handleAsync(async () => await withdraw(editState.withdrawAmount), 'Successfully withdrawn')
                   }
