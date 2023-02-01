@@ -46,6 +46,11 @@ export const StakingPanel = () => {
   useEffect(() => {
     if (isInitialized) {
       getData();
+    } else {
+      setKingBalance(0);
+      setUnlockIn('0');
+      setPendingReward(0);
+      setDeposited(0);
     }
   }, [isInitialized, isConnected, isLoad]);
 
@@ -140,7 +145,7 @@ export const StakingPanel = () => {
                 onChange={(e) => handleEditState('tokenAmount', e.currentTarget.value)}
               />
               <KingPanelButtons>
-                {isApprove ? (
+                {isApprove && isConnected ? (
                   <KingPanelButton
                     disabled={isLoad}
                     onClick={() =>
@@ -158,7 +163,7 @@ export const StakingPanel = () => {
                   </KingPanelButton>
                 )}
                 <KingPanelButton
-                  disabled={parseFloat(deposited.toString()) === 0 || isLoad}
+                  disabled={parseFloat(deposited.toString()) === 0 || isLoad || !isConnected}
                   onClick={() => handleAsync(async () => await compound(), 'Successfully compounded')}
                 >
                   {isLoad ? <Spinner /> : 'Compound'}
@@ -172,13 +177,19 @@ export const StakingPanel = () => {
               <KingPanelInput
                 type={unlockIn !== 'over' ? 'text' : 'number'}
                 placeholder="Amount"
-                disabled={unlockIn !== 'over'}
-                value={unlockIn !== 'over' ? unlockIn : editState.withdrawAmount === 0 ? '' : editState.withdrawAmount}
+                disabled={unlockIn !== 'over' || !isConnected}
+                value={
+                  unlockIn !== 'over' && unlockIn !== '0'
+                    ? unlockIn
+                    : editState.withdrawAmount === 0
+                    ? ''
+                    : editState.withdrawAmount
+                }
                 onChange={(e) => handleEditState('withdrawAmount', e.currentTarget.value)}
               />
               <KingPanelButtons>
                 <KingPanelButton
-                  disabled={unlockIn !== 'over'}
+                  disabled={unlockIn !== 'over' || !isConnected}
                   onClick={() =>
                     handleAsync(async () => await withdraw(editState.withdrawAmount), 'Successfully withdrawn')
                   }
