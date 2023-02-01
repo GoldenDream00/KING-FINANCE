@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import styled from 'styled-components';
 import { StatusText } from './staking-status';
-import { approve, compound, getUserData, isApproved, tokenDeposit, withdraw } from 'src/contract';
+import { approve, compound, getKingBalance, getUserData, isApproved, tokenDeposit, withdraw } from 'src/contract';
 import { Spinner } from 'src/components/spinner';
 import { useAccount } from 'wagmi';
 import { useWeb3Store } from 'src/context/Web3Context';
@@ -32,7 +32,6 @@ export const StakingPanel = () => {
     if (userData !== undefined) {
       setDeposited(userData[0].toString());
       setPendingReward(userData[2].toString());
-      setKingBalance(userData[3]);
       console.log({ userData });
       if (!isFlag) {
         handleTime(parseInt(userData[1].toString()));
@@ -40,13 +39,14 @@ export const StakingPanel = () => {
       }
     }
 
-    const isApp = await isApproved(address);
-    setApprove(isApp);
+    // setApprove(userData[4]);
   };
 
   useEffect(() => {
     if (isInitialized) {
       getData();
+      // const kingBalance = await getKingBalance(address);
+      // setKingBalance(kingBalance);
     }
   }, [isInitialized, isConnected, isLoad]);
 

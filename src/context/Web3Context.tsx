@@ -24,7 +24,7 @@ export const Web3Provider = (props: propsType) => {
       if (isConnected) {
         // eslint-disable-next-line no-console
         // console.log(signer);
-        await initializeWeb3(provider, signer);
+        initializeWeb3(provider, signer);
         setInitialized(true);
       }
     })();
