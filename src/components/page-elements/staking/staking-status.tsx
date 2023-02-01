@@ -3,25 +3,51 @@ import { getFreeData } from 'src/contract';
 import styled from 'styled-components';
 
 export const StakingStatus = () => {
-  const [freeData, setFreeData] = useState<string[]>([]);
+  const [freeData, setFreeData] = useState<Array<string | number>>([]);
+  const [kingPrice, setKingPrice] = useState(0);
+  const [tvl, setTvl] = useState<string | number>(0);
 
   useEffect(() => {
     (async () => {
       const _freeData = await getFreeData();
+      await getKingPrice();
       setFreeData(_freeData);
     })();
   }, []);
+
+  useEffect(() => {
+    if (kingPrice !== 0) {
+      const totalLocked = freeData[0];
+      const _tvl = (Number(totalLocked) * kingPrice).toFixed(2);
+      setTvl(_tvl);
+    }
+  }, [freeData]);
+
+  const getKingPrice = async () => {
+    await fetch(
+      'https://api.dev.dex.guru/v1/chain/56/tokens/0x74f08aF7528Ffb751e3A435ddD779b5C4565e684/market?api-key=UnK0BOsJoU3FhwiWcoIuBzGQVT3j_dw_656de3zEAAs'
+    )
+      .then((response) => {
+        response.json().then((data) => {
+          const price = data.price_usd.toFixed(5);
+          setKingPrice(price);
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   return (
     <StakingStatusContainer>
       <StakingStatusText>
         <StakingStatusGroup1>
-          <StatusText title="Total Locked" value={freeData[1] ?? 0} isFlag={true} />
-          <StatusText title="User Rewards claimed" value={freeData[0] ?? 0} />
+          <StatusText title="Total Locked" value={freeData[0] ?? 0} isFlag={true} />
+          <StatusText title="User Rewards claimed" value={freeData[1] ?? 0} />
         </StakingStatusGroup1>
         <StakingStatusGroup2>
-          <StatusText title="KING price" value="0.003564 $" />
-          <StatusText title="APY" value="11.5%" />
-          <StatusText title="TVL" value="1,257,492.604 $" />
+          <StatusText title="KING price" value={`${kingPrice ?? 0} $`} />
+          <StatusText title="APY" value={`${freeData[2] ?? 0}%`} />
+          <StatusText title="TVL" value={`${tvl} $`} />
         </StakingStatusGroup2>
       </StakingStatusText>
     </StakingStatusContainer>

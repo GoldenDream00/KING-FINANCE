@@ -58,19 +58,24 @@ export const getFreeData = async () => {
     const rpc = "https://bsc-testnet.public.blastapi.io";
     const provider = new ethers.providers.JsonRpcProvider(rpc);
     const StakingContract = new ethers.Contract(contracts.King.staking, contracts.King.abi, provider);
-    const _totalUserRewards = await StakingContract.totalUsersRewards();
-    const totalUserRewards = parseFloat(ethers.utils.formatUnits(_totalUserRewards.toString(), 9)).toFixed(4);
+
     const _totalLocked = await StakingContract.totalUsersStake();
     const totalLocked = parseFloat(ethers.utils.formatUnits(_totalLocked.toString(), 9)).toFixed(4);
-    freeData.push(totalUserRewards, totalLocked);
+
+    const _totalUserRewards = await StakingContract.totalUsersRewards();
+    const totalUserRewards = parseFloat(ethers.utils.formatUnits(_totalUserRewards.toString(), 9)).toFixed(4);
+
+    // get APY
+    const apy = getAPY(totalLocked);
+    
+    freeData.push(totalLocked, totalUserRewards, apy);
     return freeData;
 }
 
 export const getUserData = async (address: string | undefined) => {
-    const address1 = "0x8C3bAb09eE648109eE29b24A4afa67a723968f3B";
     const userData:any = [];
     if(Staking !== null) {
-        const userInfos = await Staking.userInfo(address1);
+        const userInfos = await Staking.userInfo(address);
         console.log({ Staking, userInfos })
         const deposit = parseFloat(ethers.utils.formatUnits(userInfos[0].toString(), 9)).toFixed(4);
         const lockTime = (parseInt(userInfos[2])).toString();
@@ -79,12 +84,8 @@ export const getUserData = async (address: string | undefined) => {
         const __rewardDebt = parseFloat(_rewardDebt);
         const rewardDebt = __rewardDebt.toFixed(4).toString();
 
-        // const rewardDebt = parseFloat(ethers.utils.formatUnits(userInfos[1].toString(), 9)).toFixed(4);
-        // const _rewardDebt = await Staking.pendingReward(address);
-        // const rewardDebt = parseFloat(ethers.utils.formatUnits(_rewardDebt.toString(), 9)).toFixed(4);
-
-        const isApprove = await isApproved(address1);
-        const kingBalance = await getKingBalance(address1);
+        const isApprove = await isApproved(address);
+        const kingBalance = await getKingBalance(address);
         
         userData.push(deposit, lockTime, rewardDebt, isApprove, kingBalance);
         console.log({ userData })
@@ -97,4 +98,46 @@ export const getKingBalance = async(address: string | undefined) => {
     const _kingBalance = await currencyContract.balanceOf(address);
     const kingBalance = parseFloat(ethers.utils.formatUnits(_kingBalance.toString(), 9)).toFixed(2);
     return kingBalance
+}
+
+const getAPY = (_totalLocked: string) => {
+     // APY 
+    const totalLocked = parseFloat(_totalLocked);
+    // const __totalLocked = await currencyContract.balanceOf(contracts.King.staking);
+    // const totalLocked = parseFloat(ethers.utils.formatUnits(__totalLocked.toString(), 9));
+    console.log({ totalLocked })
+
+    // const no_of_reward_tokens = 0.3250 * (28800 * 365); 
+    // const total_value_of_reward_token = no_of_reward_tokens * totalLocked;
+    // const tokenPrice = 0.035;
+    // const total_value_of_staked_token = totalLocked * tokenPrice;
+    // const apr = ((total_value_of_reward_token / total_value_of_staked_token) * 100);
+    // const apyCalc = {
+    //     compoundFrequency: 1,
+    //     days: 365,
+    //     performanceFee: 0.23
+    // };
+    // const daysAsDecimalOfYear = apyCalc.days / 365;
+    // const aprAsDecimal = apr / 100;
+    // const timesCompounded = 365 * apyCalc.compoundFrequency;
+    // let apyAsDecimal = (apr / 100) * daysAsDecimalOfYear;
+    // if (timesCompounded > 0) {
+    //     apyAsDecimal = (1 + aprAsDecimal / timesCompounded) ** (timesCompounded * daysAsDecimalOfYear) - 1;
+
+    //     const _apyAs1 = 1 + aprAsDecimal / timesCompounded;
+    //     const _apyAs2 = timesCompounded * daysAsDecimalOfYear;
+        
+    //     console.log({ _apyAs1,  _apyAs2})
+    // }
+    // if (apyCalc.performanceFee !== 0) {
+    //   const performanceFeeAsDecimal = apyCalc.performanceFee / 100;
+    //   const takenAsPerformanceFee = apyAsDecimal * performanceFeeAsDecimal;
+    //   apyAsDecimal -= takenAsPerformanceFee;
+    // }
+    
+    // return parseFloat((apyAsDecimal * 100).toFixed(2));
+    const rewardPerBlock = 0.3250
+    const blockPerSecond = 0.33
+    const apy = (((rewardPerBlock *blockPerSecond * 86400 * 365) / totalLocked) * 100).toFixed(2)
+    return apy;
 }
