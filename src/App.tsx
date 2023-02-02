@@ -13,6 +13,8 @@ import { Layout } from 'src/layouts/layout';
 
 import './config/i18n';
 import { Staking } from './pages/staking';
+import { Privacy } from './pages/Privacy';
+import { Terms } from './pages/Terms';
 function App() {
   return (
     <Suspense fallback={<>Loading</>}>
@@ -25,6 +27,8 @@ function App() {
               <Route path={PUBLIC_ROUTES.token} element={<Token />} />
               <Route path={PUBLIC_ROUTES.team} element={<Team />} />
               <Route path={PUBLIC_ROUTES.staking} element={<Staking />} />
+              <Route path={PUBLIC_ROUTES.privacy} element={<Privacy />} />
+              <Route path={PUBLIC_ROUTES.terms} element={<Terms />} />
               <Route path={PUBLIC_ROUTES.error404} element={<NotFoundPage />} />
               <Route path="*" element={<Navigate to={PUBLIC_ROUTES.error404} replace />} />
             </Routes>

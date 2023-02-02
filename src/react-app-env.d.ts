@@ -13,3 +13,8 @@ declare module '*.gif' {
 declare module '*.otf';
 
 declare module '*.ttf';
+
+declare module '*.md' {
+  const value: string; 
+  export default value;
+}

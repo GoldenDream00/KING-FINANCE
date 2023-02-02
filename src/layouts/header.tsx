@@ -143,7 +143,6 @@ export const Header = () => {
           <DeskWalletButton>
             <CustomConnectButton />
           </DeskWalletButton>
-          {/* <RectButton>{t('home.docs')}</RectButton> */}
         </RectButtonGroup>
       </HeaderContent>
     </Container>
@@ -155,8 +154,6 @@ const HeaderContent = styled.div`
   width: 100%;
   justify-content: space-between;
   align-items: flex-start;
-  /* position: absolute;
-  top: 3rem; */
   padding-top: 3rem;
 
   @media screen and (max-width: 640px) {

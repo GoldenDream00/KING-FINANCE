@@ -28,33 +28,32 @@ export const StakingPanel = () => {
   const { isInitialized } = useWeb3Store();
 
   const getData = async () => {
-    const userData = await getUserData(address);
-    if (userData !== undefined) {
-      setDeposited(commaSeparators(userData[0]));
-      setPendingReward(commaSeparators(userData[2]));
-      if (!isFlag) {
-        handleTime(parseInt(userData[1]));
-        setFlag(true);
-      }
-      setApprove(userData[3]);
-      setKingBalance(userData[4]);
-      setTimeout(() => {
-        (async () => {
-          await getData();
-        })();
-      }, 6000);
-    }
-  };
-
-  useEffect(() => {
     if (isInitialized && address !== undefined) {
-      getData();
+      const userData = await getUserData(address);
+      if (userData !== undefined) {
+        setDeposited(commaSeparators(userData[0]));
+        setPendingReward(commaSeparators(userData[2]));
+        if (!isFlag) {
+          handleTime(parseInt(userData[1]));
+          setFlag(true);
+        }
+        setApprove(userData[3]);
+        setKingBalance(userData[4]);
+        setTimeout(() => {
+          (async () => {
+            await getData();
+          })();
+        }, 6000);
+      }
     } else {
       setKingBalance('0.00');
       setUnlockIn('00 : 00 : 00 : 00');
       setPendingReward('0.0000');
       setDeposited('0.0000');
     }
+  };
+  useEffect(() => {
+    getData();
   }, [isInitialized, isConnected, isLoad]);
 
   const handleTime = (timeStamp: number) => {

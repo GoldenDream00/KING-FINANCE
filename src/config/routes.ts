@@ -4,6 +4,8 @@ export const PUBLIC_ROUTES = {
   token: '/token',
   team: '/team',
   staking: '/staking',
+  privacy: '/privacy',
+  terms: '/terms',
   error404: '/error404'
 };
 

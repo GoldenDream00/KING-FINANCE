@@ -24,9 +24,9 @@ export const Footer = () => {
         <KingLogo src={DeskFooterLogo} alt="king-logo" onClick={() => navigate('/')} />
 
         <CopyRight>
-          <Element>{t('home.privacy')}</Element>
+          <Element onClick={() => navigate('/privacy')}>{t('home.privacy')}</Element>
           <Line>|</Line>
-          <Element>{t('home.terms')}</Element>
+          <Element onClick={() => navigate('/terms')}>{t('home.terms')}</Element>
         </CopyRight>
         <SocialLinkGroup>
           <a href={'https://t.me/KlNGfinance'} rel="noopener noreferrer" target={'_blank'}>

@@ -45,7 +45,7 @@ export const SmoothProvider = ({ children }: SmoothScrollProps) => {
   // 5.
   useEffect(() => {
     requestAnimationFrame(() => smoothScrollingHandler());
-  }, []);
+  });
 
   const smoothScrollingHandler = () => {
     data.current = window.scrollY;

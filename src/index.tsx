@@ -6,7 +6,19 @@ import './index.css';
 import 'aos/dist/aos.css';
 
 import { RainbowKitProvider, connectorsForWallets } from '@rainbow-me/rainbowkit';
-import { metaMaskWallet, trustWallet } from '@rainbow-me/rainbowkit/wallets';
+import {
+  argentWallet,
+  braveWallet,
+  imTokenWallet,
+  injectedWallet,
+  ledgerWallet,
+  metaMaskWallet,
+  omniWallet,
+  rainbowWallet,
+  trustWallet,
+  walletConnectWallet,
+  coinbaseWallet
+} from '@rainbow-me/rainbowkit/wallets';
 import { configureChains, createClient, WagmiConfig } from 'wagmi';
 import { bsc } from 'wagmi/chains';
 import { alchemyProvider } from 'wagmi/providers/alchemy';
@@ -26,17 +38,27 @@ const { chains, provider } = configureChains(
 
 const connectors = connectorsForWallets([
   {
+    groupName: 'Inject your wallet',
+    wallets: [injectedWallet({ chains })]
+  },
+  {
     groupName: 'Select your wallet',
     wallets: [
       metaMaskWallet({ chains, shimDisconnect: true }),
-      trustWallet({ chains, shimDisconnect: true })
-      // walletConnectWallet({ chains }),
-      // ledgerWallet({ chains }),
-      // braveWallet({ chains }),
-      // argentWallet({ chains }),
-      // imTokenWallet({ chains }),
-      // omniWallet({ chains }),
-      // rainbowWallet({ chains })
+      trustWallet({ chains, shimDisconnect: true }),
+      coinbaseWallet({ appName: 'King', chains })
+    ]
+  },
+  {
+    groupName: 'Others',
+    wallets: [
+      walletConnectWallet({ chains }),
+      ledgerWallet({ chains }),
+      braveWallet({ chains }),
+      argentWallet({ chains }),
+      imTokenWallet({ chains }),
+      omniWallet({ chains }),
+      rainbowWallet({ chains })
     ]
   }
 ]);
@@ -53,7 +75,7 @@ root.render(
   <WagmiConfig client={wagmiClient}>
     <RainbowKitProvider
       chains={chains}
-      modalSize="compact"
+      showRecentTransactions
       appInfo={{
         appName: 'Kingworld'
       }}

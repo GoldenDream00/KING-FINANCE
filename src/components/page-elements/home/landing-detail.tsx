@@ -9,8 +9,8 @@ import {
   LogoKingFloki,
   DeskNftGame,
   MobileNftGame,
-  DeskPlayearn,
-  MobilePlayearn,
+  KingPassPng,
+  KingPassMobilePng,
   DeskBoxKingpad,
   MobileBoxKingPad,
   KingPad,
@@ -56,20 +56,14 @@ export const LandingDetails = () => {
           </div>
         </div>
         <div className="play-to-earn" data-aos="fade-left" data-aos-delay="500" data-aos-duration="1000">
-          <video className="desktop-background-video" playsInline loop autoPlay muted id="my-video">
-            <source src={DeskPlayearn} type="video/mp4" id="background-video-source" />
-            Your browser does not support the video tag.
-          </video>
-          <video className="mobile-background-video" playsInline loop autoPlay muted id="my-video">
-            <source src={MobilePlayearn} type="video/mp4" id="background-video-source" />
-            Your browser does not support the video tag.
-          </video>
+          <img src={KingPassPng} className="desktop-nft-game-gif" alt="nft-game-gif" />
+          <img src={KingPassMobilePng} className="mobile-nft-game-gif" alt="nft-game-gif" />
           <div className="background-overlay">
             <div className="to-earn">
               <div className="play-to">{t('home.playto')} </div>
               <EarnText language={lang}> {t('home.earn')}</EarnText>
             </div>
-            <a href={'https://www.kingflokiworld.com'} rel="noopener noreferrer " target="_blank">
+            <a href={'https://www.kingpass.finance'} rel="noopener noreferrer " target="_blank">
               <button className="play-button">{t('home.playnow')}</button>
             </a>
           </div>
@@ -85,7 +79,7 @@ export const LandingDetails = () => {
               <p>{t('home.safeplace')} </p>
               <p> {t('home.jointhebest')}</p>
             </KingDetailText>
-            <a href={'https://kingpad.vercel.app'} rel="noopener noreferrer" target="_blank">
+            <a href={'https://kingpad.finance/'} rel="noopener noreferrer" target="_blank">
               <ComingSoonBtn>{t('home.comingsoon')}</ComingSoonBtn>
             </a>
           </KingpadDetails>
@@ -101,7 +95,7 @@ export const LandingDetails = () => {
               <p>{t('home.beking')}</p>
               <p>{t('home.realestate')}</p>
             </KingDetailText>
-            <a href={'https://kingland.vercel.app'} rel="noopener noreferrer" target="_blank">
+            <a href={'https://kingland.finance/'} rel="noopener noreferrer" target="_blank">
               <ComingSoonBtn>{t('home.comingsoon')}</ComingSoonBtn>
             </a>
           </KingpadDetails>
@@ -355,7 +349,7 @@ const Game = styled.div`
           font-size: 2.5rem;
           text-align: center;
 
-          @media screen and (max-width: 640px) {
+          @media screen and (max-width: 840px) {
             font-size: 1rem;
           }
 
@@ -370,7 +364,7 @@ const Game = styled.div`
           font-size: 5rem;
           text-align: center;
 
-          @media screen and (max-width: 640px) {
+          @media screen and (max-width: 840px) {
             font-size: 2.5rem;
           }
         }
@@ -419,8 +413,7 @@ const Game = styled.div`
     @media screen and (max-width: 768px) {
       width: 300px;
     }
-
-    .desktop-background-video {
+    .desktop-nft-game-gif {
       width: 100%;
       height: 100%;
       display: block;
@@ -431,11 +424,12 @@ const Game = styled.div`
       }
     }
 
-    .mobile-background-video {
+    .mobile-nft-game-gif {
       width: 100%;
       height: 100%;
       display: none;
-      border-radius: 56px;
+      border-radius: 60px;
+
       @media screen and (max-width: 480px) {
         border-radius: 35px;
       }
@@ -444,7 +438,6 @@ const Game = styled.div`
         display: block;
       }
     }
-
     .background-overlay {
       position: absolute;
       width: 100%;
@@ -462,7 +455,7 @@ const Game = styled.div`
           font-family: 'gotham-bold';
           font-size: 2.5rem;
 
-          @media screen and (max-width: 640px) {
+          @media screen and (max-width: 840px) {
             font-size: 1rem;
           }
 
@@ -656,8 +649,9 @@ const EarnText = styled.div<EarnTextProps>`
   margin-top: 0.5rem;
   font-family: 'gotham-bold';
   font-size: 4rem;
+  text-transform: uppercase;
   text-align: center;
-  @media screen and (max-width: 640px) {
+  @media screen and (max-width: 840px) {
     font-size: 2.5rem;
   }
 

@@ -11,9 +11,11 @@ let Staking: any = null;
 
 let StakingWithSigner: any = null;
 let currencyContract: any = null;
+let currencyContractWithSigner: any = null;
 
 export const initializeWeb3 = async (provider_: any, signer_: any) => {
-    currencyContract = new ethers.Contract(contracts.King.address, erc20ABI, signer_);
+    currencyContract = new ethers.Contract(contracts.King.address, erc20ABI, provider_);
+    currencyContractWithSigner = new ethers.Contract(contracts.King.address, erc20ABI, signer_);
     StakingWithSigner = new ethers.Contract(contracts.King.staking, contracts.King.abi, signer_);
     Staking = new ethers.Contract(contracts.King.staking, contracts.King.abi, provider_);
 
@@ -22,18 +24,20 @@ export const initializeWeb3 = async (provider_: any, signer_: any) => {
 };
 
 export const approve = async () => {
-    if(signer !== null && signer !== undefined) {
+    if(signer !== null && signer !== undefined && currencyContractWithSigner !== null) {
         const max_allow = '115792089237316195423570985008687907853269984665640564039457584007913129639934'
-        const tx =  await currencyContract.approve(contracts.King.staking, max_allow);
+        const tx =  await currencyContractWithSigner.approve(contracts.King.staking, max_allow);
         await tx.wait();
     }
 }
 
 export const isApproved = async (address: string | undefined) => {
+    if(currencyContract !== null && currencyContract !== undefined && address !== undefined) {
         const _allownace = await currencyContract.allowance(address, contracts.King.staking);
         const allowance = _allownace.toString();
         const isAllow = allowance > '100000000000';
         return isAllow
+    }
 }
 
 export const tokenDeposit = async (amount: number) => {
@@ -75,8 +79,8 @@ export const getFreeData = async () => {
 }
 
 export const getUserData = async (address: string | undefined) => {
-    const userData:any = [];
-    if(Staking !== null) {
+    if(Staking !== null && Staking !== undefined && address !== undefined && signer !== null && signer !== undefined) {
+        const userData:any = [];
         const userInfos = await Staking.userInfo(address);
         const deposit = parseFloat(ethers.utils.formatUnits(userInfos[0].toString(), 9)).toFixed(4);
         const lockTime = (parseInt(userInfos[2])).toString();
@@ -94,7 +98,7 @@ export const getUserData = async (address: string | undefined) => {
 }
 
 export const getKingBalance = async(address: string | undefined) => {
-    if(currencyContract !== null) {
+    if(currencyContract !== null && currencyContract !== undefined && address !== undefined) {
         const _kingBalance = await currencyContract.balanceOf(address);
         const kingBalance = parseFloat(ethers.utils.formatUnits(_kingBalance.toString(), 9)).toFixed(2);
         return kingBalance
@@ -102,11 +106,11 @@ export const getKingBalance = async(address: string | undefined) => {
 }
 
 const getAPY = (_totalLocked: string) => {
-     // APY 
+    // APY 
     const totalLocked = parseFloat(_totalLocked);
     const rewardPerBlock = 0.3250
     const blockPerSecond = 0.33
-    const apy = (((rewardPerBlock *blockPerSecond * 86400 * 365) / totalLocked) * 100).toFixed(2)
+    const apy = (((rewardPerBlock * blockPerSecond * 86400 * 365) / totalLocked) * 100).toFixed(2)
     return apy;
 }
 
