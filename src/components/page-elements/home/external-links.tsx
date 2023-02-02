@@ -19,9 +19,15 @@ export const ExternalLinks = () => {
         <div className="coingecko-link">
           <img src={CoingeckoIcon} alt="coingecko-link-icon" className="link-icon" />
         </div>
-        <div className="bscscan-link">
-          <img src={BscscanIcon} alt="bscscan-link-icon" className="link-icon" />
-        </div>
+        <a
+          href={'https://bscscan.com/token/0x74f08af7528ffb751e3a435ddd779b5c4565e684'}
+          rel="noopener noreferrer"
+          target={'_blank'}
+        >
+          <div className="bscscan-link">
+            <img src={BscscanIcon} alt="bscscan-link-icon" className="link-icon" />
+          </div>
+        </a>
       </ExternalLinkWrapper>
       <ExternalButtons>
         <div className="token-button" onClick={() => navigate('/token')}>

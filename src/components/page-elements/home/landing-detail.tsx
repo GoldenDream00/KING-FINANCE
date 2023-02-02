@@ -36,7 +36,7 @@ export const LandingDetails = () => {
         <MetaverseTitle>
           <div className="awesome-game">{t('home.awesomegame')}</div>
           <div className="metaverse-letter">{t('home.metaverse')}</div>
-          <a href={'https://www.kingflokiworld.com'} rel="noopener noreferrer">
+          <a href={'https://www.kingflokiworld.com'} rel="noopener noreferrer" target="_blank">
             <button className="metaverse-play-button">{t('home.playnow')}</button>
           </a>
         </MetaverseTitle>
@@ -50,7 +50,9 @@ export const LandingDetails = () => {
               <div className="in-game">{t('home.ingame')}</div>
               <div className="nfts">NFTs</div>
             </div>
-            <button className="mint-button">{t('home.mintnow')}</button>
+            <a href={'https://kingfloki.finance/wearable'} rel="noopener noreferrer" target="_blank">
+              <button className="mint-button">{t('home.mintnow')}</button>
+            </a>
           </div>
         </div>
         <div className="play-to-earn" data-aos="fade-left" data-aos-delay="500" data-aos-duration="1000">
@@ -67,7 +69,7 @@ export const LandingDetails = () => {
               <div className="play-to">{t('home.playto')} </div>
               <EarnText language={lang}> {t('home.earn')}</EarnText>
             </div>
-            <a href={'https://www.kingflokiworld.com'} rel="noopener noreferrer">
+            <a href={'https://www.kingflokiworld.com'} rel="noopener noreferrer " target="_blank">
               <button className="play-button">{t('home.playnow')}</button>
             </a>
           </div>
@@ -83,7 +85,7 @@ export const LandingDetails = () => {
               <p>{t('home.safeplace')} </p>
               <p> {t('home.jointhebest')}</p>
             </KingDetailText>
-            <a href={'https://kingpad.vercel.app'} rel="noopener noreferrer">
+            <a href={'https://kingpad.vercel.app'} rel="noopener noreferrer" target="_blank">
               <ComingSoonBtn>{t('home.comingsoon')}</ComingSoonBtn>
             </a>
           </KingpadDetails>
@@ -99,7 +101,7 @@ export const LandingDetails = () => {
               <p>{t('home.beking')}</p>
               <p>{t('home.realestate')}</p>
             </KingDetailText>
-            <a href={'https://kingland.vercel.app'} rel="noopener noreferrer">
+            <a href={'https://kingland.vercel.app'} rel="noopener noreferrer" target="_blank">
               <ComingSoonBtn>{t('home.comingsoon')}</ComingSoonBtn>
             </a>
           </KingpadDetails>

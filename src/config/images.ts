@@ -31,6 +31,7 @@ import TwitterSvg from '../assets/Desktop/Svg/iconboxtwitter.svg';
 import YoutubeSvg from '../assets/Desktop/Svg/iconboxyt.svg';
 import GitbookSvg from '../assets/Desktop/Svg/iconboxgitbook.svg';
 import MediumSvg from '../assets/Desktop/Svg/iconboxmedium.svg';
+import DiscordSvg from '../assets/Desktop/Svg/discord.svg';
 
 import DeskNftgameGif from '../assets/Desktop/Video/desk-nft-game.gif';
 import TabletNftgameGif from '../assets/Tablet/Video/tablet-nft-game.gif';
@@ -101,6 +102,7 @@ export const TwitterIcon = TwitterSvg;
 export const YoutubeIcon = YoutubeSvg;
 export const GitbookIcon = GitbookSvg;
 export const MediumIcon = MediumSvg;
+export const DiscordIcon = DiscordSvg;
 
 export const DeskNftGame = DeskNftgameGif;
 export const TabletNftGame = TabletNftgameGif;

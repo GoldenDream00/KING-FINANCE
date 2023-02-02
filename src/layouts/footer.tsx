@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import {
   DeskBgMain,
   DeskFooterLogo,
+  DiscordIcon,
   GitbookIcon,
-  MediumIcon,
   TelegramIcon,
   TwitterIcon,
   YoutubeIcon
@@ -41,8 +41,8 @@ export const Footer = () => {
           <a href="https://king-finance.gitbook.io/king-whitepaper/" rel="noopener noreferrer" target={'_blank'}>
             <SocialIcon src={GitbookIcon} />
           </a>
-          <a href={'https://medium.com/@kingfinance'} rel="noopener noreferrer" target={'_blank'}>
-            <SocialIcon src={MediumIcon} />
+          <a href={'https://discord.gg/kingfinance'} rel="noopener noreferrer" target={'_blank'}>
+            <SocialIcon src={DiscordIcon} />
           </a>
         </SocialLinkGroup>
       </FooterContent>

@@ -26,7 +26,7 @@ export const TokenGraphSection = () => {
         </MobileChartContainer>
         <TokenChartInfo />
         <MediumText>{t('token.contractaddress')}</MediumText>
-        <SmallText>{t('token.announce')}</SmallText>
+        <SmallText>0x74f08aF7528Ffb751e3A435ddD779b5C4565e684</SmallText>
         <MediumText style={{ paddingTop: '4rem' }}>{t('token.buyking')}</MediumText>
         <SmallText>{t('token.newlisting')}</SmallText>
       </TokenDetails>
