@@ -7,6 +7,7 @@ import { approve, compound, getUserData, tokenDeposit, withdraw } from 'src/cont
 import { Spinner } from 'src/components/spinner';
 import { useAccount } from 'wagmi';
 import { useWeb3Store } from 'src/context/Web3Context';
+import { commaSeparators } from 'src/utils/commaSeparators';
 
 export const StakingPanel = () => {
   const [editState, setEditState] = useState({
@@ -29,10 +30,10 @@ export const StakingPanel = () => {
   const getData = async () => {
     const userData = await getUserData(address);
     if (userData !== undefined) {
-      setDeposited(userData[0].toString());
-      setPendingReward(userData[2].toString());
+      setDeposited(commaSeparators(userData[0]));
+      setPendingReward(commaSeparators(userData[2]));
       if (!isFlag) {
-        handleTime(parseInt(userData[1].toString()));
+        handleTime(parseInt(userData[1]));
         setFlag(true);
       }
       setApprove(userData[3]);
@@ -126,11 +127,11 @@ export const StakingPanel = () => {
         <StakingBalancePanel>
           <KingBalanceCircle>
             <KingBalanceTitle>$King Balance</KingBalanceTitle>
-            <KingBalanceValue>{kingBalance}</KingBalanceValue>
+            <KingBalanceValue>{commaSeparators(kingBalance)}</KingBalanceValue>
           </KingBalanceCircle>
           <KingBalanceText>
-            <StatusText title="Pending reward" value={pendingReward} />
-            <StatusText title="Deposited" value={deposited} />
+            <StatusText title="Pending reward" value={commaSeparators(pendingReward)} />
+            <StatusText title="Deposited" value={commaSeparators(deposited)} />
             <StatusText title="Unlock in" value={unlockIn === 'over' ? 'Lock time over' : unlockIn} />
           </KingBalanceText>
         </StakingBalancePanel>

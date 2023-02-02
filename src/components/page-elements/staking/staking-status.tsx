@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { getFreeData } from 'src/contract';
+import { commaSeparators } from 'src/utils/commaSeparators';
 import styled from 'styled-components';
 
 export const StakingStatus = () => {
@@ -16,13 +17,13 @@ export const StakingStatus = () => {
     <StakingStatusContainer>
       <StakingStatusText>
         <StakingStatusGroup1>
-          <StatusText title="Total Locked" value={freeData[0] ?? 0} isFlag={true} />
-          <StatusText title="User Rewards claimed" value={freeData[1] ?? 0} />
+          <StatusText title="Total Locked" value={commaSeparators(freeData[0] ?? 0)} isFlag={true} />
+          <StatusText title="User Rewards claimed" value={commaSeparators(freeData[1] ?? 0)} />
         </StakingStatusGroup1>
         <StakingStatusGroup2>
-          <StatusText title="KING price" value={`${freeData[3] ?? 0} $`} />
-          <StatusText title="APY" value={`${freeData[2] ?? 0}%`} />
-          <StatusText title="TVL" value={`${freeData[4] ?? 0} $`} />
+          <StatusText title="KING price" value={`${commaSeparators(freeData[3] ?? 0)} $`} />
+          <StatusText title="APY" value={`${commaSeparators(freeData[2] ?? 0)}%`} />
+          <StatusText title="TVL" value={`${commaSeparators(freeData[4] ?? 0)} $`} />
         </StakingStatusGroup2>
       </StakingStatusText>
     </StakingStatusContainer>
