@@ -105,12 +105,10 @@ export const StakingPanel = () => {
     });
     promise
       .then((result) => {
-        console.log({ result });
         toast.success(successMsg);
         setLoad(false);
       })
       .catch((err) => {
-        console.log({ err });
         const revertData = err.reason;
         toast.error(`Transaction failed: ${revertData ?? err}`);
         setLoad(false);
