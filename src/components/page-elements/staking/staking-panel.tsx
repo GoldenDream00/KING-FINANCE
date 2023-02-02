@@ -46,7 +46,7 @@ export const StakingPanel = () => {
   };
 
   useEffect(() => {
-    if (isInitialized) {
+    if (isInitialized && address !== undefined) {
       getData();
     } else {
       setKingBalance('0.00');
