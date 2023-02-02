@@ -24,7 +24,6 @@ export const Web3Provider = (props: propsType) => {
       if (isConnected && signer !== undefined) {
         initializeWeb3(provider, signer)
           .then(() => {
-            console.log('true');
             setInitialized(true);
           })
           .catch((err) => {

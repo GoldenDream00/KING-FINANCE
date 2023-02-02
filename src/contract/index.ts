@@ -19,7 +19,6 @@ export const initializeWeb3 = async (provider_: any, signer_: any) => {
 
     provider =  provider_;
     signer =  await signer_;
-    console.log({ provider, signer });
 };
 
 export const approve = async () => {
@@ -31,7 +30,6 @@ export const approve = async () => {
 }
 
 export const isApproved = async (address: string | undefined) => {
-        console.log({ signer })
         const _allownace = await currencyContract.allowance(address, contracts.King.staking);
         const allowance = _allownace.toString();
         const isAllow = allowance > '100000000000';
@@ -67,8 +65,12 @@ export const getFreeData = async () => {
 
     // get APY
     const apy = getAPY(totalLocked);
-    
-    freeData.push(totalLocked, totalUserRewards, apy);
+
+    const kingPrice = await getKingPrice();
+
+    const tvl = (Number(totalLocked) * kingPrice).toFixed(2);
+
+    freeData.push(totalLocked, totalUserRewards, apy, kingPrice, tvl);
     return freeData;
 }
 
@@ -76,7 +78,6 @@ export const getUserData = async (address: string | undefined) => {
     const userData:any = [];
     if(Staking !== null) {
         const userInfos = await Staking.userInfo(address);
-        console.log({ Staking, userInfos })
         const deposit = parseFloat(ethers.utils.formatUnits(userInfos[0].toString(), 9)).toFixed(4);
         const lockTime = (parseInt(userInfos[2])).toString();
         
@@ -86,15 +87,13 @@ export const getUserData = async (address: string | undefined) => {
 
         const isApprove = await isApproved(address);
         const kingBalance = await getKingBalance(address);
-        
+
         userData.push(deposit, lockTime, rewardDebt, isApprove, kingBalance);
-        console.log({ userData })
         return userData;
     }
 }
 
 export const getKingBalance = async(address: string | undefined) => {
-    console.log({ signer })
     const _kingBalance = await currencyContract.balanceOf(address);
     const kingBalance = parseFloat(ethers.utils.formatUnits(_kingBalance.toString(), 9)).toFixed(2);
     return kingBalance
@@ -103,41 +102,15 @@ export const getKingBalance = async(address: string | undefined) => {
 const getAPY = (_totalLocked: string) => {
      // APY 
     const totalLocked = parseFloat(_totalLocked);
-    // const __totalLocked = await currencyContract.balanceOf(contracts.King.staking);
-    // const totalLocked = parseFloat(ethers.utils.formatUnits(__totalLocked.toString(), 9));
-    console.log({ totalLocked })
-
-    // const no_of_reward_tokens = 0.3250 * (28800 * 365); 
-    // const total_value_of_reward_token = no_of_reward_tokens * totalLocked;
-    // const tokenPrice = 0.035;
-    // const total_value_of_staked_token = totalLocked * tokenPrice;
-    // const apr = ((total_value_of_reward_token / total_value_of_staked_token) * 100);
-    // const apyCalc = {
-    //     compoundFrequency: 1,
-    //     days: 365,
-    //     performanceFee: 0.23
-    // };
-    // const daysAsDecimalOfYear = apyCalc.days / 365;
-    // const aprAsDecimal = apr / 100;
-    // const timesCompounded = 365 * apyCalc.compoundFrequency;
-    // let apyAsDecimal = (apr / 100) * daysAsDecimalOfYear;
-    // if (timesCompounded > 0) {
-    //     apyAsDecimal = (1 + aprAsDecimal / timesCompounded) ** (timesCompounded * daysAsDecimalOfYear) - 1;
-
-    //     const _apyAs1 = 1 + aprAsDecimal / timesCompounded;
-    //     const _apyAs2 = timesCompounded * daysAsDecimalOfYear;
-        
-    //     console.log({ _apyAs1,  _apyAs2})
-    // }
-    // if (apyCalc.performanceFee !== 0) {
-    //   const performanceFeeAsDecimal = apyCalc.performanceFee / 100;
-    //   const takenAsPerformanceFee = apyAsDecimal * performanceFeeAsDecimal;
-    //   apyAsDecimal -= takenAsPerformanceFee;
-    // }
-    
-    // return parseFloat((apyAsDecimal * 100).toFixed(2));
     const rewardPerBlock = 0.3250
     const blockPerSecond = 0.33
     const apy = (((rewardPerBlock *blockPerSecond * 86400 * 365) / totalLocked) * 100).toFixed(2)
     return apy;
 }
+
+const getKingPrice = async () => {
+    const response = await fetch('https://api.dev.dex.guru/v1/chain/56/tokens/0x74f08aF7528Ffb751e3A435ddD779b5C4565e684/market?api-key=UnK0BOsJoU3FhwiWcoIuBzGQVT3j_dw_656de3zEAAs')
+    const data = await response.json()
+    const res = data.price_usd.toFixed(5);
+    return res
+};

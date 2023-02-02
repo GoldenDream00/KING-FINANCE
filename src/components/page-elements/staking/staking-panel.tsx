@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import styled from 'styled-components';
 import { StatusText } from './staking-status';
-import { approve, compound, getKingBalance, getUserData, isApproved, tokenDeposit, withdraw } from 'src/contract';
+import { approve, compound, getUserData, tokenDeposit, withdraw } from 'src/contract';
 import { Spinner } from 'src/components/spinner';
 import { useAccount } from 'wagmi';
 import { useWeb3Store } from 'src/context/Web3Context';
@@ -15,10 +15,10 @@ export const StakingPanel = () => {
   });
   const [isLoad, setLoad] = useState(false);
 
-  const [unlockIn, setUnlockIn] = useState<string>('');
-  const [deposited, setDeposited] = useState<string | number>(0);
-  const [pendingReward, setPendingReward] = useState<string | number>(0);
-  const [kingBalance, setKingBalance] = useState<string | number>(0);
+  const [unlockIn, setUnlockIn] = useState<string>('00 : 00 : 00 : 00');
+  const [deposited, setDeposited] = useState<string | number>('0.0000');
+  const [pendingReward, setPendingReward] = useState<string | number>('0.0000');
+  const [kingBalance, setKingBalance] = useState<string | number>('0.00');
   const [isApprove, setApprove] = useState(false);
   const [isFlag, setFlag] = useState(false);
 
@@ -28,17 +28,20 @@ export const StakingPanel = () => {
 
   const getData = async () => {
     const userData = await getUserData(address);
-
     if (userData !== undefined) {
       setDeposited(userData[0].toString());
       setPendingReward(userData[2].toString());
-      console.log({ userData });
       if (!isFlag) {
         handleTime(parseInt(userData[1].toString()));
         setFlag(true);
       }
       setApprove(userData[3]);
       setKingBalance(userData[4]);
+      setTimeout(() => {
+        (async () => {
+          await getData();
+        })();
+      }, 6000);
     }
   };
 
@@ -46,10 +49,10 @@ export const StakingPanel = () => {
     if (isInitialized) {
       getData();
     } else {
-      setKingBalance(0);
-      setUnlockIn('0');
-      setPendingReward(0);
-      setDeposited(0);
+      setKingBalance('0.00');
+      setUnlockIn('00 : 00 : 00 : 00');
+      setPendingReward('0.0000');
+      setDeposited('0.0000');
     }
   }, [isInitialized, isConnected, isLoad]);
 
@@ -128,8 +131,8 @@ export const StakingPanel = () => {
             <KingBalanceValue>{kingBalance}</KingBalanceValue>
           </KingBalanceCircle>
           <KingBalanceText>
-            <StatusText title="Pending reward" value={pendingReward ?? 0} />
-            <StatusText title="Deposited" value={deposited ?? 0} />
+            <StatusText title="Pending reward" value={pendingReward} />
+            <StatusText title="Deposited" value={deposited} />
             <StatusText title="Unlock in" value={unlockIn === 'over' ? 'Lock time over' : unlockIn} />
           </KingBalanceText>
         </StakingBalancePanel>
@@ -174,16 +177,10 @@ export const StakingPanel = () => {
             <KingPanelTitle>Withdraw $King</KingPanelTitle>
             <KingPanelAction>
               <KingPanelInput
-                type={unlockIn !== 'over' ? 'text' : 'number'}
+                type={'text'}
                 placeholder="Amount"
                 disabled={unlockIn !== 'over' || !isConnected}
-                value={
-                  unlockIn !== 'over' && unlockIn !== '0'
-                    ? unlockIn
-                    : editState.withdrawAmount === 0
-                    ? ''
-                    : editState.withdrawAmount
-                }
+                value={unlockIn !== 'over' ? unlockIn : editState.withdrawAmount === 0 ? '' : editState.withdrawAmount}
                 onChange={(e) => handleEditState('withdrawAmount', e.currentTarget.value)}
               />
               <KingPanelButtons>
