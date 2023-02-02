@@ -53,15 +53,12 @@ export const withdraw = async (amount: number) => {
 
 export const getFreeData = async () => {
     const freeData = [];
-    console.log("Hello")
     const rpc = "https://bsc-dataseed1.binance.org";
     const provider = new ethers.providers.JsonRpcProvider(rpc);
     const StakingContract = new ethers.Contract(contracts.King.staking, contracts.King.abi, provider);
 
     const _totalLocked = await StakingContract.totalUsersStake();
     const totalLocked = parseFloat(ethers.utils.formatUnits(_totalLocked.toString(), 9)).toFixed(4);
-
-    console.log({ totalLocked })
 
     const _totalUserRewards = await StakingContract.totalUsersRewards();
     const totalUserRewards = parseFloat(ethers.utils.formatUnits(_totalUserRewards.toString(), 9)).toFixed(4);
@@ -70,8 +67,6 @@ export const getFreeData = async () => {
     const apy = getAPY(totalLocked);
 
     const kingPrice = await getKingPrice();
-
-    console.log({ kingPrice })
 
     const tvl = (Number(totalLocked) * kingPrice).toFixed(2);
 
