@@ -46,10 +46,10 @@ export const EcoSystem = () => {
             <a href={'https://www.kingflokiworld.com'} rel="noopener noreferrer" target={'_blank'}>
               <KingFlokiWrapper onMouseOver={() => changeBg(1)} onMouseOut={() => changeBg(0)} />
             </a>
-            <a href={'https://kingland.finance'} rel="noopener noreferrer" target={'_blank'}>
+            <a href={'https://kingpad.finance'} rel="noopener noreferrer" target={'_blank'}>
               <KingPadWrapper onMouseOver={() => changeBg(2)} onMouseOut={() => changeBg(0)} />
             </a>
-            <a href={'https://kingpad.finance'} rel="noopener noreferrer" target={'_blank'}>
+            <a href={'https://kingland.finance'} rel="noopener noreferrer" target={'_blank'}>
               <KingLandWrapper onMouseOver={() => changeBg(3)} onMouseOut={() => changeBg(0)} />
             </a>
           </KingLogos>

@@ -4,6 +4,7 @@ import { CmcIcon, BscscanIcon, CoingeckoIcon, MediakitZip } from 'src/config/ima
 
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import CopyToClipboard from 'src/components/CopyToClipboard';
 
 export const ExternalLinks = () => {
   const navigate = useNavigate();
@@ -30,6 +31,13 @@ export const ExternalLinks = () => {
           </div>
         </a>
       </ExternalLinkWrapper>
+      <CopyToClipboard>
+        {({ copy }) => (
+          <ContractAddy onClick={() => copy(' 0x74f08af7528ffb751e3a435ddd779b5c4565e684')}>
+            CA: 0x74f08af7528ffb751e3a435ddd779b5c4565e684
+          </ContractAddy>
+        )}
+      </CopyToClipboard>
       <ExternalButtons>
         <div className="token-button" onClick={() => navigate('/token')}>
           {t('home.token')}
@@ -55,11 +63,11 @@ const Wrapper = styled.div`
   color: ${(props) => props.theme.white};
 
   width: 100%;
-  padding-top: 3rem;
+  padding-top: 5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 3rem;
+  gap: 5rem;
 `;
 
 const ExternalLinkWrapper = styled.div`
@@ -126,4 +134,17 @@ const ALink = styled.a`
   outline: none;
   text-decoration: none;
   width: 100%;
+`;
+
+const ContractAddy = styled.div`
+  font-size: 'gotham-bold';
+  cursor: pointer;
+  font-size: 20px;
+  @media screen and (max-width: 720px) {
+    font-size: 15px;
+  }
+
+  @media screen and (max-width: 540px) {
+    font-size: 11px;
+  }
 `;
