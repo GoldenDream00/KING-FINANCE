@@ -12,43 +12,43 @@ const members = [
     img: img1,
     name: 'Travladd',
     job: 'COO Co-Founder',
-    telegram: '',
-    twitter: ''
+    telegram: 'https://t.me/TRAVLADD',
+    twitter: 'https://twitter.com/OfficialTravlad'
   },
   {
     img: img2,
     name: 'Benson',
     job: 'CEO Founder',
-    telegram: '',
-    twitter: ''
+    telegram: 'https://t.me/BensonCryptoLTD',
+    twitter: 'https://twitter.com/BensonCryptoLTD'
   },
   {
     img: img3,
     name: 'Krakovia',
     job: 'Solidity developer',
-    telegram: '',
-    twitter: ''
+    telegram: 'https://t.me/karola96',
+    twitter: 'https://twitter.com/krakovia_evm'
   },
   {
     img: img4,
     name: 'Ercolino',
     job: 'Creative designer',
-    telegram: '',
-    twitter: ''
+    telegram: 'https://t.me/erco_lino',
+    twitter: 'https://twitter.com/erco_lino'
   },
   {
     img: img5,
     name: 'Katowice',
-    job: 'Coder',
-    telegram: '',
-    twitter: ''
+    job: 'Solidity developer',
+    telegram: 'https://t.me/Katerina_978',
+    twitter: 'https://twitter.com/katerina_978'
   },
   {
     img: img6,
     name: 'Araki',
     job: 'Web3 Developer',
-    telegram: '',
-    twitter: ''
+    telegram: 'https://t.me/tolmany21',
+    twitter: 'https://twitter.com/tolmany21'
   }
 ];
 

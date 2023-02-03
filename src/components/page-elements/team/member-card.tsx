@@ -17,10 +17,10 @@ export const MemberCard = ({ img, name, job, telegram, twitter }: MemberCardProp
         <Name>{name}</Name>
         <Job>{job}</Job>
         <Links>
-          <Twitter href={twitter} rel="noopener noreferrer">
+          <Twitter href={twitter} rel="noopener noreferrer" target={'_blank'}>
             <img src={TwitterIcon} alt="twitter" />
           </Twitter>
-          <Telegram href={telegram} rel="noopener noreferrer">
+          <Telegram href={telegram} rel="noopener noreferrer" target={'_blank'}>
             <img src={TelegramIcon} alt="telegram" />
           </Telegram>
         </Links>
