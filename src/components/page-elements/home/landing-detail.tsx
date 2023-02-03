@@ -651,8 +651,19 @@ const EarnText = styled.div<EarnTextProps>`
   font-size: 4rem;
   text-transform: uppercase;
   text-align: center;
+  @media screen and (max-width: 1366px) {
+    font-size: 3rem;
+  }
   @media screen and (max-width: 840px) {
     font-size: 2.5rem;
+  }
+
+  @media screen and (max-width: 640px) {
+    font-size: 2rem;
+  }
+
+  @media screen and (max-width: 480px) {
+    font-size: 1.5rem;
   }
 
   ${(props) =>
