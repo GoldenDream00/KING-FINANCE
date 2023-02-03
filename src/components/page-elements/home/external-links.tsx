@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { CmcIcon, BscscanIcon, CoingeckoIcon } from 'src/config/images';
+import { CmcIcon, BscscanIcon, CoingeckoIcon, MediakitZip } from 'src/config/images';
 
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
@@ -8,6 +8,7 @@ import { useTranslation } from 'react-i18next';
 export const ExternalLinks = () => {
   const navigate = useNavigate();
   const { t } = useTranslation();
+
   return (
     <Wrapper>
       <ExternalLinkWrapper>
@@ -39,8 +40,12 @@ export const ExternalLinks = () => {
         <ALink href={'https://king-finance.gitbook.io/king-whitepaper/'} rel="noopener noreferrer" target={'_blank'}>
           <div className="token-button">{t('home.docs')}</div>
         </ALink>
-        <div className="token-button">{t('home.mediakit')}</div>
-        <div className="token-button">{t('home.kingpass')}</div>
+        <ALink href={MediakitZip} rel="noopener noreferrer" target={'_blank'}>
+          <div className="token-button">{t('home.mediakit')}</div>
+        </ALink>
+        <ALink href={'https://kingpass.finance'} rel="noopener noreferrer" target={'_blank'}>
+          <div className="token-button">{t('home.kingpass')}</div>
+        </ALink>
       </ExternalButtons>
     </Wrapper>
   );

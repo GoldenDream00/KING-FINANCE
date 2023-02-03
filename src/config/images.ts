@@ -66,6 +66,9 @@ import KingPassMobilePng from '../assets/Mobile/Png/kingpass_mobile.png'
 
 import TokenomicsImg from '../assets/Token/desktop_tokenomics.svg';
 
+// Media kit download
+import MediakitZip from '../assets/download/King_media_kit.zip'
+
 export const BoxBgKingFloki = BoxBgKingFlokiPNG;
 export const BoxBgKingFlokiTablet = BoxBgKingFlokiTabletPNG;
 export const BoxBgKingFlokiMobile = BoxBgKingFlokiMobilePNG;
@@ -127,7 +130,7 @@ export const BscscanIcon = BscscanIconSvg;
 
 export const DeskFooterLogo = DeskFooterLogoSvg;
 
-export {KingPassPng, KingPassMobilePng}
+export { KingPassPng, KingPassMobilePng, MediakitZip }
 
 // Token
 
