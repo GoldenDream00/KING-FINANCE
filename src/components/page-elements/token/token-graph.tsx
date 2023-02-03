@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import CopyToClipboard from 'src/components/CopyToClipboard';
 import { DeskTopTokenChart, MobileTokenChart } from 'src/components/tokenomics-chart';
 import { TokenChartInfo } from 'src/components/tokenomics-chart/chart-info';
 import { LogoHeader } from 'src/config/images';
@@ -26,7 +27,13 @@ export const TokenGraphSection = () => {
         </MobileChartContainer>
         <TokenChartInfo />
         <MediumText>{t('token.contractaddress')}</MediumText>
-        <SmallText>0x74f08aF7528Ffb751e3A435ddD779b5C4565e684</SmallText>
+        <CopyToClipboard>
+          {({ copy }) => (
+            <ContractAddy onClick={() => copy(' 0x74f08af7528ffb751e3a435ddd779b5c4565e684')}>
+              0x74f08aF7528Ffb751e3A435ddD779b5C4565e684
+            </ContractAddy>
+          )}
+        </CopyToClipboard>
         <MediumText style={{ paddingTop: '4rem' }}>{t('token.buyking')}</MediumText>
         <SmallText>{t('token.newlisting')}</SmallText>
       </TokenDetails>
@@ -167,6 +174,19 @@ const SmallText = styled.div`
   text-align: center;
   color: ${(prop) => prop.theme.white};
   font-size: 15px;
+  @media screen and (max-width: 420px) {
+    font-size: 13px;
+  }
+`;
+
+const ContractAddy = styled.div`
+  padding-top: 1.375rem;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  color: ${(prop) => prop.theme.white};
+  font-size: 15px;
+  cursor: pointer;
   @media screen and (max-width: 420px) {
     font-size: 13px;
   }
