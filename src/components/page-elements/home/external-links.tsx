@@ -141,6 +141,7 @@ const ContractAddy = styled.div`
   cursor: pointer;
   font-size: 20px;
   font-weight: 600;
+  white-space: nowrap;
   @media screen and (max-width: 720px) {
     font-size: 15px;
   }
