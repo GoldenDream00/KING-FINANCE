@@ -137,7 +137,7 @@ const ALink = styled.a`
 `;
 
 const ContractAddy = styled.div`
-  font-size: 'gotham-bold';
+  font-family: 'gotham-book';
   cursor: pointer;
   font-size: 20px;
   @media screen and (max-width: 720px) {

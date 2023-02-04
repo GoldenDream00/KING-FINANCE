@@ -187,6 +187,7 @@ const ContractAddy = styled.div`
   color: ${(prop) => prop.theme.white};
   font-size: 15px;
   cursor: pointer;
+  font-family: 'gotham-bold';
   @media screen and (max-width: 420px) {
     font-size: 13px;
   }
