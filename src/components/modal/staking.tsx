@@ -156,6 +156,7 @@ const ItemTitle = styled.div`
   @media screen and (max-width: 640px) {
     font-size: 12px;
     padding-top: 5px;
+    line-height: 15px;
   }
 `;
 
@@ -168,6 +169,7 @@ const ItemContent = styled.div`
     font-size: 10px;
     padding-top: 0px;
     max-width: 90px;
+    line-height: 12px;
   }
 `;
 
@@ -179,5 +181,6 @@ const FinalLabel = styled.div`
   @media screen and (max-width: 640px) {
     font-size: 12px;
     padding-top: 44px;
+    line-height: 16px;
   }
 `;
