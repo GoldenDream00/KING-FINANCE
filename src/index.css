@@ -104,3 +104,7 @@ input[type=number] {
 .react-responsive-modal-closeButton {
   display: none !important;
 }
+
+.react-responsive-modal-overlay {
+  background: rgba(0, 0, 0, 0.8) !important;
+}
