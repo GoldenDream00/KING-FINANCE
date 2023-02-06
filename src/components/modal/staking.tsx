@@ -110,7 +110,6 @@ const SecondaryLabel = styled.div`
   font-size: 15px;
   text-align: center;
   padding-top: 9px;
-  font-family: 'gotham-bold';
   @media screen and (max-width: 640px) {
     font-size: 12px;
   }
@@ -158,7 +157,6 @@ const ItemTitle = styled.div`
   text-transform: uppercase;
   text-align: center;
   padding-top: 10px;
-  font-family: 'gotham-bold';
   @media screen and (max-width: 640px) {
     font-size: 12px;
     padding-top: 5px;
@@ -172,7 +170,6 @@ const ItemContent = styled.div`
   color: #ffffff;
   text-align: center;
   height: 38px;
-  font-family: 'gotham-bold';
   @media screen and (max-width: 640px) {
     font-size: 10px;
     padding-top: 0px;
@@ -186,7 +183,6 @@ const FinalLabel = styled.div`
   font-size: 15px;
   max-width: 350px;
   text-align: center;
-  font-family: 'gotham-bold';
   @media screen and (max-width: 640px) {
     font-size: 12px;
     padding-top: 44px;
