@@ -131,6 +131,10 @@ const StakingItemWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 10px;
+  @media screen and (max-width: 640px) {
+    gap: 5px;
+  }
 `;
 
 const ItemIcon = styled.div`
@@ -165,6 +169,7 @@ const ItemContent = styled.div`
   font-size: 13px;
   color: #ffffff;
   text-align: center;
+  height: 38px;
   @media screen and (max-width: 640px) {
     font-size: 10px;
     padding-top: 0px;
