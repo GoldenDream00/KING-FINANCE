@@ -109,7 +109,8 @@ const PrimaryLabel = styled.div`
 const SecondaryLabel = styled.div`
   font-size: 15px;
   text-align: center;
-  margin-top: 9px;
+  padding-top: 9px;
+  font-family: 'gotham-bold';
   @media screen and (max-width: 640px) {
     font-size: 12px;
   }
@@ -120,9 +121,9 @@ const StakingItemContainer = styled.div`
   justify-content: space-between;
   align-items: flex-start;
   width: 100%;
-  margin-top: 60px;
+  padding-top: 60px;
   @media screen and (max-width: 640px) {
-    margin-top: 45px;
+    padding-top: 45px;
   }
 `;
 
@@ -156,36 +157,39 @@ const ItemTitle = styled.div`
   color: #ffce5a;
   text-transform: uppercase;
   text-align: center;
-  margin-top: 10px;
+  padding-top: 10px;
+  font-family: 'gotham-bold';
   @media screen and (max-width: 640px) {
     font-size: 12px;
-    margin-top: 5px;
+    padding-top: 5px;
     line-height: 15px;
   }
 `;
 
 const ItemContent = styled.div`
-  margin-top: 3px;
+  padding-top: 3px;
   font-size: 13px;
   color: #ffffff;
   text-align: center;
   height: 38px;
+  font-family: 'gotham-bold';
   @media screen and (max-width: 640px) {
     font-size: 10px;
-    margin-top: 0px;
+    padding-top: 0px;
     max-width: 90px;
     line-height: 12px;
   }
 `;
 
 const FinalLabel = styled.div`
-  margin-top: 57px;
+  padding-top: 57px;
   font-size: 15px;
   max-width: 350px;
   text-align: center;
+  font-family: 'gotham-bold';
   @media screen and (max-width: 640px) {
     font-size: 12px;
-    margin-top: 44px;
+    padding-top: 44px;
     line-height: 16px;
   }
 `;
