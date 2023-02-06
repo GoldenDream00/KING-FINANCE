@@ -109,7 +109,7 @@ const PrimaryLabel = styled.div`
 const SecondaryLabel = styled.div`
   font-size: 15px;
   text-align: center;
-  padding-top: 9px;
+  margin-top: 9px;
   @media screen and (max-width: 640px) {
     font-size: 12px;
   }
@@ -120,9 +120,9 @@ const StakingItemContainer = styled.div`
   justify-content: space-between;
   align-items: flex-start;
   width: 100%;
-  padding-top: 60px;
+  margin-top: 60px;
   @media screen and (max-width: 640px) {
-    padding-top: 45px;
+    margin-top: 45px;
   }
 `;
 
@@ -156,36 +156,36 @@ const ItemTitle = styled.div`
   color: #ffce5a;
   text-transform: uppercase;
   text-align: center;
-  padding-top: 10px;
+  margin-top: 10px;
   @media screen and (max-width: 640px) {
     font-size: 12px;
-    padding-top: 5px;
+    margin-top: 5px;
     line-height: 15px;
   }
 `;
 
 const ItemContent = styled.div`
-  padding-top: 3px;
+  margin-top: 3px;
   font-size: 13px;
   color: #ffffff;
   text-align: center;
   height: 38px;
   @media screen and (max-width: 640px) {
     font-size: 10px;
-    padding-top: 0px;
+    margin-top: 0px;
     max-width: 90px;
     line-height: 12px;
   }
 `;
 
 const FinalLabel = styled.div`
-  padding-top: 57px;
+  margin-top: 57px;
   font-size: 15px;
   max-width: 350px;
   text-align: center;
   @media screen and (max-width: 640px) {
     font-size: 12px;
-    padding-top: 44px;
+    margin-top: 44px;
     line-height: 16px;
   }
 `;
