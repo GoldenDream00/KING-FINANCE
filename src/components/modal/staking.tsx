@@ -83,7 +83,7 @@ const ModalContainer = styled.div`
   height: 420px;
   @media screen and (max-width: 640px) {
     width: 327px;
-    height: 320px;
+    height: 364px;
   }
 `;
 
@@ -176,7 +176,7 @@ const ItemContent = styled.div`
   @media screen and (max-width: 640px) {
     font-size: 10px;
     padding-top: 0px;
-    max-width: 90px;
+    max-width: 95px;
     line-height: 12px;
   }
 `;
