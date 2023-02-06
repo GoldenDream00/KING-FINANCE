@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import { PageWrapper } from 'src/components/container/container';
 import { ExternalLinks } from 'src/components/page-elements/home/external-links';
 import { StakingPanel } from 'src/components/page-elements/staking/staking-panel';
 import { StakingStatus } from 'src/components/page-elements/staking/staking-status';
@@ -11,12 +10,10 @@ export const Staking = () => {
   }, []);
   return (
     <>
-      <PageWrapper>
-        <StakingText />
-        <StakingStatus />
-        <StakingPanel />
-        <ExternalLinks />
-      </PageWrapper>
+      <StakingText />
+      <StakingStatus />
+      <StakingPanel />
+      <ExternalLinks />
     </>
   );
 };

@@ -8,6 +8,8 @@ import { Spinner } from 'src/components/spinner';
 import { useAccount } from 'wagmi';
 import { useWeb3Store } from 'src/context/Web3Context';
 import { commaSeparators } from 'src/utils/commaSeparators';
+import { StakingInfoIcon } from 'src/config/images';
+import { StakingInfoModal } from 'src/components/modal/staking';
 
 export const StakingPanel = () => {
   const [editState, setEditState] = useState({
@@ -22,6 +24,7 @@ export const StakingPanel = () => {
   const [kingBalance, setKingBalance] = useState<string | number>('0.00');
   const [isApprove, setApprove] = useState(false);
   const [isFlag, setFlag] = useState(false);
+  const [isStakingModalOpen, setStakingModalOpen] = useState(false);
 
   const { isConnected, address } = useAccount();
 
@@ -124,6 +127,9 @@ export const StakingPanel = () => {
     <StakingPanelContainer>
       <StakingPanelWrapper>
         <StakingBalancePanel>
+          <StakingInfo onClick={() => setStakingModalOpen(true)}>
+            <Img src={StakingInfoIcon} alt="info-icon" />
+          </StakingInfo>
           <KingBalanceCircle>
             <KingBalanceTitle>$King Balance</KingBalanceTitle>
             <KingBalanceValue>{commaSeparators(kingBalance)}</KingBalanceValue>
@@ -192,6 +198,7 @@ export const StakingPanel = () => {
                 </KingPanelButton>
               </KingPanelButtons>
             </KingPanelAction>
+            <StakingInfoModal isState={isStakingModalOpen} setState={setStakingModalOpen} />
           </KingPanel>
         </StakingField>
       </StakingPanelWrapper>
@@ -225,7 +232,9 @@ const StakingBalancePanel = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  position: relative;
   @media screen and (max-width: 1024px) {
+    padding-top: 40px;
     height: 480px;
   }
 
@@ -355,4 +364,22 @@ const KingPanelButton = styled.button`
     height: 44px;
     font-size: 14px;
   }
+`;
+
+const StakingInfo = styled.div`
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  display: none;
+  @media screen and (max-width: 1024px) {
+    display: block;
+  }
+`;
+
+const Img = styled.img`
+  width: 100%;
+  height: 100%;
 `;

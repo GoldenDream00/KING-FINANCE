@@ -86,3 +86,21 @@ input[type=number] {
 .Toastify__toast, .Toastify__toast-container, .Toastify__toast-container--top-right {
   width: 380px !important;
 }
+
+.react-responsive-modal-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.react-responsive-modal-modal {
+  background-color: #171717 !important;
+  border-radius: 30px;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.react-responsive-modal-closeButton {
+  display: none !important;
+}

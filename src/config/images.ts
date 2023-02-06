@@ -69,6 +69,11 @@ import TokenomicsImg from '../assets/Token/desktop_tokenomics.svg';
 // Media kit download
 import MediakitZip from '../assets/download/King_media_kit.zip'
 
+import StakingInfoIcon from '../assets/staking/info-icon.svg'
+import Staking1Icon from '../assets/staking/staking-01.svg'
+import Staking2Icon from '../assets/staking/staking-02.svg'
+import Staking3Icon from '../assets/staking/staking-03.svg'
+
 export const BoxBgKingFloki = BoxBgKingFlokiPNG;
 export const BoxBgKingFlokiTablet = BoxBgKingFlokiTabletPNG;
 export const BoxBgKingFlokiMobile = BoxBgKingFlokiMobilePNG;
@@ -130,7 +135,7 @@ export const BscscanIcon = BscscanIconSvg;
 
 export const DeskFooterLogo = DeskFooterLogoSvg;
 
-export { KingPassPng, KingPassMobilePng, MediakitZip }
+export { KingPassPng, KingPassMobilePng, MediakitZip, StakingInfoIcon, Staking1Icon, Staking2Icon, Staking3Icon }
 
 // Token
 

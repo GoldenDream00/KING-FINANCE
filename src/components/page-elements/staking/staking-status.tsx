@@ -1,10 +1,13 @@
 import { useEffect, useState } from 'react';
+import { StakingInfoModal } from 'src/components/modal/staking';
+import { StakingInfoIcon } from 'src/config/images';
 import { getFreeData } from 'src/contract';
 import { commaSeparators } from 'src/utils/commaSeparators';
 import styled from 'styled-components';
 
 export const StakingStatus = () => {
   const [freeData, setFreeData] = useState<Array<string | number>>([]);
+  const [isStakingModalOpen, setStakingModalOpen] = useState(false);
 
   useEffect(() => {
     (async () => {
@@ -24,6 +27,10 @@ export const StakingStatus = () => {
           <StatusText title="KING price" value={`${commaSeparators(freeData[3] ?? 0)} $`} />
           <StatusText title="APY" value={`${commaSeparators(freeData[2] ?? 0)}%`} />
           <StatusText title="TVL" value={`${commaSeparators(freeData[4] ?? 0)} $`} />
+          <StakingInfo onClick={() => setStakingModalOpen(true)}>
+            <Img src={StakingInfoIcon} alt="info-icon" />
+          </StakingInfo>
+          <StakingInfoModal isState={isStakingModalOpen} setState={setStakingModalOpen} />
         </StakingStatusGroup2>
       </StakingStatusText>
     </StakingStatusContainer>
@@ -105,16 +112,16 @@ const StatusValue = styled.div`
 const StakingStatusGroup1 = styled.div`
   display: flex;
   align-items: center;
-  gap: 90px;
+  gap: 70px;
   @media screen and (max-width: 960px) {
-    gap: 47px;
+    gap: 37px;
   }
 `;
 
 const StakingStatusGroup2 = styled.div`
   display: flex;
   align-items: center;
-  gap: 90px;
+  gap: 60px;
   @media screen and (max-width: 960px) {
     gap: 45px;
   }
@@ -130,4 +137,18 @@ const StakingStatusGroup2 = styled.div`
   @media screen and (max-width: 390px) {
     gap: 0px;
   }
+`;
+
+const StakingInfo = styled.div`
+  width: 31px;
+  height: 31px;
+  cursor: pointer;
+  @media screen and (max-width: 1024px) {
+    display: none;
+  }
+`;
+
+const Img = styled.img`
+  width: 100%;
+  height: 100%;
 `;
