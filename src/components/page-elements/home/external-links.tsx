@@ -13,14 +13,16 @@ export const ExternalLinks = () => {
   return (
     <Wrapper>
       <ExternalLinkWrapper>
-        <a href={'https://medium.com/@kingfinance'} rel="noopener noreferrer" target={'_blank'}>
+        <a href={'https://coinmarketcap.com/currencies/king-finance/'} rel="noopener noreferrer" target={'_blank'}>
           <div className="medium-link">
             <img src={CmcIcon} alt="medium-link-icon" className="link-icon" />
           </div>
         </a>
-        <div className="coingecko-link">
-          <img src={CoingeckoIcon} alt="coingecko-link-icon" className="link-icon" />
-        </div>
+        <a href="https://www.coingecko.com/en/coins/king-finance" rel="noopener noreferrer" target={'_blank'}>
+          <div className="coingecko-link">
+            <img src={CoingeckoIcon} alt="coingecko-link-icon" className="link-icon" />
+          </div>
+        </a>
         <a
           href={'https://bscscan.com/token/0x74f08af7528ffb751e3a435ddd779b5c4565e684'}
           rel="noopener noreferrer"
