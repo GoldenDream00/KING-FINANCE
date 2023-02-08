@@ -53,7 +53,7 @@ export const StakingPanel = () => {
       if (userData !== undefined) {
         setDeposited(commaSeparators(userData[0]));
         setPendingReward(commaSeparators(userData[2]));
-        if (!isFlag) {
+        if (!isFlag && !isLoad) {
           handleTime(parseInt(userData[1]));
           setFlag(true);
         }
