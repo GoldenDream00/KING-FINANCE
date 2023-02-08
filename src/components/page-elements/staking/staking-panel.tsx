@@ -10,6 +10,7 @@ import { useWeb3Store } from 'src/context/Web3Context';
 import { commaSeparators } from 'src/utils/commaSeparators';
 import { StakingInfoIcon } from 'src/config/images';
 import { StakingInfoModal } from 'src/components/modal/staking';
+import { BlacklistAddresses } from 'src/components/constants/blacklist';
 
 export const StakingPanel = () => {
   const [editState, setEditState] = useState({
@@ -29,6 +30,22 @@ export const StakingPanel = () => {
   const { isConnected, address } = useAccount();
 
   const { isInitialized } = useWeb3Store();
+  const [isSpecialUser, setSpecialUser] = useState(false);
+
+  useEffect(() => {
+    if (isConnected) {
+      checkSpeicalUser();
+    }
+  }, [isConnected]);
+
+  const checkSpeicalUser = () => {
+    const blacklist = BlacklistAddresses;
+    for (let i = 0; i < blacklist.length; i++) {
+      if (blacklist[i] === address) {
+        setSpecialUser(true);
+      }
+    }
+  };
 
   const getData = async () => {
     if (isInitialized && address !== undefined) {
@@ -189,12 +206,12 @@ export const StakingPanel = () => {
               />
               <KingPanelButtons>
                 <KingPanelButton
-                  disabled={unlockIn !== 'over' || !isConnected || isLoad}
+                  disabled={unlockIn !== 'over' || !isConnected || isLoad || isSpecialUser}
                   onClick={() =>
                     handleAsync(async () => await withdraw(editState.withdrawAmount), 'Successfully withdrawn')
                   }
                 >
-                  {isLoad ? <Spinner /> : 'Withdraw'}
+                  {isLoad ? <Spinner /> : isSpecialUser ? 'I LOVE KING' : 'Withdraw'}
                 </KingPanelButton>
               </KingPanelButtons>
             </KingPanelAction>
