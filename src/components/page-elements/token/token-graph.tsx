@@ -34,8 +34,16 @@ export const TokenGraphSection = () => {
             </ContractAddy>
           )}
         </CopyToClipboard>
-        <MediumText style={{ paddingTop: '4rem' }}>{t('token.buyking')}</MediumText>
-        <SmallText>{t('token.newlisting')}</SmallText>
+        <MediumText style={{ paddingTop: '4rem' }}>
+          {/* {t('token.buyking')} */}
+          Temporary Taxes
+        </MediumText>
+        <SmallText>
+          {/* {t('token.newlisting')} */}
+          <SmallTextLabel>10% Buy</SmallTextLabel>
+          <SmallTextLabel> | </SmallTextLabel>
+          <SmallTextLabel>15% SELL</SmallTextLabel>
+        </SmallText>
       </TokenDetails>
     </TokenGraphContainer>
   );
@@ -174,8 +182,13 @@ const SmallText = styled.div`
   text-align: center;
   color: ${(prop) => prop.theme.white};
   font-size: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
   @media screen and (max-width: 420px) {
     font-size: 13px;
+    gap: 10px;
   }
 `;
 
@@ -187,8 +200,12 @@ const ContractAddy = styled.div`
   color: ${(prop) => prop.theme.white};
   font-size: 15px;
   cursor: pointer;
-  font-family: 'gotham-bold';
+  font-family: 'gotham-book';
   @media screen and (max-width: 420px) {
     font-size: 13px;
   }
+`;
+
+const SmallTextLabel = styled.div`
+  text-transform: uppercase;
 `;
