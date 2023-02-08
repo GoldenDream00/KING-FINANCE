@@ -102,8 +102,8 @@ export const StakingPanel = () => {
         const res = days + ' : ' + hours + ' : ' + minutes + ' : ' + seconds;
         if (res !== unlockIn) {
           setUnlockIn(res);
+          setTimeout(() => handleTime(timeStamp), 1000);
         }
-        setTimeout(() => handleTime(timeStamp), 1000);
       }
     }
   };
