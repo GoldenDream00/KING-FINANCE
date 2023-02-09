@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { CmcIcon, BscscanIcon, CoingeckoIcon, MediakitZip } from 'src/config/images';
+import { CmcIcon, BscscanIcon, CoingeckoIcon, MediakitZip, AssureSvg, CertikSvg } from 'src/config/images';
 
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
@@ -30,6 +30,16 @@ export const ExternalLinks = () => {
         >
           <div className="bscscan-link">
             <img src={BscscanIcon} alt="bscscan-link-icon" className="link-icon" />
+          </div>
+        </a>
+        <a href={'https://www.certik.com/projects/king'} rel="noopener noreferrer" target={'_blank'}>
+          <div className="certik-link">
+            <img src={CertikSvg} alt="certik-link-icon" className="link-icon" />
+          </div>
+        </a>
+        <a href={'https://assuredefi.com/projects/king-finance/'} rel="noopener noreferrer" target={'_blank'}>
+          <div className="assuredefi-link">
+            <img src={AssureSvg} alt="assuredefi-link-icon" className="link-icon" />
           </div>
         </a>
       </ExternalLinkWrapper>
@@ -77,14 +87,14 @@ const ExternalLinkWrapper = styled.div`
   width: 100%;
   justify-content: center;
   -webkit-justify-content: center;
-  gap: 6rem;
+  gap: 4rem;
   .link-icon {
     width: 60px;
     height: 60px;
   }
 
   @media screen and (max-width: 768px) {
-    gap: 4rem;
+    gap: 3rem;
 
     .link-icon {
       width: 50px;
@@ -93,7 +103,7 @@ const ExternalLinkWrapper = styled.div`
   }
 
   @media screen and (max-width: 480px) {
-    gap: 3rem;
+    gap: 26px;
 
     .link-icon {
       width: 40px;

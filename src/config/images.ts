@@ -62,6 +62,9 @@ import BoxBgKingFlokiMobilePNG from '../assets/Mobile/Png/boxbgkingfloki.png';
 import KingPassPng from '../assets/Desktop/Png/kingpass.png'
 import KingPassMobilePng from '../assets/Mobile/Png/kingpass_mobile.png'
 
+import AssureSvg from '../assets/Desktop/Svg/assure.svg'
+import CertikSvg from '../assets/Desktop/Svg/certik.svg'
+
 // Token
 
 import TokenomicsImg from '../assets/Token/desktop_tokenomics.svg';
@@ -135,7 +138,7 @@ export const BscscanIcon = BscscanIconSvg;
 
 export const DeskFooterLogo = DeskFooterLogoSvg;
 
-export { KingPassPng, KingPassMobilePng, MediakitZip, StakingInfoIcon, Staking1Icon, Staking2Icon, Staking3Icon }
+export { KingPassPng, KingPassMobilePng, MediakitZip, StakingInfoIcon, Staking1Icon, Staking2Icon, Staking3Icon, AssureSvg, CertikSvg }
 
 // Token
 
