@@ -112,7 +112,7 @@ export const Header = () => {
           </LogoButtons>
 
           <ButtonGroup>
-            <a href={'https://www.kingflokiworld.com'} rel="noopener noreferrer" target={'_blank'}>
+            <a href={'https://kingfloki.finance'} rel="noopener noreferrer" target={'_blank'}>
               <KingFlokiButton className="btn-kingfloki" />
             </a>
             <a href={'https://kingland.finance'} rel="noopener noreferrer" target={'_blank'}>

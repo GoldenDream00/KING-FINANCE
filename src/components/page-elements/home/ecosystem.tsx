@@ -43,7 +43,7 @@ export const EcoSystem = () => {
         <EcoSystemContainer>
           <WholeSystem dangerouslySetInnerHTML={{ __html: t('home.ecosystem') }} />
           <KingLogos>
-            <a href={'https://www.kingflokiworld.com'} rel="noopener noreferrer" target={'_blank'}>
+            <a href={'https://kingfloki.finance'} rel="noopener noreferrer" target={'_blank'}>
               <KingFlokiWrapper onMouseOver={() => changeBg(1)} onMouseOut={() => changeBg(0)} />
             </a>
             <a href={'https://kingpad.finance'} rel="noopener noreferrer" target={'_blank'}>
