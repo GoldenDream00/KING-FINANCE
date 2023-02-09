@@ -32,6 +32,8 @@ export const StakingPanel = () => {
   const { isInitialized } = useWeb3Store();
   const [isSpecialUser, setSpecialUser] = useState(false);
 
+  let timeStamp = 0;
+
   useEffect(() => {
     if (isConnected) {
       checkSpeicalUser();
@@ -53,16 +55,16 @@ export const StakingPanel = () => {
       if (userData !== undefined) {
         setDeposited(commaSeparators(userData[0]));
         setPendingReward(commaSeparators(userData[2]));
-        if (!isFlag && !isLoad) {
-          handleTime(parseInt(userData[1]));
+        timeStamp = parseInt(userData[1]);
+        if (!isFlag) {
+          handleTime();
           setFlag(true);
         }
         setApprove(userData[3]);
         setKingBalance(userData[4]);
-        setTimeout(() => {
-          (async () => {
-            await getData();
-          })();
+        // eslint-disable-next-line @typescript-eslint/no-misused-promises
+        setTimeout(async () => {
+          await getData();
         }, 6000);
       }
     } else {
@@ -72,38 +74,37 @@ export const StakingPanel = () => {
       setDeposited('0.0000');
     }
   };
+
   useEffect(() => {
     getData();
   }, [isInitialized, isConnected, isLoad]);
 
-  const handleTime = (timeStamp: number) => {
-    if (timeStamp !== 0) {
-      const now = Math.floor(Date.now() / 1000);
-      const remain = Number(timeStamp) - now;
-      if (remain < 0) {
-        setUnlockIn('over');
-      } else {
-        let days: string | number = Math.floor(remain / 86400);
-        let hours: string | number = Math.floor((remain - days * 86400) / 3600);
-        let minutes: string | number = Math.floor((remain - days * 86400 - hours * 3600) / 60);
-        let seconds: string | number = remain - days * 86400 - hours * 3600 - minutes * 60;
-        if (days < 10) {
-          days = '0' + days;
-        }
-        if (hours < 10) {
-          hours = '0' + hours;
-        }
-        if (minutes < 10) {
-          minutes = '0' + minutes;
-        }
-        if (seconds < 10) {
-          seconds = '0' + seconds;
-        }
-        const res = days + ' : ' + hours + ' : ' + minutes + ' : ' + seconds;
-        if (res !== unlockIn) {
-          setUnlockIn(res);
-          setTimeout(() => handleTime(timeStamp), 1000);
-        }
+  const handleTime = () => {
+    const now = Math.floor(Date.now() / 1000);
+    const remain = Number(timeStamp) - now;
+    if (remain < 0) {
+      setUnlockIn('over');
+    } else {
+      let days: string | number = Math.floor(remain / 86400);
+      let hours: string | number = Math.floor((remain - days * 86400) / 3600);
+      let minutes: string | number = Math.floor((remain - days * 86400 - hours * 3600) / 60);
+      let seconds: string | number = remain - days * 86400 - hours * 3600 - minutes * 60;
+      if (days < 10) {
+        days = '0' + days;
+      }
+      if (hours < 10) {
+        hours = '0' + hours;
+      }
+      if (minutes < 10) {
+        minutes = '0' + minutes;
+      }
+      if (seconds < 10) {
+        seconds = '0' + seconds;
+      }
+      const res = days + ' : ' + hours + ' : ' + minutes + ' : ' + seconds;
+      if (res !== unlockIn) {
+        setUnlockIn(res);
+        setTimeout(() => handleTime(), 1000);
       }
     }
   };
