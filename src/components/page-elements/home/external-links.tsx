@@ -5,6 +5,7 @@ import { CmcIcon, BscscanIcon, CoingeckoIcon, MediakitZip, AssureSvg, CertikSvg 
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import CopyToClipboard from 'src/components/CopyToClipboard';
+import { windowsToTop } from 'src/utils/windowsToTop';
 
 export const ExternalLinks = () => {
   const navigate = useNavigate();
@@ -51,10 +52,22 @@ export const ExternalLinks = () => {
         )}
       </CopyToClipboard>
       <ExternalButtons>
-        <div className="token-button" onClick={() => navigate('/token')}>
+        <div
+          className="token-button"
+          onClick={() => {
+            navigate('/token');
+            windowsToTop();
+          }}
+        >
           {t('home.token')}
         </div>
-        <div className="token-button" onClick={() => navigate('/team')}>
+        <div
+          className="token-button"
+          onClick={() => {
+            navigate('/team');
+            windowsToTop();
+          }}
+        >
           {t('home.team')}
         </div>
         <ALink href={'https://king-finance.gitbook.io/king-whitepaper/'} rel="noopener noreferrer" target={'_blank'}>

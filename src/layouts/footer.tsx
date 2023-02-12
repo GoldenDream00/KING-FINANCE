@@ -9,6 +9,7 @@ import {
   TwitterIcon,
   YoutubeIcon
 } from 'src/config/images';
+import { windowsToTop } from 'src/utils/windowsToTop';
 import styled from 'styled-components';
 import { PageWrapper } from '../components/container/container';
 
@@ -21,12 +22,33 @@ export const Footer = () => {
         <FooterBackground src={DeskBgMain} alt="logo-header" />
       </FooterContainer>
       <FooterContent>
-        <KingLogo src={DeskFooterLogo} alt="king-logo" onClick={() => navigate('/')} />
+        <KingLogo
+          src={DeskFooterLogo}
+          alt="king-logo"
+          onClick={() => {
+            navigate('/');
+            windowsToTop();
+          }}
+        />
 
         <CopyRight>
-          <Element onClick={() => navigate('/privacy')}>{t('home.privacy')}</Element>
+          <Element
+            onClick={() => {
+              navigate('/privacy');
+              windowsToTop();
+            }}
+          >
+            {t('home.privacy')}
+          </Element>
           <Line>|</Line>
-          <Element onClick={() => navigate('/terms')}>{t('home.terms')}</Element>
+          <Element
+            onClick={() => {
+              navigate('/terms');
+              windowsToTop();
+            }}
+          >
+            {t('home.terms')}
+          </Element>
         </CopyRight>
         <SocialLinkGroup>
           <a href={'https://t.me/KlNGfinance'} rel="noopener noreferrer" target={'_blank'}>

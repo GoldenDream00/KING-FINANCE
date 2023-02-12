@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { useStore } from 'src/context/StoreContext';
+import { windowsToTop } from 'src/utils/windowsToTop';
 import styled from 'styled-components';
 import DesktopStaking from '../../../assets/Token/destop_staking.png';
 
@@ -11,7 +12,13 @@ export const Staking = () => {
   return (
     <StakingContainer language={lang}>
       <SmallText dangerouslySetInnerHTML={{ __html: t('token.stakingplatform') }} />
-      <LaunchButton dangerouslySetInnerHTML={{ __html: t('token.launch') }} onClick={() => navigate('/staking')} />
+      <LaunchButton
+        dangerouslySetInnerHTML={{ __html: t('token.launch') }}
+        onClick={() => {
+          navigate('/staking');
+          windowsToTop();
+        }}
+      />
       <DesktopImg src={DesktopStaking} alt="desktop-staking" />
     </StakingContainer>
   );
