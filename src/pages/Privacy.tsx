@@ -1,12 +1,8 @@
-import { useEffect } from 'react';
 import { ExternalLinks } from 'src/components/page-elements/home/external-links';
 import { PrivacyContext } from 'src/components/TextContent/privacy';
 import styled from 'styled-components';
 
 export const Privacy = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
   return (
     <PrivacyContainer>
       <TextContent>
