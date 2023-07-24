@@ -45,10 +45,10 @@ const members = [
   },
   {
     img: img6,
-    name: 'Araki',
+    name: 'Daisuke',
     job: 'Web3 Developer',
-    telegram: 'https://t.me/tolmany21',
-    twitter: 'https://twitter.com/tolmany21'
+    telegram: 'https://t.me/mind1995star',
+    twitter: 'https://twitter.com/mind1995star'
   }
 ];
 
